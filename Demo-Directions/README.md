@@ -1,7 +1,7 @@
 This is a VBAP demo, created in Matlab (startSPATIALIZE.m), and played with pure-data (launch with _OPEN DEMO.bat).
 
-This file is used to create a spatial simulation of example directions.
-The VBAP parameters are adapted to MR Lab.
+This demo presents a spatial simulation of example directions.
+
 - Sources: 6
 - Directions: defined in label track channel
 
