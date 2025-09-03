@@ -1,2 +1,11 @@
 /Demo-*/Data/*.wav
 /Demo-*/Data/*.aup3
+/Demo-*/Data/*.aup
+/Demo-*/Data/*.mp3
+/Demo-*/Data/peaks/*.reapeaks
+/Demo-*/Data/peaks/*.reapindex
+/Demo-*/Media/*.wav
+/Demo-*/Media/*.mp3
+/Demo-*/Media/peaks/*.reapeaks
+/Demo-*/Media/peaks/*.reapindex
+
