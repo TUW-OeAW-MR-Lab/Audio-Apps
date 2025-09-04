@@ -8,5 +8,5 @@
 /Demo-*/Media/*.mp3
 /Demo-*/Media/peaks/*.reapeaks
 /Demo-*/Media/peaks/*.reapindex
-
+~*.*
 *.rpp-bak
