@@ -1,7 +1,17 @@
 /Demo-*/Data/*.wav
+/Demo-*/Data/*/*.wav
+/Demo-*/Data/*/*/*.wav
 /Demo-*/Data/*.aup3
 /Demo-*/Data/*.aup
 /Demo-*/Data/*.mp3
+/Demo-*/Data/*/*.mp3
+/Demo-*/Data/*/*/*.mp3
+/Demo-*/Data/*.flac
+/Demo-*/Data/*/*.flac
+/Demo-*/Data/*/*/*.flac
+/Demo-*/Data/*.aiff
+/Demo-*/Data/*/*.aiff
+/Demo-*/Data/*/*/*.aiff
 /Demo-*/Data/peaks/*.reapeaks
 /Demo-*/Data/peaks/*.reapindex
 /Demo-*/Media/*.wav
