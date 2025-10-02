@@ -17,4 +17,7 @@ Sources: 71
 ## Play Demo
 - run batch file _OPEN DEMO.bat (opened with pd)
 - press green button to start demo
-- press red button to stop demo
+- optional: use light green buttons to start delayed, or to enable loop
+- orange fader (left) controls volume
+- demo can be combined with demo “realtime reverb” (Mix 1 configuration)
+- press red „stop“ button to stop demo, or close all pd windows
