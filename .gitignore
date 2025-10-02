@@ -2,6 +2,8 @@
 /Demo-*/Data/*/*.wav
 /Demo-*/Data/*/*/*.wav
 /Demo-*/Data/*.aup3
+/Demo-*/Data/*/*.aup3
+/Demo-*/Data/*/*/*.aup3
 /Demo-*/Data/*.aup
 /Demo-*/Data/*.mp3
 /Demo-*/Data/*/*.mp3
