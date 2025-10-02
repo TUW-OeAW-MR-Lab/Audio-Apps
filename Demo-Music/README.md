@@ -8,4 +8,4 @@
 ## Play Demo 
 - load RME Mix 1 configuration 
 - open Reaper file with Reaper 
-- hit Space to start and stop playback 
+- hit "Space" to start and stop playback 
