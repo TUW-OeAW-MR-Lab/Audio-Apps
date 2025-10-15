@@ -359,7 +359,7 @@
 #X obj 1508 532 env~;
 #X obj 1508 552 env~;
 #X obj 50 89 vsl 15 128 0.01 1 1 0 empty empty LS_OUTPUT 0 -28 0 20
--261234 -1 -258113 3175 1;
+-261234 -1 -258113 0 1;
 #X obj 469 912 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 0;
 #X obj 39 902 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -1769,7 +1769,7 @@
 -1 -1;
 #N canvas 940 140 593 259 ElapsedTime 0;
 #X obj 145 105 tgl 15 0 empty empty active 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 215 129 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 251 134 sel 1;
@@ -1818,11 +1818,10 @@
 #X obj 837 337 readsf~ 24;
 #X msg 322 152 1;
 #X obj 24 231 vsl 15 128 0 127 0 0 empty empty Master_Volume 0 -9 0
-20 -260097 -1 -1 7000 1;
+20 -260097 -1 -1 6000 1;
 #X obj 24 388 dbtorms;
 #X obj 345 58 r dFly;
 #X text 26 601 8.2025 miho: MR lab version designed;
-#X msg 23 180 70;
 #X obj 240 92 delay 10000;
 #X obj 832 95 spigot 0;
 #X obj 833 50 tgl 15 0 empty empty loop_on/off 17 7 0 10 -204786 -1
@@ -1831,6 +1830,7 @@
 #X msg 879 117 0;
 #X obj 832 75 delay 29000;
 #X msg 406 89 Data/output;
+#X msg 23 180 60;
 #X connect 1 0 28 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -1914,7 +1914,7 @@
 #X connect 11 0 28 0;
 #X connect 12 0 11 0;
 #X connect 12 0 22 2;
-#X connect 12 0 43 0;
+#X connect 12 0 42 0;
 #X connect 13 0 0 1;
 #X connect 13 1 0 2;
 #X connect 13 2 0 3;
@@ -1941,12 +1941,12 @@
 #X connect 13 23 0 24;
 #X connect 15 0 14 0;
 #X connect 15 1 16 0;
-#X connect 17 0 45 0;
-#X connect 17 0 22 1;
 #X connect 17 0 44 0;
+#X connect 17 0 22 1;
+#X connect 17 0 43 0;
 #X connect 19 0 15 0;
-#X connect 20 0 38 0;
-#X connect 21 0 39 0;
+#X connect 20 0 45 0;
+#X connect 21 0 38 0;
 #X connect 23 0 32 0;
 #X connect 24 0 30 0;
 #X connect 25 0 31 0;
@@ -2058,11 +2058,11 @@
 #X connect 34 0 35 0;
 #X connect 35 0 0 0;
 #X connect 36 0 17 0;
-#X connect 38 0 34 0;
+#X connect 38 0 17 0;
 #X connect 39 0 17 0;
-#X connect 40 0 17 0;
-#X connect 41 0 40 1;
-#X connect 43 0 41 0;
-#X connect 44 0 40 0;
-#X connect 45 0 10 0;
+#X connect 40 0 39 1;
+#X connect 42 0 40 0;
+#X connect 43 0 39 0;
+#X connect 44 0 10 0;
+#X connect 45 0 34 0;
 #X coords 0 662 1 661 85 60 0;
