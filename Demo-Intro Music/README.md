@@ -1,0 +1,4 @@
+# Intro Music
+- This is a music piece as introduction to spatial audio.
+- Requires Intro_v2_C.wav in /Media
+- Original source: Sonible, modified to RME Mix 1 configuration.
