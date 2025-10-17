@@ -1,4 +1,4 @@
-Final mix saved as Data\merged_sources.wav with 141 channels.
+Final mix saved as Data\merged_sources.wav with 126 channels.
 
 - channels 1-11 (11 channels): birds.wav
 - channels 12-29 (18 channels): rain.wav
@@ -6,4 +6,3 @@ Final mix saved as Data\merged_sources.wav with 141 channels.
 - channels 54-71 (18 channels): rain2.wav
 - channels 72-98 (27 channels): frogs.wav
 - channels 99-126 (28 channels): crickets.wav
-- channels 127-141 (15 channels): creek.wav

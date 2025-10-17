@@ -1,3 +1,21 @@
+% MergeSources.m
+% 
+% Merge several sound files (wav) to one single file.
+% - Define input files in script
+% - Audio output is saved as 'Data\merged_sources.wav'
+% - Log output is saved as 'Data\merged_sources.log'
+% 
+% #Author: Michael Mihocic (07-10.2025)
+% #Author: Michael Mihocic: creek removed from output (17.10.2025)
+% 
+
+% Copyright (C) Michael Mihocic, Acoustics Research Institute - Austrian Academy of Sciences
+% Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "License")
+% You may not use this work except in compliance with the License.
+% You may obtain a copy of the License at: https://joinup.ec.europa.eu/software/page/eupl
+% Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+% See the License for the specific language governing  permissions and limitations under the License.
+
 clear;
 
 % Load audio files
@@ -7,12 +25,12 @@ clear;
 [rain2]            = audioread('Data\rain2.wav');
 [frogs]            = audioread('Data\frogs.wav');
 [crickets]         = audioread('Data\crickets.wav');
-[creek]            = audioread('Data\creek.wav');
+% [creek]            = audioread('Data\creek.wav');
   
 % --- Find maximum length across all files ---
 maxlen = max([ ...
-    size(birds,1), size(rain,1), size(thunderstorm,1), ...
-    size(rain2,1), size(frogs,1), size(crickets,1), size(creek,1) ]);
+    % size(birds,1), size(rain,1), size(thunderstorm,1), size(rain2,1), size(frogs,1), size(crickets,1), size(creek,1) ]);
+    size(birds,1), size(rain,1), size(thunderstorm,1), size(rain2,1), size(frogs,1), size(crickets,1) ]);
 
 % --- Pad each file with zeros to same length ---
 birds        = [birds;       zeros(maxlen - size(birds,1),       size(birds,2))];
@@ -21,10 +39,11 @@ thunderstorm = [thunderstorm;zeros(maxlen - size(thunderstorm,1),size(thundersto
 rain2        = [rain2;       zeros(maxlen - size(rain2,1),       size(rain2,2))];
 frogs        = [frogs;       zeros(maxlen - size(frogs,1),       size(frogs,2))];
 crickets     = [crickets;    zeros(maxlen - size(crickets,1),    size(crickets,2))];
-creek        = [creek;       zeros(maxlen - size(creek,1),       size(creek,2))];
+% creek        = [creek;       zeros(maxlen - size(creek,1),       size(creek,2))];
 
 % --- Concatenate all channels side by side ---
-mix = [birds rain thunderstorm rain2 frogs crickets creek];
+% mix = [birds rain thunderstorm rain2 frogs crickets creek];
+mix = [birds rain thunderstorm rain2 frogs crickets];
 
 % --- Optional: normalize (to avoid clipping) ---
 if max(abs(mix(:))) > 0
@@ -36,10 +55,10 @@ outfile = 'Data\merged_sources.wav';
 audiowrite(outfile, mix, FS);
 
 % --- Report channel counts with ranges ---
-channels = [size(birds,2), size(rain,2), size(thunderstorm,2), ...
-            size(rain2,2), size(frogs,2), size(crickets,2), size(creek,2)];
-files    = {'birds.wav','rain.wav','thunderstorm.wav','rain2.wav', ...
-            'frogs.wav','crickets.wav','creek.wav'};
+% channels = [size(birds,2), size(rain,2), size(thunderstorm,2), size(rain2,2), size(frogs,2), size(crickets,2), size(creek,2)];
+% files    = {'birds.wav','rain.wav','thunderstorm.wav','rain2.wav', 'frogs.wav','crickets.wav','creek.wav'};
+channels = [size(birds,2), size(rain,2), size(thunderstorm,2), size(rain2,2), size(frogs,2), size(crickets,2)];
+files    = {'birds.wav','rain.wav','thunderstorm.wav','rain2.wav', 'frogs.wav','crickets.wav'};
 
 disp(['Final mix saved as ' outfile ' with ' num2str(size(mix,2)) ' channels.']);
 

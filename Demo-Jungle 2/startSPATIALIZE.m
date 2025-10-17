@@ -8,14 +8,15 @@
 % - channels 54-71 (18 channels): rain2.wav
 % - channels 72-98 (27 channels): frogs.wav
 % - channels 99-126 (28 channels): crickets.wav
-% - channels 127-141 (15 channels): creek.wav
-
-%   Directions: defined in label track channel
+% 
+% Directions: defined in pos.txt
+% Output: 8 wav files '\Data\output_1.wav' to '\Data\output_8.wav', to be played by the pd demo file.
 %
-
 % #Author: Michael Mihocic and Piotr Majdak (09.2017)
 % #Author: Michael Mihocic: adapted to MR lab, new functions implemented/added (08.2025)
 % #Author: Michael Mihocic: updated t0 141 virtual sound sources (frogs, crickets, creek) (10.2025)
+% #Author: Michael Mihocic: creek removed (17.10.2025)
+
 % 
 % Copyright (C) Acoustics Research Institute - Austrian Academy of Sciences
 % Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "License")
