@@ -8,7 +8,6 @@ Typical sources in a jungle atmosphere
 - channels 54-71 (18 channels): rain2.wav
 - channels 72-98 (27 channels): frogs.wav
 - channels 99-126 (28 channels): crickets.wav
-- channels 127-141 (15 channels): creek.wav
 
 ## Spatialize Demo
 - prepare your multichannel file 'Data\merged_sources.wav' (eg. Matlab or Audacity)
@@ -23,6 +22,3 @@ Typical sources in a jungle atmosphere
 - orange fader (left) controls volume
 - demo can be combined with demo "realtime reverb" (Mix 1 configuration)
 - press red "stop" button to stop demo, or close all pd windows
-
-to do>
-no creek
