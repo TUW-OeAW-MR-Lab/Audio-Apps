@@ -9,7 +9,7 @@ a fly circling around the room
 - demo can be combined with demo “realtime reverb” (Mix 1 configuration)
 - press “stop” or close all Pd windows to stop demo
 ## OSC Commands
-The following commands can be used to communicate with Demo-Fly via OSC:
+The app is listening to port 10003. The following commands can be used to communicate with Demo-Fly via OSC:
 | Send | Receive | Description |
 |-----:|-----------|-----------|
 |     /Control/Response connect localhost 9336 | connect localhost 9336 | connect to demo app and send return channel |
