@@ -6,15 +6,15 @@ a fly circling around the room
 - press green button to start demo
 - optional: use light green buttons to start delayed, or to enable loop
 - orange fader (left) controls volume
-- demo can be combined with demo ìrealtime reverbî (Mix 1 configuration)
-- press ìstopî or close all Pd windows to stop demo
+- demo can be combined with demo ‚Äúrealtime reverb‚Äù (Mix 1 configuration)
+- press ‚Äústop‚Äù or close all Pd windows to stop demo
 ## OSC Commands
 The following commands can be used to communicate with Demo-Fly via OSC:
 | Send | Receive | Description |
 |-----:|-----------|-----------|
 |     /Control/Response connect localhost 9336 | connect localhost 9336 | connect to demo app and send return channel |
 |     /Control/Version| /Control/Version v1.2    | get version number    |
-|     /Control/SampleRate| send /Control/SampleRate 48000       | get sample rate       |
+|     /Control/SampleRate| /Control/SampleRate 48000       | get sample rate       |
 |     /Control/CPULoad| /Control/CPULoad 10.94       | get current CPU load       |
 |     /Play/Start| -       | start demo; trigger levels sent via OSC periodically      |
 |     /Play/Stop| -       | stop demo; stop sending levels       |
