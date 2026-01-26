@@ -1,11 +1,4 @@
-# Demo Music
-
-## Desciption 
-- 64 channels are used (selection is defined in RME Mix 1 configuration) 
-- mp3 audio file from \Data folder is loaded, and spatially played 
-- requires RME Mix 1 configuration (default)
-
-## Play Demo 
-- load RME Mix 1 configuration 
-- open Reaper file with Reaper 
-- hit "Space" to start and stop playback 
+# Intro Music
+- This is a music piece as introduction to spatial audio.
+- Requires Intro_v2_C.wav in /Media
+- Original source: Sonible, modified to RME Mix 1 configuration.

@@ -1,39 +1,39 @@
-#N canvas 5 193 1948 662 10;
-#N canvas -2 3 3833 972 VU_ambisonics~ 1;
+#N canvas -22 305 1974 662 10;
+#N canvas -2 25 3833 972 VU_ambisonics~ 0;
 #X obj 51 51 cnv 15 1890 170 empty empty empty 20 12 0 14 -204800 -66577
 0;
-#X obj 72 88 vsl 10 128 0 127 0 0 SliderValue empty 1 4 -9 0 10 -262144
+#X obj 72 88 vsl 10 128 0 127 0 0 SliderValue1 empty 1 4 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 82 88 vsl 10 128 0 127 0 0 SliderValue empty empty -10 -25 0
-15 -262144 -1 -4160 0 1;
-#X obj 92 88 vsl 10 128 0 127 0 0 SliderValue empty empty 4 -9 0 10
+#X obj 82 88 vsl 10 128 0 127 0 0 SliderValue2 empty empty -10 -25
+0 15 -262144 -1 -4160 0 1;
+#X obj 92 88 vsl 10 128 0 127 0 0 SliderValue3 empty empty 4 -9 0 10
 -262144 -1 -1 0 1;
-#X obj 102 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 112 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 122 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 132 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 142 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 152 88 vsl 10 128 0 127 0 0 SliderValue empty 9 0 -9 0 10 -228856
+#X obj 102 88 vsl 10 128 0 127 0 0 SliderValue4 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 112 88 vsl 10 128 0 127 0 0 SliderValue5 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 122 88 vsl 10 128 0 127 0 0 SliderValue6 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 132 88 vsl 10 128 0 127 0 0 SliderValue7 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 142 88 vsl 10 128 0 127 0 0 SliderValue8 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 152 88 vsl 10 128 0 127 0 0 SliderValue9 empty 9 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 162 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 172 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 182 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 192 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 202 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 212 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 222 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
+#X obj 162 88 vsl 10 128 0 127 0 0 SliderValue10 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 172 88 vsl 10 128 0 127 0 0 SliderValue11 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 182 88 vsl 10 128 0 127 0 0 SliderValue12 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 192 88 vsl 10 128 0 127 0 0 SliderValue13 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 202 88 vsl 10 128 0 127 0 0 SliderValue14 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 212 88 vsl 10 128 0 127 0 0 SliderValue15 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 222 88 vsl 10 128 0 127 0 0 SliderValue16 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
 #X obj 367 238 env~;
 #X obj 367 258 env~;
 #X obj 367 278 env~;
@@ -66,24 +66,24 @@
 #X obj 181 504 inlet~;
 #X obj 191 524 inlet~;
 #X obj 201 544 inlet~;
-#X obj 232 88 vsl 10 128 0 127 0 0 SliderValue empty 17 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 242 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
+#X obj 232 88 vsl 10 128 0 127 0 0 SliderValue17 empty 17 0 -9 0 10
 -262144 -1 -1 0 1;
-#X obj 252 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 262 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 272 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 282 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 292 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 302 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 312 88 vsl 10 128 0 127 0 0 SliderValue empty 25 0 -9 0 10 -228856
--1 -1 0 1;
+#X obj 242 88 vsl 10 128 0 127 0 0 SliderValue18 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 252 88 vsl 10 128 0 127 0 0 SliderValue19 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 262 88 vsl 10 128 0 127 0 0 SliderValue20 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 272 88 vsl 10 128 0 127 0 0 SliderValue21 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 282 88 vsl 10 128 0 127 0 0 SliderValue22 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 292 88 vsl 10 128 0 127 0 0 SliderValue23 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 302 88 vsl 10 128 0 127 0 0 SliderValue24 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 312 88 vsl 10 128 0 127 0 0 SliderValue25 empty 25 0 -9 0 10
+-228856 -1 -1 0 1;
 #X obj 367 558 env~;
 #X obj 367 578 env~;
 #X obj 367 598 env~;
@@ -102,28 +102,28 @@
 #X obj 281 704 inlet~;
 #X obj 746 231 env~;
 #X obj 446 237 inlet~;
-#X obj 322 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 332 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 342 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 352 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 362 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 372 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 382 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 392 88 vsl 10 128 0 127 0 0 SliderValue empty 33 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 402 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
+#X obj 322 88 vsl 10 128 0 127 0 0 SliderValue26 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 332 88 vsl 10 128 0 127 0 0 SliderValue27 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 342 88 vsl 10 128 0 127 0 0 SliderValue28 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 352 88 vsl 10 128 0 127 0 0 SliderValue29 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 362 88 vsl 10 128 0 127 0 0 SliderValue30 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 372 88 vsl 10 128 0 127 0 0 SliderValue31 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 382 88 vsl 10 128 0 127 0 0 SliderValue32 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 392 88 vsl 10 128 0 127 0 0 SliderValue33 empty 33 0 -9 0 10
 -262144 -1 -1 0 1;
-#X obj 412 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 422 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+#X obj 402 88 vsl 10 128 0 127 0 0 SliderValue34 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 412 88 vsl 10 128 0 127 0 0 SliderValue35 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 422 88 vsl 10 128 0 127 0 0 SliderValue36 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
 #X obj 746 251 env~;
 #X obj 746 271 env~;
 #X obj 460 257 inlet~;
@@ -146,30 +146,30 @@
 #X obj 550 437 inlet~;
 #X obj 746 451 env~;
 #X obj 563 458 inlet~;
-#X obj 432 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 442 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 452 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 462 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 472 88 vsl 10 128 0 127 0 0 SliderValue empty 41 0 -9 0 10 -228856
--1 -1 0 1;
-#X obj 482 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
+#X obj 432 88 vsl 10 128 0 127 0 0 SliderValue37 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 442 88 vsl 10 128 0 127 0 0 SliderValue38 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 452 88 vsl 10 128 0 127 0 0 SliderValue39 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 462 88 vsl 10 128 0 127 0 0 SliderValue40 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 472 88 vsl 10 128 0 127 0 0 SliderValue41 empty 41 0 -9 0 10
 -228856 -1 -1 0 1;
-#X obj 492 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 502 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 512 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 522 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 532 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 542 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
+#X obj 482 88 vsl 10 128 0 127 0 0 SliderValue42 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 492 88 vsl 10 128 0 127 0 0 SliderValue43 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 502 88 vsl 10 128 0 127 0 0 SliderValue44 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 512 88 vsl 10 128 0 127 0 0 SliderValue45 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 522 88 vsl 10 128 0 127 0 0 SliderValue46 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 532 88 vsl 10 128 0 127 0 0 SliderValue47 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 542 88 vsl 10 128 0 127 0 0 SliderValue48 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
 #X obj 580 477 inlet~;
 #X obj 590 497 inlet~;
 #X obj 600 517 inlet~;
@@ -196,38 +196,38 @@
 #X obj 792 229 inlet~;
 #X obj 746 691 env~;
 #X obj 1120 233 env~;
-#X obj 552 88 vsl 10 128 0 127 0 0 SliderValue empty 49 4 -9 0 10 -262144
--1 -1 444 1;
-#X obj 562 88 vsl 10 128 0 127 0 0 SliderValue empty empty -10 -25
+#X obj 552 88 vsl 10 128 0 127 0 0 SliderValue49 empty 49 4 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 562 88 vsl 10 128 0 127 0 0 SliderValue50 empty empty -10 -25
 0 15 -262144 -1 -4160 0 1;
-#X obj 572 88 vsl 10 128 0 127 0 0 SliderValue empty empty 4 -9 0 10
--262144 -1 -1 0 1;
-#X obj 582 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 592 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 602 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 612 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 622 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 632 88 vsl 10 128 0 127 0 0 SliderValue empty 57 0 -9 0 10 -228856
--1 -1 0 1;
-#X obj 642 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
+#X obj 572 88 vsl 10 128 0 127 0 0 SliderValue51 empty empty 4 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 582 88 vsl 10 128 0 127 0 0 SliderValue52 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 592 88 vsl 10 128 0 127 0 0 SliderValue53 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 602 88 vsl 10 128 0 127 0 0 SliderValue54 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 612 88 vsl 10 128 0 127 0 0 SliderValue55 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 622 88 vsl 10 128 0 127 0 0 SliderValue56 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 632 88 vsl 10 128 0 127 0 0 SliderValue57 empty 57 0 -9 0 10
 -228856 -1 -1 0 1;
-#X obj 652 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 662 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 672 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 682 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 692 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 702 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
+#X obj 642 88 vsl 10 128 0 127 0 0 SliderValue58 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 652 88 vsl 10 128 0 127 0 0 SliderValue59 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 662 88 vsl 10 128 0 127 0 0 SliderValue60 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 672 88 vsl 10 128 0 127 0 0 SliderValue61 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 682 88 vsl 10 128 0 127 0 0 SliderValue62 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 692 88 vsl 10 128 0 127 0 0 SliderValue63 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 702 88 vsl 10 128 0 127 0 0 SliderValue64 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
 #X obj 1120 254 env~;
 #X obj 1120 274 env~;
 #X obj 1120 294 env~;
@@ -260,24 +260,24 @@
 #X obj 934 510 inlet~;
 #X obj 944 530 inlet~;
 #X obj 954 550 inlet~;
-#X obj 712 88 vsl 10 128 0 127 0 0 SliderValue empty 65 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 722 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
+#X obj 712 88 vsl 10 128 0 127 0 0 SliderValue65 empty 65 0 -9 0 10
 -262144 -1 -1 0 1;
-#X obj 732 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 742 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 752 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 762 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 772 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 782 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 792 88 vsl 10 128 0 127 0 0 SliderValue empty 73 0 -9 0 10 -228856
--1 -1 0 1;
+#X obj 722 88 vsl 10 128 0 127 0 0 SliderValue66 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 732 88 vsl 10 128 0 127 0 0 SliderValue67 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 742 88 vsl 10 128 0 127 0 0 SliderValue68 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 752 88 vsl 10 128 0 127 0 0 SliderValue69 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 762 88 vsl 10 128 0 127 0 0 SliderValue70 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 772 88 vsl 10 128 0 127 0 0 SliderValue71 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 782 88 vsl 10 128 0 127 0 0 SliderValue72 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 792 88 vsl 10 128 0 127 0 0 SliderValue73 empty 73 0 -9 0 10
+-228856 -1 -1 0 1;
 #X obj 1121 574 env~;
 #X obj 1120 594 env~;
 #X obj 1120 614 env~;
@@ -296,28 +296,28 @@
 #X obj 1195 235 inlet~;
 #X obj 1507 252 env~;
 #X obj 1208 257 inlet~;
-#X obj 802 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 812 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 822 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 832 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 842 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 852 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 862 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 872 88 vsl 10 128 0 127 0 0 SliderValue empty 81 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 882 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
+#X obj 802 88 vsl 10 128 0 127 0 0 SliderValue74 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 812 88 vsl 10 128 0 127 0 0 SliderValue75 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 822 88 vsl 10 128 0 127 0 0 SliderValue76 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 832 88 vsl 10 128 0 127 0 0 SliderValue77 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 842 88 vsl 10 128 0 127 0 0 SliderValue78 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 852 88 vsl 10 128 0 127 0 0 SliderValue79 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 862 88 vsl 10 128 0 127 0 0 SliderValue80 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 872 88 vsl 10 128 0 127 0 0 SliderValue81 empty 81 0 -9 0 10
 -262144 -1 -1 0 1;
-#X obj 892 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 902 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+#X obj 882 88 vsl 10 128 0 127 0 0 SliderValue82 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 892 88 vsl 10 128 0 127 0 0 SliderValue83 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 902 88 vsl 10 128 0 127 0 0 SliderValue84 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
 #X obj 1508 272 env~;
 #X obj 1508 292 env~;
 #X obj 1218 277 inlet~;
@@ -340,16 +340,16 @@
 #X obj 1308 457 inlet~;
 #X obj 1508 472 env~;
 #X obj 1318 477 inlet~;
-#X obj 912 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 922 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 932 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 942 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 952 88 vsl 10 128 0 127 0 0 SliderValue empty 89 0 -9 0 10 -228856
--1 -1 0 1;
+#X obj 912 88 vsl 10 128 0 127 0 0 SliderValue85 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 922 88 vsl 10 128 0 127 0 0 SliderValue86 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 932 88 vsl 10 128 0 127 0 0 SliderValue87 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 942 88 vsl 10 128 0 127 0 0 SliderValue88 empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 952 88 vsl 10 128 0 127 0 0 SliderValue89 empty 89 0 -9 0 10
+-228856 -1 -1 0 1;
 #X obj 1338 497 inlet~;
 #X obj 1348 517 inlet~;
 #X obj 1358 537 inlet~;
@@ -376,15 +376,15 @@
 #X obj 1412 594 inlet~;
 #X obj 1510 571 env~;
 #X obj 1511 591 env~;
-#X obj 962 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 972 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
+#X obj 962 88 vsl 10 128 0 127 0 0 SliderValue90 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
+#X obj 972 88 vsl 10 128 0 127 0 0 SliderValue91 empty empty 0 -9 0
+10 -228856 -1 -1 0 1;
 #X obj 1696 759 lop~ 150;
 #X obj 1520 688 env~;
 #X obj 1815 837 env~;
-#X obj 1921 88 vsl 10 128 0 127 0 0 SliderValue empty LFE -4 -9 0 10
--162280 -1 -1 0 1;
+#X obj 1921 88 vsl 10 128 0 127 0 0 SliderValue185 empty LFE -4 -9
+0 10 -162280 -1 -1 0 1;
 #X obj 146 24 loadbang;
 #X msg 219 24 0;
 #X text 1701 719 LFE;
@@ -597,192 +597,192 @@
 #X obj 1456 671 inlet~;
 #X obj 1469 691 inlet~;
 #X obj 1422 614 inlet~;
-#X obj 982 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 992 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 1002 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 982 88 vsl 10 128 0 127 0 0 SliderValue92 empty empty 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1012 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 992 88 vsl 10 128 0 127 0 0 SliderValue93 empty empty 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1022 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1032 88 vsl 10 128 0 127 0 0 SliderValue empty 97 4 -9 0 10
+#X obj 1002 88 vsl 10 128 0 127 0 0 SliderValue94 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1012 88 vsl 10 128 0 127 0 0 SliderValue95 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1022 88 vsl 10 128 0 127 0 0 SliderValue96 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1032 88 vsl 10 128 0 127 0 0 SliderValue97 empty 97 4 -9 0 10
 -262144 -1 -1 0 1;
-#X obj 1042 88 vsl 10 128 0 127 0 0 SliderValue empty empty -10 -25
+#X obj 1042 88 vsl 10 128 0 127 0 0 SliderValue98 empty empty -10 -25
 0 15 -262144 -1 -4160 0 1;
-#X obj 1052 88 vsl 10 128 0 127 0 0 SliderValue empty empty 4 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1062 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1072 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1082 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1092 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1102 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1112 88 vsl 10 128 0 127 0 0 SliderValue empty 105 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 1122 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1052 88 vsl 10 128 0 127 0 0 SliderValue99 empty empty 4 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1062 88 vsl 10 128 0 127 0 0 SliderValue100 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1072 88 vsl 10 128 0 127 0 0 SliderValue101 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1082 88 vsl 10 128 0 127 0 0 SliderValue102 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1092 88 vsl 10 128 0 127 0 0 SliderValue103 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1102 88 vsl 10 128 0 127 0 0 SliderValue104 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1112 88 vsl 10 128 0 127 0 0 SliderValue105 empty 105 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1132 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1142 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1152 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1162 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1172 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1182 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1192 88 vsl 10 128 0 127 0 0 SliderValue empty 113 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 1202 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1122 88 vsl 10 128 0 127 0 0 SliderValue106 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1132 88 vsl 10 128 0 127 0 0 SliderValue107 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1142 88 vsl 10 128 0 127 0 0 SliderValue108 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1152 88 vsl 10 128 0 127 0 0 SliderValue109 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1162 88 vsl 10 128 0 127 0 0 SliderValue110 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1172 88 vsl 10 128 0 127 0 0 SliderValue111 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1182 88 vsl 10 128 0 127 0 0 SliderValue112 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1192 88 vsl 10 128 0 127 0 0 SliderValue113 empty 113 0 -9 0
 10 -262144 -1 -1 0 1;
-#X obj 1212 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1222 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1232 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1242 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1252 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1262 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1272 88 vsl 10 128 0 127 0 0 SliderValue empty 121 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 1282 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1202 88 vsl 10 128 0 127 0 0 SliderValue114 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1212 88 vsl 10 128 0 127 0 0 SliderValue115 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1222 88 vsl 10 128 0 127 0 0 SliderValue116 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1232 88 vsl 10 128 0 127 0 0 SliderValue117 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1242 88 vsl 10 128 0 127 0 0 SliderValue118 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1252 88 vsl 10 128 0 127 0 0 SliderValue119 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1262 88 vsl 10 128 0 127 0 0 SliderValue120 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1272 88 vsl 10 128 0 127 0 0 SliderValue121 empty 121 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1292 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1302 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1312 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1322 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1332 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1342 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1352 88 vsl 10 128 0 127 0 0 SliderValue empty 129 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 1362 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1282 88 vsl 10 128 0 127 0 0 SliderValue122 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1292 88 vsl 10 128 0 127 0 0 SliderValue123 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1302 88 vsl 10 128 0 127 0 0 SliderValue124 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1312 88 vsl 10 128 0 127 0 0 SliderValue125 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1322 88 vsl 10 128 0 127 0 0 SliderValue126 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1332 88 vsl 10 128 0 127 0 0 SliderValue127 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1342 88 vsl 10 128 0 127 0 0 SliderValue128 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1352 88 vsl 10 128 0 127 0 0 SliderValue129 empty 129 0 -9 0
 10 -262144 -1 -1 0 1;
-#X obj 1372 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1382 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1392 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1402 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1412 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1422 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1432 88 vsl 10 128 0 127 0 0 SliderValue empty 137 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 1442 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1362 88 vsl 10 128 0 127 0 0 SliderValue130 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1372 88 vsl 10 128 0 127 0 0 SliderValue131 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1382 88 vsl 10 128 0 127 0 0 SliderValue132 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1392 88 vsl 10 128 0 127 0 0 SliderValue133 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1402 88 vsl 10 128 0 127 0 0 SliderValue134 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1412 88 vsl 10 128 0 127 0 0 SliderValue135 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1422 88 vsl 10 128 0 127 0 0 SliderValue136 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1432 88 vsl 10 128 0 127 0 0 SliderValue137 empty 137 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1452 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1462 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1472 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1482 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1492 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1502 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1512 88 vsl 10 128 0 127 0 0 SliderValue empty 145 4 -9 0 10
--262144 -1 -1 0 1;
-#X obj 1522 88 vsl 10 128 0 127 0 0 SliderValue empty empty -10 -25
-0 15 -262144 -1 -4160 0 1;
-#X obj 1532 88 vsl 10 128 0 127 0 0 SliderValue empty empty 4 -9 0
+#X obj 1442 88 vsl 10 128 0 127 0 0 SliderValue138 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1452 88 vsl 10 128 0 127 0 0 SliderValue139 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1462 88 vsl 10 128 0 127 0 0 SliderValue140 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1472 88 vsl 10 128 0 127 0 0 SliderValue141 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1482 88 vsl 10 128 0 127 0 0 SliderValue142 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1492 88 vsl 10 128 0 127 0 0 SliderValue143 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1502 88 vsl 10 128 0 127 0 0 SliderValue144 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1512 88 vsl 10 128 0 127 0 0 SliderValue145 empty 145 4 -9 0
 10 -262144 -1 -1 0 1;
-#X obj 1542 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1552 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1562 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1572 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1582 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1592 88 vsl 10 128 0 127 0 0 SliderValue empty 153 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 1602 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1522 88 vsl 10 128 0 127 0 0 SliderValue146 empty empty -10
+-25 0 15 -262144 -1 -4160 0 1;
+#X obj 1532 88 vsl 10 128 0 127 0 0 SliderValue147 empty empty 4 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1542 88 vsl 10 128 0 127 0 0 SliderValue148 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1552 88 vsl 10 128 0 127 0 0 SliderValue149 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1562 88 vsl 10 128 0 127 0 0 SliderValue150 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1572 88 vsl 10 128 0 127 0 0 SliderValue151 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1582 88 vsl 10 128 0 127 0 0 SliderValue152 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1592 88 vsl 10 128 0 127 0 0 SliderValue153 empty 153 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1612 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1602 88 vsl 10 128 0 127 0 0 SliderValue154 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1612 88 vsl 10 128 0 127 0 0 SliderValue155 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1622 88 vsl 10 128 0 127 0 0 SliderValue156 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1632 88 vsl 10 128 0 127 0 0 SliderValue157 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1642 88 vsl 10 128 0 127 0 0 SliderValue158 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1652 88 vsl 10 128 0 127 0 0 SliderValue159 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1662 88 vsl 10 128 0 127 0 0 SliderValue160 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1672 88 vsl 10 128 0 127 0 0 SliderValue161 empty 161 0 -9 0
+10 -262144 -1 -1 0 1;
+#X obj 1682 88 vsl 10 128 0 127 0 0 SliderValue162 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1692 88 vsl 10 128 0 127 0 0 SliderValue163 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1702 88 vsl 10 128 0 127 0 0 SliderValue164 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1712 88 vsl 10 128 0 127 0 0 SliderValue165 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1722 88 vsl 10 128 0 127 0 0 SliderValue166 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1732 88 vsl 10 128 0 127 0 0 SliderValue167 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1742 88 vsl 10 128 0 127 0 0 SliderValue168 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1752 88 vsl 10 128 0 127 0 0 SliderValue169 empty 169 0 -9 0
 10 -228856 -1 -1 0 1;
-#X obj 1622 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1632 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1642 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1652 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1662 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1672 88 vsl 10 128 0 127 0 0 SliderValue empty 161 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 1682 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
+#X obj 1762 88 vsl 10 128 0 127 0 0 SliderValue170 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1772 88 vsl 10 128 0 127 0 0 SliderValue171 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1782 88 vsl 10 128 0 127 0 0 SliderValue172 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1792 88 vsl 10 128 0 127 0 0 SliderValue173 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1802 88 vsl 10 128 0 127 0 0 SliderValue174 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1812 88 vsl 10 128 0 127 0 0 SliderValue175 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1822 88 vsl 10 128 0 127 0 0 SliderValue176 empty empty 0 -9
+0 10 -228856 -1 -1 0 1;
+#X obj 1832 88 vsl 10 128 0 127 0 0 SliderValue177 empty 177 0 -9 0
 10 -262144 -1 -1 0 1;
-#X obj 1692 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1702 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1712 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1722 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1732 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1742 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1752 88 vsl 10 128 0 127 0 0 SliderValue empty 169 0 -9 0 10
--228856 -1 -1 0 1;
-#X obj 1762 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1772 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1782 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1792 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1802 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1812 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1822 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -228856 -1 -1 0 1;
-#X obj 1832 88 vsl 10 128 0 127 0 0 SliderValue empty 177 0 -9 0 10
--262144 -1 -1 0 1;
-#X obj 1842 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1852 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1862 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1872 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1882 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1892 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 1902 88 vsl 10 128 0 127 0 0 SliderValue empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
+#X obj 1842 88 vsl 10 128 0 127 0 0 SliderValue178 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1852 88 vsl 10 128 0 127 0 0 SliderValue179 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1862 88 vsl 10 128 0 127 0 0 SliderValue180 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1872 88 vsl 10 128 0 127 0 0 SliderValue181 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1882 88 vsl 10 128 0 127 0 0 SliderValue182 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1892 88 vsl 10 128 0 127 0 0 SliderValue183 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 1902 88 vsl 10 128 0 127 0 0 SliderValue184 empty empty 0 -9
+0 10 -262144 -1 -1 0 1;
 #X obj 1513 610 env~;
 #X obj 1515 649 env~;
 #X obj 1517 668 env~;
@@ -791,79 +791,27 @@
 #X obj 1514 629 env~;
 #X obj 94 223 t f f f f f f f f f;
 #X obj 2706 210 inlet~;
-#X obj 1167 729 s env_bus;
-#N canvas 1967 181 1254 780 MaxLevel 1;
-#X obj 80 120 f;
-#X obj 130 120 max 0;
-#X obj 240 10 loadbang;
-#X obj 240 150 t b b;
-#X msg 160 170 0;
-#X obj 80 200 nbx 5 14 -1e+037 1e+037 0 0 empty empty MAX_WERT 0 -8
-0 10 -262144 -1 -1 0 256;
-#X obj 84 239 outlet;
-#X floatatom 144 68 5 0 0 0 - - -;
-#X obj 341 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X floatatom 51 159 5 0 0 0 - - -;
-#X floatatom 14 140 5 0 0 0 - - -;
-#X obj 243 46 metro 3000;
-#X obj 80 40 r env_bus;
-#X floatatom 20 88 5 0 0 0 - - -;
-#X connect 0 0 1 1;
-#X connect 0 0 10 0;
-#X connect 1 0 0 1;
-#X connect 1 0 9 0;
-#X connect 2 0 11 0;
-#X connect 3 0 5 0;
-#X connect 3 1 4 0;
-#X connect 4 0 0 1;
-#X connect 5 0 6 0;
-#X connect 7 0 0 0;
-#X connect 7 0 1 0;
-#X connect 8 0 11 0;
-#X connect 11 0 3 0;
-#X connect 12 0 0 0;
-#X connect 12 0 1 0;
-#X connect 12 0 13 0;
-#X restore 1980 51 pd MaxLevel;
-#X obj 782 715 s env_bus;
-#X obj 388 736 s env_bus;
-#X floatatom 1695 53 5 0 0 0 - - -;
-#X floatatom 1213 687 5 0 0 0 - - -;
-#X floatatom 1197 653 5 0 0 0 - - -;
-#X floatatom 1195 624 5 0 0 0 - - -;
+#X floatatom 1695 53 5 0 0 0 - GlobalMax -;
+#X obj 1962 74 max_slider_185;
+#X obj 1560 53 hsl 128 15 0 127 0 0 empty GlobalMax GlobalMaxLevel
+-90 9 0 10 -261682 -1 -1 0 1;
+#X obj 1962 51 r TriggerGlobalMax;
 #X connect 17 0 1 0;
-#X connect 17 0 591 0;
 #X connect 18 0 2 0;
-#X connect 18 0 591 0;
 #X connect 19 0 3 0;
-#X connect 19 0 591 0;
 #X connect 20 0 4 0;
-#X connect 20 0 591 0;
 #X connect 21 0 5 0;
-#X connect 21 0 591 0;
 #X connect 22 0 6 0;
-#X connect 22 0 591 0;
 #X connect 23 0 7 0;
-#X connect 23 0 591 0;
 #X connect 24 0 8 0;
-#X connect 24 0 591 0;
 #X connect 25 0 9 0;
-#X connect 25 0 591 0;
 #X connect 26 0 10 0;
-#X connect 26 0 591 0;
 #X connect 27 0 11 0;
-#X connect 27 0 591 0;
 #X connect 28 0 12 0;
-#X connect 28 0 591 0;
 #X connect 29 0 13 0;
-#X connect 29 0 591 0;
 #X connect 30 0 14 0;
-#X connect 30 0 591 0;
 #X connect 31 0 15 0;
-#X connect 31 0 591 0;
 #X connect 32 0 16 0;
-#X connect 32 0 591 0;
 #X connect 33 0 270 0;
 #X connect 34 0 270 1;
 #X connect 35 0 270 2;
@@ -881,21 +829,13 @@
 #X connect 47 0 270 14;
 #X connect 48 0 270 15;
 #X connect 58 0 49 0;
-#X connect 58 0 591 0;
 #X connect 59 0 50 0;
-#X connect 59 0 591 0;
 #X connect 60 0 51 0;
-#X connect 60 0 591 0;
 #X connect 61 0 52 0;
-#X connect 61 0 591 0;
 #X connect 62 0 53 0;
-#X connect 62 0 591 0;
 #X connect 63 0 54 0;
-#X connect 63 0 591 0;
 #X connect 64 0 55 0;
-#X connect 64 0 591 0;
 #X connect 65 0 56 0;
-#X connect 65 0 591 0;
 #X connect 66 0 270 16;
 #X connect 67 0 270 17;
 #X connect 68 0 270 18;
@@ -905,30 +845,19 @@
 #X connect 72 0 270 22;
 #X connect 73 0 270 23;
 #X connect 74 0 57 0;
-#X connect 74 0 590 0;
 #X connect 75 0 269 0;
 #X connect 87 0 76 0;
-#X connect 87 0 590 0;
 #X connect 88 0 77 0;
-#X connect 88 0 590 0;
 #X connect 89 0 269 1;
 #X connect 90 0 269 2;
 #X connect 91 0 78 0;
-#X connect 91 0 590 0;
 #X connect 92 0 79 0;
-#X connect 92 0 590 0;
 #X connect 93 0 80 0;
-#X connect 93 0 590 0;
 #X connect 94 0 81 0;
-#X connect 94 0 590 0;
 #X connect 95 0 82 0;
-#X connect 95 0 590 0;
 #X connect 96 0 83 0;
-#X connect 96 0 590 0;
 #X connect 97 0 84 0;
-#X connect 97 0 590 0;
 #X connect 98 0 85 0;
-#X connect 98 0 590 0;
 #X connect 99 0 269 3;
 #X connect 100 0 269 4;
 #X connect 101 0 269 5;
@@ -938,7 +867,6 @@
 #X connect 105 0 269 9;
 #X connect 106 0 269 10;
 #X connect 107 0 86 0;
-#X connect 107 0 590 0;
 #X connect 108 0 269 11;
 #X connect 121 0 269 12;
 #X connect 122 0 269 13;
@@ -952,65 +880,36 @@
 #X connect 130 0 269 21;
 #X connect 131 0 269 22;
 #X connect 132 0 109 0;
-#X connect 132 0 590 0;
 #X connect 133 0 110 0;
-#X connect 133 0 590 0;
 #X connect 134 0 111 0;
-#X connect 134 0 590 0;
 #X connect 135 0 112 0;
-#X connect 135 0 590 0;
 #X connect 136 0 113 0;
-#X connect 136 0 590 0;
 #X connect 137 0 114 0;
-#X connect 137 0 590 0;
 #X connect 138 0 115 0;
-#X connect 138 0 590 0;
 #X connect 139 0 116 0;
-#X connect 139 0 590 0;
 #X connect 140 0 117 0;
-#X connect 140 0 590 0;
 #X connect 141 0 118 0;
-#X connect 141 0 590 0;
 #X connect 142 0 119 0;
-#X connect 142 0 590 0;
 #X connect 143 0 269 23;
 #X connect 144 0 271 0;
 #X connect 145 0 120 0;
-#X connect 145 0 590 0;
 #X connect 146 0 147 0;
-#X connect 146 0 588 0;
 #X connect 163 0 148 0;
-#X connect 163 0 588 0;
 #X connect 164 0 149 0;
-#X connect 164 0 588 0;
 #X connect 165 0 150 0;
-#X connect 165 0 588 0;
 #X connect 166 0 151 0;
-#X connect 166 0 588 0;
 #X connect 167 0 152 0;
-#X connect 167 0 588 0;
 #X connect 168 0 153 0;
-#X connect 168 0 588 0;
 #X connect 169 0 154 0;
-#X connect 169 0 588 0;
 #X connect 170 0 155 0;
-#X connect 170 0 588 0;
 #X connect 171 0 156 0;
-#X connect 171 0 588 0;
 #X connect 172 0 157 0;
-#X connect 172 0 588 0;
 #X connect 173 0 158 0;
-#X connect 173 0 588 0;
 #X connect 174 0 159 0;
-#X connect 174 0 588 0;
 #X connect 175 0 160 0;
-#X connect 175 0 588 0;
 #X connect 176 0 161 0;
-#X connect 176 0 588 0;
 #X connect 177 0 162 0;
-#X connect 177 0 588 0;
 #X connect 178 0 195 0;
-#X connect 178 0 588 0;
 #X connect 179 0 271 1;
 #X connect 180 0 271 2;
 #X connect 181 0 271 3;
@@ -1028,22 +927,12 @@
 #X connect 193 0 271 15;
 #X connect 194 0 271 16;
 #X connect 204 0 196 0;
-#X connect 204 0 588 0;
 #X connect 205 0 197 0;
-#X connect 205 0 588 0;
 #X connect 206 0 198 0;
-#X connect 206 0 588 0;
 #X connect 207 0 199 0;
-#X connect 207 0 588 0;
 #X connect 208 0 200 0;
-#X connect 208 0 588 0;
-#X connect 208 0 595 0;
 #X connect 209 0 201 0;
-#X connect 209 0 588 0;
-#X connect 209 0 594 0;
 #X connect 210 0 202 0;
-#X connect 210 0 588 0;
-#X connect 210 0 593 0;
 #X connect 211 0 203 0;
 #X connect 212 0 271 17;
 #X connect 213 0 271 18;
@@ -1856,7 +1745,7 @@
 #X connect 586 7 482 16;
 #X connect 586 8 295 0;
 #X connect 587 0 477 0;
-#X connect 589 0 592 0;
+#X connect 591 0 589 0;
 #X coords 0 -1 1 1 1890 170 1 50 50;
 #X restore 36 426 pd VU_ambisonics~;
 #X msg 418 162 1;
@@ -1877,7 +1766,7 @@
 -1 -258113;
 #X text 59 189 Volume;
 #X obj 35 169 loadbang;
-#X obj 251 74 bng 15 250 50 0 empty empty Start_delayed 17 7 0 10 -204786
+#X obj 252 74 bng 15 250 50 0 empty empty Start_delayed 17 7 0 10 -204786
 -1 -1;
 #N canvas 940 140 593 259 ElapsedTime 0;
 #X obj 145 105 tgl 15 0 empty empty active 17 7 0 10 -262144 -1 -1
@@ -1897,8 +1786,6 @@
 #X obj 145 123 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
 -1 -1;
 #X msg 152 161 0;
-#X obj 18 157 print PlayDemo;
-#X obj 238 43 print StopDemo;
 #X connect 0 0 9 0;
 #X connect 1 0 6 1;
 #X connect 2 0 6 0;
@@ -1906,12 +1793,10 @@
 #X connect 5 0 1 0;
 #X connect 6 0 3 0;
 #X connect 7 0 8 0;
-#X connect 7 0 14 0;
 #X connect 8 0 0 0;
 #X connect 9 0 5 0;
 #X connect 9 1 2 0;
 #X connect 10 0 11 0;
-#X connect 10 0 15 0;
 #X connect 11 0 0 0;
 #X connect 12 0 13 0;
 #X connect 12 0 11 0;
@@ -1930,7 +1815,7 @@
 #X obj 849 346 readsf~ 24;
 #X msg 334 161 1;
 #X obj 36 240 vsl 15 128 0 127 0 0 empty empty Master_Volume 0 -9 0
-20 -260097 -1 -1 3000 1;
+20 -260097 -1 -1 6000 1;
 #X obj 36 397 dbtorms;
 #X obj 364 78 r dFly;
 #X obj 252 101 delay 10000;
@@ -1942,185 +1827,24 @@
 #X obj 844 84 delay 29000;
 #X msg 418 98 Data/output;
 #X msg 35 189 60;
-#N canvas 1140 84 680 461 OSC-Control 1;
-#X obj 377 118 r OSCresponse;
-#X obj 467 142 r OSCdirectresponse;
-#X obj 377 143 spigot;
-#X obj 377 188 sendOSC;
-#X obj 377 225 s Response;
-#N canvas 951 89 853 770 control 0;
-#X obj 15 26 inlet;
-#X obj 77 445 s OSCresponse;
-#X obj 141 260 samplerate~;
-#X obj 141 309 s OSCresponse;
-#X obj 204 234 s OSCresponse;
-#X obj 204 187 float;
-#X obj 90 336 r version;
-#X obj 91 361 symbol \$1;
-#X obj 250 187 s CPULoad;
-#X msg 91 392 set send /Control/Version \$1;
-#X msg 141 283 send /Control/SampleRate \$1;
-#X msg 204 210 send /Control/CPULoad \$1;
-#X obj 325 136 dyn~ 0 0 0 0;
-#X msg 266 112 newobj . \$1 \$2;
-#X msg 389 112 del \$1;
-#X obj 265 89 list;
-#X obj 329 89 symbol;
-#X obj 15 50 OSCroute /Response /Version /SampleRate /CPULoad /LoadObject
-/DelObject;
-#X obj 16 89 s OSCdirectresponse;
-#X obj 218 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 164 145 random 100;
-#X floatatom 158 195 5 0 0 0 - - -;
-#X floatatom 417 205 5 0 0 0 - - -;
-#X obj 417 183 iemlib/dsp;
-#X floatatom 484 204 5 0 0 0 - - -;
-#X obj 417 162 tgl 15 1 empty empty DSP 17 7 0 10 -262144 -1 -1 1 1
-;
-#X obj 481 379 s OSCresponse;
-#X obj 481 332 float;
-#X obj 527 332 s CPULoad;
-#X msg 481 355 send /Control/CPULoad \$1;
-#X obj 516 307 iemlib/dsp~;
-#X msg 78 419 send /Control/Version v1.1;
-#X connect 0 0 17 0;
-#X connect 2 0 10 0;
-#X connect 5 0 11 0;
-#X connect 6 0 7 0;
-#X connect 7 0 9 0;
-#X connect 9 0 31 0;
-#X connect 10 0 3 0;
-#X connect 11 0 4 0;
-#X connect 13 0 12 0;
-#X connect 14 0 12 0;
-#X connect 15 0 13 0;
-#X connect 16 0 14 0;
-#X connect 17 0 18 0;
-#X connect 17 1 31 0;
-#X connect 17 2 2 0;
-#X connect 17 3 27 0;
-#X connect 17 4 15 0;
-#X connect 17 5 16 0;
-#X connect 19 0 20 0;
-#X connect 20 0 11 0;
-#X connect 20 0 21 0;
-#X connect 23 0 22 0;
-#X connect 23 1 24 0;
-#X connect 25 0 23 0;
-#X connect 27 0 29 0;
-#X connect 29 0 26 0;
-#X connect 30 0 27 1;
-#X connect 30 0 28 0;
-#X connect 31 0 1 0;
-#X restore 91 205 pd control;
-#N canvas 684 511 818 402 play 0;
-#X obj 18 14 inlet;
-#N canvas 359 3 805 591 OpenWAV 0;
-#X obj 30 27 inlet;
-#X text 116 17 /Play/OpenWAV/N ... open a WAV-file for channel N \,
-preparing to play. Parameter: "open FILENAME";
-#X obj 8 534 s play0_cmd;
-#X obj 21 505 s play1_cmd;
-#X obj 32 71 OSCroute /0 /1 /2 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12 /13
-/14 /15 /16 /17 /18 /19 /20 /21 /22 /23;
-#X obj 36 479 s play2_cmd;
-#X obj 48 455 s play3_cmd;
-#X obj 65 432 s play4_cmd;
-#X obj 78 403 s play5_cmd;
-#X obj 97 377 s play6_cmd;
-#X obj 121 353 s play7_cmd;
-#X obj 135 325 s play8_cmd;
-#X obj 162 296 s play9_cmd;
-#X obj 181 271 s play10_cmd;
-#X obj 193 247 s play11_cmd;
-#X obj 303 534 s play12_cmd;
-#X obj 316 505 s play13_cmd;
-#X obj 331 477 s play14_cmd;
-#X obj 343 455 s play15_cmd;
-#X obj 360 432 s play16_cmd;
-#X obj 373 403 s play17_cmd;
-#X obj 392 377 s play18_cmd;
-#X obj 415 353 s play19_cmd;
-#X obj 430 325 s play20_cmd;
-#X obj 457 296 s play21_cmd;
-#X obj 476 271 s play22_cmd;
-#X obj 488 247 s play23_cmd;
-#X connect 0 0 4 0;
-#X connect 4 0 2 0;
-#X connect 4 1 3 0;
-#X connect 4 2 5 0;
-#X connect 4 3 6 0;
-#X connect 4 4 7 0;
-#X connect 4 5 8 0;
-#X connect 4 6 9 0;
-#X connect 4 7 10 0;
-#X connect 4 8 11 0;
-#X connect 4 9 12 0;
-#X connect 4 10 13 0;
-#X connect 4 11 14 0;
-#X connect 4 12 15 0;
-#X connect 4 13 16 0;
-#X connect 4 14 17 0;
-#X connect 4 15 18 0;
-#X connect 4 16 19 0;
-#X connect 4 17 20 0;
-#X connect 4 18 21 0;
-#X connect 4 19 22 0;
-#X connect 4 20 23 0;
-#X connect 4 21 24 0;
-#X connect 4 22 25 0;
-#X connect 4 23 26 0;
-#X restore 19 168 pd OpenWAV;
-#X obj 579 83 s OSCresponse;
-#X text 584 31 Send stop playing;
-#X obj 579 55 r PlayStopMsg;
-#X obj 19 43 OSCroute /OpenWAV /Start /Stop /SetFade /SetFadeOut /StartSynced
-/SetDelay /StartAll;
-#X obj 56 145 s startdemo;
-#X obj 94 122 s stopdemo;
-#X connect 0 0 5 0;
-#X connect 4 0 2 0;
-#X connect 5 0 1 0;
-#X connect 5 1 6 0;
-#X connect 5 2 7 0;
-#X restore 31 180 pd play;
-#X obj 152 238 s volume;
-#X obj 31 145 OSCroute /Play /Control /SetVol /GetLevel;
-#X obj 31 31 dumpOSC 10003;
-#X obj 210 42 inlet;
-#X obj 128 93 spigot;
-#X obj 210 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 463 198 spigot;
-#X obj 128 119 print OSC-RECEIVE;
-#X obj 463 232 print OSC-SEND;
-#X connect 0 0 2 0;
-#X connect 1 0 3 0;
-#X connect 1 0 13 0;
-#X connect 2 0 3 0;
-#X connect 2 0 13 0;
-#X connect 3 0 4 0;
-#X connect 3 0 2 1;
-#X connect 8 0 6 0;
-#X connect 8 1 5 0;
-#X connect 8 2 7 0;
-#X connect 9 0 8 0;
-#X connect 9 0 11 0;
-#X connect 10 0 12 0;
-#X connect 11 0 14 0;
-#X connect 12 0 11 1;
-#X connect 12 0 13 1;
-#X connect 13 0 15 0;
-#X restore 1020 103 pd OSC-Control;
 #X floatatom 66 243 5 0 0 0 - volume -;
-#X text 1268 112 v1.1 miho: OSC communication implemented \, object
-OSC-Control added;
 #X obj 1176 79 loadbang;
-#X msg 1176 111 \; version v1.1 \;;
-#X obj 1020 76 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 1020 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 1045 75 OSC Debug;
+#X text 1038 83 OSC Debug;
+#X msg 1176 111 \; version v1.2 \;;
+#X text 1268 112 v1.2 miho: OSC communication implemented \, object
+OSC-Control added \, GetLevel command added;
+#X obj 1020 259 s OSCresponse;
+#X obj 1020 212 float;
+#X obj 1076 192 r GlobalMax;
+#X obj 1020 140 r GetLevel;
+#X obj 1020 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1020 184 t b b;
+#X obj 1075 169 s TriggerGlobalMax;
+#X obj 1020 103 OSC-Control;
+#X msg 1020 235 send /Level \$1;
 #X connect 1 0 24 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -2352,7 +2076,14 @@ OSC-Control added;
 #X connect 38 0 34 0;
 #X connect 39 0 10 0;
 #X connect 40 0 30 0;
-#X connect 42 0 30 0;
-#X connect 44 0 45 0;
-#X connect 46 0 41 0;
+#X connect 41 0 30 0;
+#X connect 42 0 45 0;
+#X connect 43 0 54 0;
+#X connect 48 0 55 0;
+#X connect 49 0 48 1;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 52 0 48 0;
+#X connect 52 1 53 0;
+#X connect 55 0 47 0;
 #X coords 0 662 1 661 85 60 0;
