@@ -1769,8 +1769,8 @@
 #X obj 252 74 bng 15 250 50 0 empty empty Start_delayed 17 7 0 10 -204786
 -1 -1;
 #N canvas 940 140 593 259 ElapsedTime 0;
-#X obj 145 105 tgl 15 0 empty empty active 17 7 0 10 -262144 -1 -1
-1 1;
+#X obj 145 105 tgl 15 0 active empty active 17 7 0 10 -262144 -1 -1
+0 1;
 #X obj 215 129 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 251 134 sel 1;
@@ -1845,6 +1845,14 @@ OSC-Control added \, GetLevel command added;
 #X obj 1075 169 s TriggerGlobalMax;
 #X obj 1020 103 OSC-Control;
 #X msg 1020 235 send /Level \$1;
+#X floatatom 666 150 5 0 0 0 - - -;
+#X obj 666 128 iemlib/dsp;
+#X floatatom 733 149 5 0 0 0 - - -;
+#X obj 666 107 tgl 15 1 empty empty DSP 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 955 121 tgl 15 0 empty active empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 955 140 metro 100;
 #X connect 1 0 24 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -2086,4 +2094,9 @@ OSC-Control added \, GetLevel command added;
 #X connect 52 0 48 0;
 #X connect 52 1 53 0;
 #X connect 55 0 47 0;
+#X connect 57 0 56 0;
+#X connect 57 1 58 0;
+#X connect 59 0 57 0;
+#X connect 60 0 61 0;
+#X connect 61 0 48 0;
 #X coords 0 662 1 661 85 60 0;
