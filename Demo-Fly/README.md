@@ -21,3 +21,4 @@ The app is listening to port 10003. The following commands can be used to commun
 |     - | /Play/VU [value]      | get VU (max level of all channels) (0..100 in dB)       |
 |     /Play/Volume/Set [value] | -       | set volume of app (0..100 in dB)     |
 |     /Play/Volume | /Play/Volume [value]       | get volume of app (0..100 in dB)      |
+|     - |  /Play/Timecode     | get time code      |
