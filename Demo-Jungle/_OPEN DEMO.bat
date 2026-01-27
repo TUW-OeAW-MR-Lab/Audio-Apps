@@ -7,7 +7,7 @@
 
 @rem --- which libraries to load?
 @rem @set pd_LIB=-lib lib\iemlib1 -lib lib\iemlib2 -lib lib\OSC -lib lib\comport -lib lib/vasp -lib lib/zexy -lib lib/dyn~
-@set pd_LIB=-lib ..\YAMI\lib\zexy
+@set pd_LIB=-lib ..\YAMI\lib\zexy -lib ..\YAMI\lib\OSC
 
 @rem --- how many channels do you have? (Not used in EXPSUITE)
 @set pd_CHANNELS=-channels 192
