@@ -18,6 +18,6 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /Control/CPULoad| /Control/CPULoad [value]       | get current CPU load       |
 |     /Play/Start| -       | start demo; trigger levels sent via OSC periodically      |
 |     /Play/Stop| -       | stop demo; stop sending levels       |
-|     - | /Play/VU [value]      | get VU (max level of all channels)       |
-|     /Play/Volume/Set [value] | -       | set volume of app       |
-|     /Play/Volume | /Play/Volume [value]       | get volume of app       |
+|     - | /Play/VU [value]      | get VU (max level of all channels) (0..100 in dB)       |
+|     /Play/Volume/Set [value] | -       | set volume of app (0..100 in dB)     |
+|     /Play/Volume | /Play/Volume [value]       | get volume of app (0..100 in dB)      |
