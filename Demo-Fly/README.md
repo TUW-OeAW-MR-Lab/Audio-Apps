@@ -19,5 +19,5 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /Play/Start| -       | start demo; trigger levels sent via OSC periodically      |
 |     /Play/Stop| -       | stop demo; stop sending levels       |
 |     - | /VU [value]      | get VU level values (max level of all channels)       |
-|     /SetVol [value] | -       | set volume of app       |
-|     /GetVol | /GetVol [value]       | get volume of app       |
+|     /Play/Volume/Set [value] | -       | set volume of app       |
+|     /Play/Volume | /Play/Volume [value]       | get volume of app       |
