@@ -22,3 +22,4 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /Play/Volume/Set [value] | -       | set volume of app (0..100 in dB)     |
 |     /Play/Volume | /Play/Volume [value]       | get volume of app (0..100 in dB)      |
 |     - |  /Play/Timecode     | get time code      |
+|     /Play/Duration |  /Play/Duration [value]     | get duration of demo      |
