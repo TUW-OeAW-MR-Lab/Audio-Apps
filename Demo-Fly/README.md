@@ -12,12 +12,12 @@ a fly circling around the room
 The app is listening to port 10003. The following commands can be used to communicate with Demo-Fly via OSC:
 | Send | Receive | Description |
 |-----|-----------|-----------|
-|     /Control/Response connect localhost 9336 | connect localhost 9336 | connect to demo app and send return channel |
-|     /Control/Version| /Control/Version v1.2    | get version number    |
-|     /Control/SampleRate| /Control/SampleRate 48000       | get sample rate       |
-|     /Control/CPULoad| /Control/CPULoad 10.94       | get current CPU load       |
+|     /Control/Response connect localhost [value] | connect localhost 9336 | connect to demo app and send return channel |
+|     /Control/Version| /Control/Version [value]    | get version number    |
+|     /Control/SampleRate| /Control/SampleRate [value]       | get sample rate       |
+|     /Control/CPULoad| /Control/CPULoad [value]       | get current CPU load       |
 |     /Play/Start| -       | start demo; trigger levels sent via OSC periodically      |
 |     /Play/Stop| -       | stop demo; stop sending levels       |
-|     /SetVol 55 | -       | set volume of app       |
-|     - | /Level [value]      | get level values (max level of all channels)       |
+|     - | /VU [value]      | get VU level values (max level of all channels)       |
+|     /SetVol [value] | -       | set volume of app       |
 |     /GetVol | /GetVol [value]       | get volume of app       |
