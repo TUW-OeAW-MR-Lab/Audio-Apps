@@ -1829,30 +1829,33 @@
 #X msg 35 189 60;
 #X floatatom 66 243 5 0 0 0 - volume -;
 #X obj 1176 79 loadbang;
-#X obj 1020 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 1038 83 OSC Debug;
+#X obj 1084 69 tgl 15 0 empty empty OSC_Debug 17 7 0 10 -262144 -1
+-1 0 1;
 #X msg 1176 111 \; version v1.2 \;;
 #X text 1268 112 v1.2 miho: OSC communication implemented \, object
 OSC-Control added \, GetLevel command added;
-#X obj 1020 259 s OSCresponse;
-#X obj 1020 212 float;
-#X obj 1076 192 r GlobalMax;
-#X obj 1020 140 r GetLevel;
-#X obj 1020 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1040 259 s OSCresponse;
+#X obj 1040 212 float;
+#X obj 1096 192 r GlobalMax;
+#X obj 1040 140 r GetLevel;
+#X obj 1040 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1020 184 t b b;
-#X obj 1075 169 s TriggerGlobalMax;
-#X obj 1020 103 OSC-Control;
-#X msg 1020 235 send /Level \$1;
+#X obj 1040 184 t b b;
+#X obj 1095 169 s TriggerGlobalMax;
+#X obj 1084 88 OSC-Control;
+#X msg 1040 235 send /Level \$1;
 #X floatatom 666 150 5 0 0 0 - - -;
 #X obj 666 128 iemlib/dsp;
 #X floatatom 733 149 5 0 0 0 - - -;
 #X obj 666 107 tgl 15 1 empty empty DSP 17 7 0 10 -262144 -1 -1 1 1
 ;
-#X obj 955 121 tgl 15 0 empty active empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 955 140 metro 100;
+#X obj 975 69 tgl 15 0 empty active Send_Levels 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 975 171 metro 100;
+#X obj 975 90 route 0 1;
+#X msg 975 142 0;
+#X msg 1007 142 1;
+#X obj 975 116 delay 500;
 #X connect 1 0 24 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -2085,18 +2088,23 @@ OSC-Control added \, GetLevel command added;
 #X connect 39 0 10 0;
 #X connect 40 0 30 0;
 #X connect 41 0 30 0;
-#X connect 42 0 45 0;
-#X connect 43 0 54 0;
-#X connect 48 0 55 0;
-#X connect 49 0 48 1;
+#X connect 42 0 44 0;
+#X connect 43 0 53 0;
+#X connect 47 0 54 0;
+#X connect 48 0 47 1;
+#X connect 49 0 50 0;
 #X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 52 0 48 0;
-#X connect 52 1 53 0;
-#X connect 55 0 47 0;
-#X connect 57 0 56 0;
-#X connect 57 1 58 0;
-#X connect 59 0 57 0;
-#X connect 60 0 61 0;
-#X connect 61 0 48 0;
+#X connect 51 0 47 0;
+#X connect 51 1 52 0;
+#X connect 54 0 46 0;
+#X connect 56 0 55 0;
+#X connect 56 1 57 0;
+#X connect 58 0 56 0;
+#X connect 59 0 61 0;
+#X connect 60 0 47 0;
+#X connect 61 0 64 0;
+#X connect 61 1 63 0;
+#X connect 62 0 60 0;
+#X connect 63 0 60 0;
+#X connect 64 0 62 0;
 #X coords 0 662 1 661 85 60 0;
