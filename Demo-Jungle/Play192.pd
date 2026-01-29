@@ -359,7 +359,7 @@
 #X obj 1508 532 env~;
 #X obj 1508 552 env~;
 #X obj 50 89 vsl 15 128 0.01 1 1 0 empty empty LS_OUTPUT 0 -28 0 20
--261234 -1 -258113 4763 1;
+-261234 -1 -258113 0 1;
 #X obj 469 912 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 0;
 #X obj 39 902 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -1823,7 +1823,7 @@
 #X obj 995 337 readsf~ 24;
 #X obj 837 337 readsf~ 24;
 #X obj 24 231 vsl 15 128 0 127 0 0 empty empty Master_Volume 0 -9 0
-20 -260097 -1 -1 7500 1;
+20 -260097 -1 -1 1000 1;
 #X obj 24 388 dbtorms;
 #X msg 23 180 75;
 #X obj 334 87 r dJungle;
@@ -1858,6 +1858,7 @@ OSC-Control added \, GetLevel command added;
 #X msg 968 142 0;
 #X msg 1000 142 1;
 #X obj 968 116 delay 500;
+#X floatatom 66 243 5 0 0 0 - volume -;
 #X connect 1 0 28 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -2107,4 +2108,5 @@ OSC-Control added \, GetLevel command added;
 #X connect 60 0 58 0;
 #X connect 61 0 58 0;
 #X connect 62 0 60 0;
+#X connect 63 0 33 0;
 #X coords 0 662 1 661 85 60 0;
