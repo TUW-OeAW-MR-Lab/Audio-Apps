@@ -8,12 +8,16 @@ a fly circling around the room
 - use startSPATIALIZE.m to spatialize sound, adapt position and movement in script
 
 ## Play Demo
-- double click link to batch file
+### Standalone
+- run batch file _OPEN DEMO.bat (opened with pd)
 - press green "start" button to start demo
 - optional: use light green buttons to start delayed, or to enable loop
 - orange fader (left) controls volume
 - demo can be combined with demo "realtime reverb" (Mix 1 configuration)
 - press "stop" or close all Pd windows to stop demo
+### OSC
+- launch batch file _OPEN DEMO.bat
+- use OSC commands to control demo
 
 ## OSC Commands
 The app is listening to port 10003. The following commands can be used to communicate with Demo-Fly via OSC:
