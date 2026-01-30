@@ -1,4 +1,4 @@
-#N canvas 3 304 1948 662 10;
+#N canvas 0 320 1948 662 10;
 #N canvas 16 33 2564 972 VU_ambisonics~ 0;
 #X obj 51 51 cnv 15 1890 170 empty empty empty 20 12 0 14 -204800 -66577
 0;
@@ -359,7 +359,7 @@
 #X obj 1508 532 env~;
 #X obj 1508 552 env~;
 #X obj 50 89 vsl 15 128 0.01 1 1 0 empty empty LS_OUTPUT 0 -28 0 20
--261234 -1 -258113 0 1;
+-261234 -1 -258113 5397 1;
 #X obj 469 912 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 0;
 #X obj 39 902 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -1764,52 +1764,50 @@
 #X obj 325 337 readsf~ 24;
 #X floatatom 666 144 5 0 0 0 - - -;
 #X obj 666 122 iemlib/dsp;
-#X floatatom 733 143 5 0 0 0 - - -;
-#X obj 406 51 bng 25 250 50 0 empty empty Demo_Jungle 0 -10 0 20 -24198
--1 -258113;
+#X floatatom 723 143 5 0 0 0 - - -;
+#X obj 406 51 bng 25 250 50 0 empty startdemo Demo_Jungle 0 -10 0 20
+-24198 -1 -258113;
 #X text 47 180 Volume;
 #X obj 666 101 tgl 15 1 empty empty DSP 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 23 160 loadbang;
 #X obj 261 47 bng 15 250 50 0 empty empty Start_delayed 17 7 0 10 -204786
 -1 -1;
-#N canvas 940 140 593 259 ElapsedTime 0;
+#N canvas 845 441 451 259 ElapsedTime 0;
 #X obj 145 105 tgl 15 0 active empty active 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 215 129 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 251 134 sel 1;
-#X floatatom 107 114 4 0 0 0 - - -;
+#X floatatom 107 114 4 0 0 0 - - Timecode;
 #X obj 75 45 inlet;
-#X obj 215 104 metro 1 60 permin;
 #X obj 251 164 timer 60 permin;
 #X obj 136 9 inlet;
 #X msg 136 44 1;
 #X obj 214 78 t f f;
 #X obj 190 9 inlet;
 #X msg 190 44 0;
-#X obj 145 123 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
+#X obj 146 123 bng 15 250 50 0 empty reset reset 17 7 0 10 -262144
 -1 -1;
 #X msg 152 161 0;
-#X obj 18 157 print PlayDemo;
-#X obj 238 43 print StopDemo;
-#X connect 0 0 9 0;
-#X connect 1 0 6 1;
-#X connect 2 0 6 0;
+#X obj 215 104 metro 1 600 permin;
+#X obj 152 188 s Timecode;
+#X connect 0 0 8 0;
+#X connect 1 0 5 1;
+#X connect 2 0 5 0;
 #X connect 4 0 0 0;
-#X connect 5 0 1 0;
-#X connect 6 0 3 0;
-#X connect 7 0 8 0;
-#X connect 7 0 14 0;
-#X connect 8 0 0 0;
-#X connect 9 0 5 0;
-#X connect 9 1 2 0;
-#X connect 10 0 11 0;
-#X connect 10 0 15 0;
-#X connect 11 0 0 0;
-#X connect 12 0 13 0;
-#X connect 12 0 11 0;
-#X connect 13 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 13 0;
+#X connect 8 1 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 3 0;
+#X connect 12 0 14 0;
+#X connect 13 0 1 0;
 #X coords 0 -1 1 1 100 40 2 100 100;
 #X restore 507 111 pd ElapsedTime;
 #X msg 866 196 open \$1_5.wav;
@@ -1822,10 +1820,9 @@
 #X obj 916 337 readsf~ 24;
 #X obj 995 337 readsf~ 24;
 #X obj 837 337 readsf~ 24;
-#X obj 24 231 vsl 15 128 0 127 0 0 empty empty Master_Volume 0 -9 0
-20 -260097 -1 -1 1000 1;
+#X obj 24 231 vsl 15 128 0 100 0 0 empty SetVolume Master_Volume 0
+-9 0 20 -260097 -1 -1 9779 1;
 #X obj 24 388 dbtorms;
-#X msg 23 180 75;
 #X obj 334 87 r dJungle;
 #X obj 261 69 delay 10000;
 #X obj 831 72 delay 50000;
@@ -1835,30 +1832,92 @@
 -1 0 1;
 #X msg 883 119 0;
 #X msg 406 89 Data/output;
-#X obj 1176 79 loadbang;
-#X msg 1176 111 \; version v1.2 \;;
-#X text 1268 112 v1.2 miho: OSC communication implemented \, object
-OSC-Control added \, GetLevel command added;
-#X obj 1077 69 tgl 15 0 empty empty OSC_Debug 17 7 0 10 -262144 -1
+#X floatatom 38 369 5 0 0 0 - - GetVolume;
+#X obj 1273 196 loadbang;
+#X obj 1273 110 tgl 15 0 empty empty OSC_Debug 17 7 0 10 -232576 -1
 -1 0 1;
-#X obj 1033 259 s OSCresponse;
-#X obj 1033 212 float;
-#X obj 1089 192 r GlobalMax;
-#X obj 1033 140 r GetLevel;
-#X obj 1033 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X text 1264 143 Define listening port;
+#X msg 1273 228 \; version v1.3 \;;
+#X text 1363 233 v1.3 miho: OSC commands updated;
+#X obj 1273 74 loadbang;
+#X text 1271 88 connect to enable at startup;
+#X obj 1273 129 OSC-Control 10007;
+#X obj 188 357 s reset;
+#N canvas 0 50 450 363 SendVU 0;
+#X obj 130 297 s OSCresponse;
+#X obj 130 250 float;
+#X obj 186 230 r GlobalMax;
+#X obj 130 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 130 222 t b b;
+#X obj 185 207 s TriggerGlobalMax;
+#X obj 54 53 tgl 15 0 empty active Send_VU 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 54 195 metro 100;
+#X obj 54 114 route 0 1;
+#X msg 54 166 0;
+#X msg 86 166 1;
+#X obj 54 140 delay 500;
+#X msg 130 273 send /Play/VU \$1;
+#X obj 130 28 r GetVU;
+#X connect 1 0 12 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 5 0;
+#X connect 6 0 8 0;
+#X connect 7 0 1 0;
+#X connect 8 0 11 0;
+#X connect 8 1 10 0;
+#X connect 9 0 7 0;
+#X connect 10 0 7 0;
+#X connect 11 0 9 0;
+#X connect 12 0 0 0;
+#X connect 13 0 3 0;
+#X coords 0 -1 1 1 100 40 2 50 50;
+#X restore 1017 76 pd SendVU;
+#N canvas 0 50 450 363 SendTimecode 0;
+#X obj 131 183 s OSCresponse;
+#X obj 131 136 float;
+#X obj 131 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 54 53 tgl 15 0 empty active Send_Timecode 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 131 26 r GetTimecode;
+#X msg 131 159 send /Play/Timecode \$1;
+#X obj 218 116 r Timecode;
+#X obj 54 95 metro 100;
+#X obj 222 71 loadbang;
+#X obj 222 93 delay 300;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 1;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X coords 0 -1 1 1 100 40 2 50 50;
+#X restore 1130 76 pd SendTimecode;
+#N canvas 0 50 450 363 Send_Duration 0;
+#X obj 53 169 s OSCresponse;
+#X obj 24 22 r GetDuration;
+#X msg 53 145 send /Play/Duration \$1;
+#X text 85 119 Duration;
+#X obj 53 54 bng 15 250 50 0 empty empty Send_Duration 17 7 0 10 -262144
 -1 -1;
-#X obj 1033 184 t b b;
-#X obj 1088 169 s TriggerGlobalMax;
-#X obj 1077 88 OSC-Control;
-#X msg 1033 235 send /Level \$1;
-#X obj 968 69 tgl 15 0 empty active Send_Levels 17 7 0 10 -262144 -1
--1 0 1;
-#X obj 968 171 metro 100;
-#X obj 968 90 route 0 1;
-#X msg 968 142 0;
-#X msg 1000 142 1;
-#X obj 968 116 delay 500;
-#X floatatom 66 243 5 0 0 0 - volume -;
+#X msg 53 119 49.1;
+#X text 62 71 Adapt to Demo!;
+#X floatatom 111 89 5 0 0 0 - - -;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 5 0 7 0;
+#X coords 0 -1 1 1 100 60 2 50 50;
+#X restore 1130 127 pd Send_Duration;
+#X msg 23 180 75;
 #X connect 1 0 28 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -1941,8 +2000,8 @@ OSC-Control added \, GetLevel command added;
 #X connect 10 1 6 0;
 #X connect 11 0 28 0;
 #X connect 12 0 11 0;
+#X connect 12 0 41 0;
 #X connect 12 0 22 2;
-#X connect 12 0 42 0;
 #X connect 13 0 0 1;
 #X connect 13 1 0 2;
 #X connect 13 2 0 3;
@@ -1967,14 +2026,15 @@ OSC-Control added \, GetLevel command added;
 #X connect 13 21 0 22;
 #X connect 13 22 0 23;
 #X connect 13 23 0 24;
+#X connect 13 24 52 0;
 #X connect 15 0 14 0;
 #X connect 15 1 16 0;
-#X connect 17 0 43 0;
+#X connect 17 0 42 0;
+#X connect 17 0 37 0;
 #X connect 17 0 22 1;
-#X connect 17 0 38 0;
 #X connect 19 0 15 0;
-#X connect 20 0 35 0;
-#X connect 21 0 37 0;
+#X connect 20 0 56 0;
+#X connect 21 0 36 0;
 #X connect 23 0 32 0;
 #X connect 24 0 30 0;
 #X connect 25 0 31 0;
@@ -2083,30 +2143,16 @@ OSC-Control added \, GetLevel command added;
 #X connect 32 22 0 119;
 #X connect 32 23 0 120;
 #X connect 33 0 34 0;
+#X connect 33 0 43 0;
 #X connect 34 0 0 0;
-#X connect 35 0 33 0;
+#X connect 35 0 17 0;
 #X connect 36 0 17 0;
-#X connect 37 0 17 0;
-#X connect 38 0 40 0;
-#X connect 40 0 17 0;
-#X connect 41 0 40 1;
-#X connect 42 0 41 0;
-#X connect 43 0 10 0;
-#X connect 44 0 45 0;
-#X connect 47 0 55 0;
-#X connect 49 0 56 0;
-#X connect 50 0 49 1;
-#X connect 51 0 52 0;
-#X connect 52 0 53 0;
-#X connect 53 0 49 0;
-#X connect 53 1 54 0;
-#X connect 56 0 48 0;
-#X connect 57 0 59 0;
-#X connect 58 0 49 0;
-#X connect 59 0 62 0;
-#X connect 59 1 61 0;
-#X connect 60 0 58 0;
-#X connect 61 0 58 0;
-#X connect 62 0 60 0;
-#X connect 63 0 33 0;
+#X connect 37 0 39 0;
+#X connect 39 0 17 0;
+#X connect 40 0 39 1;
+#X connect 41 0 40 0;
+#X connect 42 0 10 0;
+#X connect 44 0 47 0;
+#X connect 45 0 51 0;
+#X connect 56 0 33 0;
 #X coords 0 662 1 661 85 60 0;
