@@ -1,13 +1,20 @@
 # Demo Fly
+
 ## Description
 a fly circling around the room
+
+## Spatialize Demo
+- prepare your source wav file (fly.wav) in \Data folder
+- use startSPATIALIZE.m to spatialize sound, adapt position and movement in script
+
 ## Play Demo
 - double click link to batch file
-- press green button to start demo
+- press green "start" button to start demo
 - optional: use light green buttons to start delayed, or to enable loop
 - orange fader (left) controls volume
-- demo can be combined with demo “realtime reverb” (Mix 1 configuration)
-- press “stop” or close all Pd windows to stop demo
+- demo can be combined with demo "realtime reverb" (Mix 1 configuration)
+- press "stop" or close all Pd windows to stop demo
+
 ## OSC Commands
 The app is listening to port 10003. The following commands can be used to communicate with Demo-Fly via OSC:
 | Send | Receive | Description |
