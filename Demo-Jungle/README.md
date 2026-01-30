@@ -25,12 +25,15 @@ Typical sources in a jungle atmosphere
 ## OSC Commands
 The app is listening to port 10003. The following commands can be used to communicate with Demo-Fly via OSC:
 | Send | Receive | Description |
-|-----:|-----------|-----------|
-|     /Control/Response connect localhost 9336 | connect localhost 9336 | connect to demo app and send return channel |
-|     /Control/Version| /Control/Version v1.2    | get version number    |
-|     /Control/SampleRate| /Control/SampleRate 48000       | get sample rate       |
-|     /Control/CPULoad| /Control/CPULoad 10.94       | get current CPU load       |
+|-----|-----------|-----------|
+|     /Control/Response connect localhost [value] | connect localhost [value] | connect to demo app and send return channel |
+|     /Control/Version| /Control/Version [value]    | get version number    |
+|     /Control/SampleRate| /Control/SampleRate [value]       | get sample rate       |
+|     /Control/CPULoad| /Control/CPULoad [value]       | get current CPU load       |
 |     /Play/Start| -       | start demo; trigger levels sent via OSC periodically      |
 |     /Play/Stop| -       | stop demo; stop sending levels       |
-|     /SetVol 55 | -       | set volume of app       |
-|     - | /Level 32.48       | get level values (max level of all channels)       |
+|     - | /Play/VU [value]      | get VU (max level of all channels) (0..100 in dB)       |
+|     /Play/Volume/Set [value] | -       | set volume of app (0..100 in dB)     |
+|     /Play/Volume | /Play/Volume [value]       | get volume of app (0..100 in dB)      |
+|     - |  /Play/Timecode [value]    | get time code      |
+|     /Play/Duration |  /Play/Duration [value]     | get duration of demo      |
