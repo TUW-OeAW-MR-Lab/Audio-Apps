@@ -6,15 +6,15 @@
 @set YAMI_DIR=C:\pd\YAMI
 
 @rem --- which libraries to load?
-@set pd_LIB=-lib ..\YAMI\lib\iemlib1 -lib ..\YAMI\lib\iemlib2 -lib ..\YAMI\lib\OSC -lib ..\YAMI\lib\comport -lib ..\YAMI\lib\vasp -lib ..\YAMI\lib\zexy -lib ..\YAMI\lib\dyn~ -lib ..\extra\iemmatrix -lib ..\extra\bsaylor\partconv~ -lib ..\..\MRLab\\Audio-Apps\VA-XX.VBAP\vbap\define_loudspeakers -lib ..\..\MRLab\Audio-Apps\VA-XX.VBAP\vbap\vbap
+@set pd_LIB=-lib ..\YAMI\lib\iemlib1 -lib ..\YAMI\lib\iemlib2 -lib ..\YAMI\lib\OSC -lib ..\YAMI\lib\comport -lib ..\YAMI\lib\vasp -lib ..\YAMI\lib\zexy -lib ..\YAMI\lib\dyn~ -lib ..\extra\iemmatrix -lib ..\extra\bsaylor\partconv~ -lib define_loudspeakers -lib vbap -lib vbapcart
 
 @rem --- how many channels do you have?
 @set pd_CHANNELS=-channels 200
 
 @rem --- which device do you use?
-@set pd_DEF=-audioaddoutdev "ASIO:ASIO MADIface USB" -noadc
+@set pd_DEF=-audioadddev "ASIO:ASIO MADIface USB" -noadc
 
-@set pd_PATH=-path %YAMI_DIR%\abs -path %~dp0..\..\MRLab\Audio-Apps\VA-XX.VBAP\vbap -path ..\extra\iemlib -path ..\extra\iemmatrix -path ..\extra\bsaylor
+@set pd_PATH=-path %YAMI_DIR%\abs -path ..\extra\iemlib -path ..\extra\iemmatrix -path ..\extra\bsaylor
 
 @set pd_OPEN=-open VA-CC.VBAP.pd
 @set pd_ASIO=-asio

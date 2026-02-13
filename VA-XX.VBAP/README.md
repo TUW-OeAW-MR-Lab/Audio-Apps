@@ -9,13 +9,13 @@
 
 ## Launch Scene
 - launch batch file _LAUNCH SCENE.bat
-- use OSC commands to control VBAP
+- use OSC commands (port see below) to control VBAP parameters
 
 ## OSC Commands
 The app is listening to port 10003. The following commands can be used to communicate via OSC:
 | Send | Receive | Description | Example |
 |-----|-----------|-----------|-----------|
-|     /Control/Response connect localhost [value] | connect localhost [value] | connect to demo app and send return channel | |
+|     /Control/Response connect localhost [value] | connect localhost [value] | connect to demo app and send return channel | /Control/Response connect localhost 10005 |
 |     /Control/Version| /Control/Version [value]    | get version number    | |
 |     /Control/SampleRate| /Control/SampleRate [value]       | get sample rate       | |
 |     /Control/CPULoad| /Control/CPULoad [value]       | get current CPU load       | |
@@ -24,3 +24,5 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /VBAP/SetVol/[VBAP object] [value] | -       | set volume for VBAP object      | /VBAP/SetVol/0 100 |
 |     /VBAP/SetDirection/[VBAP object] [A value] [E value] | -       | set azimuth and elevation for VBAP object      | /VBAP/SetDirection/0 90 45 |
 |     - | /Play/VU [value]      | get VU (max level of all channels) (0..100 in dB)       | |
+|     /Play/Volume/Set [value] | -       | set volume of app (0..100 in dB)     | | 
+|     /Play/Volume | /Play/Volume [value]       | get volume of app (0..100 in dB)      | | 
