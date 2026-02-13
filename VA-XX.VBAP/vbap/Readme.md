@@ -7,12 +7,12 @@ Source: https://puredata.info/docs/developer/WindowsMinGW
 ## Configure Msys ## 
 Source: https://github.com/msys2/msys2/wiki/MSYS2-installation
 - Run twice:
-    Syuu`
+    `Syuu`
 ## Install Packages ## 
 Source: https://puredata.info/docs/developer/WindowsMinGW
 - Run the following commands:
- - `pacman -S make pkg-config autoconf automake libtool`
- - `pacman -S mingw32/mingw-w64-i686-gcc`
+    - `pacman -S make pkg-config autoconf automake libtool`
+    - `pacman -S mingw32/mingw-w64-i686-gcc`
 ## Build VBAP ## 
 - launch mingw32 (located in the same folder as msys2, eg.: C:\msys64\mingw32.exe)
 - Navigate to this folder: cd mypath
