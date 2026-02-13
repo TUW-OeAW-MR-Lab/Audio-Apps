@@ -7,7 +7,7 @@ Source: https://puredata.info/docs/developer/WindowsMinGW
 ## Configure Msys ## 
 Source: https://github.com/msys2/msys2/wiki/MSYS2-installation
 - Run twice:
-    `Syuu`
+    - `Syuu`
 ## Install Packages ## 
 Source: https://puredata.info/docs/developer/WindowsMinGW
 - Run the following commands:
@@ -18,7 +18,8 @@ Source: https://puredata.info/docs/developer/WindowsMinGW
 - Navigate to this folder: cd mypath
   (eg: `cd /d/Projects/ExpSuite/Sourceforge/FrameWork/pd/extra/vbap/`)
 - Optionally delete old .dll and .o files (File Explorer)
-- Run command: `make`
+- Run command:
+    - `make`
  ## Test ## 
 Start vbap-test.bat and vbap-test.pd to test functionality
  ## Info ## 
