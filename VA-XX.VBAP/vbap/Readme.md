@@ -7,7 +7,7 @@ Source: https://puredata.info/docs/developer/WindowsMinGW
 ## Configure Msys ## 
 Source: https://github.com/msys2/msys2/wiki/MSYS2-installation
 - Run twice:
- - `pacman -Syuu`
+    Syuu`
 ## Install Packages ## 
 Source: https://puredata.info/docs/developer/WindowsMinGW
 - Run the following commands:
