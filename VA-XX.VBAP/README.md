@@ -1,11 +1,11 @@
 # Virtual Audio: VBAP
 
-!!! STILL UNDER DEVELOPMENT !!!
+**!!! STILL UNDER DEVELOPMENT !!!**
 
 ## Description
-vector-based amplitude panning
-XX defines the doors (open/closed -> CC/CO/OC/OO)
-based on VBAP and VBAP200, ExpSuite package
+- vector-based amplitude panning
+- XX defines the doors (open/closed -> CC/CO/OC/OO)
+- based on VBAP and VBAP200, ExpSuite package
 
 ## Launch Scene
 - launch batch file _LAUNCH SCENE.bat
