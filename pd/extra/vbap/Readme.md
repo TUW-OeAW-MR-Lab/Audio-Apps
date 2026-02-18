@@ -16,7 +16,7 @@ Source: https://puredata.info/docs/developer/WindowsMinGW
 ## Build VBAP ## 
 - launch mingw32 (located in the same folder as msys2, eg.: C:\msys64\mingw32.exe)
 - Navigate to this folder: cd mypath
-  (eg: `cd /d/Projects/ExpSuite/Sourceforge/FrameWork/pd/extra/vbap/`)
+  (eg: `cd /c/MRLab/Audio-Apps/pd/extra/vbap`)
 - Optionally delete old .dll and .o files (File Explorer)
 - Run command:
     - `make`
