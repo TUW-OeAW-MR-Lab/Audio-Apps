@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="doc">
+      <UniqueIdentifier>{97e9c108-734f-40d6-8912-7eaae256f6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vasp">
+      <UniqueIdentifier>{d6531b23-9a03-4b22-8602-325ec2e1c9d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ops">
+      <UniqueIdentifier>{53f1e75e-d020-410c-ac99-d377426614bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ops\funcs">
+      <UniqueIdentifier>{934623d8-6d74-4971-962e-fea39bb523fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dft">
+      <UniqueIdentifier>{b5ef5e76-fb19-4280-b487-8554de48630b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="objs">
+      <UniqueIdentifier>{d8465fd1-7313-4107-86f7-ab7d475e60d2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="changes.txt">
+      <Filter>doc</Filter>
+    </Text>
+    <Text Include="license.txt">
+      <Filter>doc</Filter>
+    </Text>
+    <Text Include="readme.txt">
+      <Filter>doc</Filter>
+    </Text>
+    <Text Include="todo.txt">
+      <Filter>doc</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\arg.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\buflib.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\classes.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\env.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\util.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vasp.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vbuffer.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vecblk.cpp">
+      <Filter>vasp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\opbase.cpp">
+      <Filter>ops</Filter>
+    </ClCompile>
+    <ClCompile Include="source\opparam.cpp">
+      <Filter>ops</Filter>
+    </ClCompile>
+    <ClCompile Include="source\opvecs.cpp">
+      <Filter>ops</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_arith.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_assign.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_carith.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_cmp.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_cplx.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_dft.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_feature.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_flt.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_gate.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_gen.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_qminmax.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_rearr.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_resmp.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_search.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_trnsc.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ops_wnd.cpp">
+      <Filter>ops\funcs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_chns.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_frames.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_imm.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_offs.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_part.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_peaks.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_q.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_radio.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_size.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_split.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_sync.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_vasp.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\obj_vecs.cpp">
+      <Filter>objs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\arg.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\buflib.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\classes.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\env.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\util.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\vasp.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\vbuffer.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\vecblk.h">
+      <Filter>vasp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\opbase.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\opdefs.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\opfuns.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\oploop.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\opparam.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\oppermute.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops.h">
+      <Filter>ops</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_arith.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_assign.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_carith.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_cmp.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_cplx.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_dft.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_feature.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_flt.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_gen.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_rearr.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_resmp.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_search.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_trnsc.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ops_wnd.h">
+      <Filter>ops\funcs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\main.h" />
+    <ClInclude Include="source\mixfft.hpp">
+      <Filter>dft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\rdx2fft.hpp">
+      <Filter>dft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\rvfft.hpp">
+      <Filter>dft</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

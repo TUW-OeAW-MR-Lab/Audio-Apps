@@ -1,0 +1,30 @@
+﻿  flatom.cpp
+  flatom_part.cpp
+  flatom_pr.cpp
+  flbase.cpp
+  flext.cpp
+  fllib.cpp
+  flthr.cpp
+  flattr.cpp
+  flattr_ed.cpp
+  flbind.cpp
+  flitem.cpp
+  flmeth.cpp
+  flmsg.cpp
+  flout.cpp
+  flproxy.cpp
+  flqueue.cpp
+  flxlet.cpp
+  flbuf.cpp
+  flmap.cpp
+  flsimd.cpp
+  Generating Code...
+  Compiling...
+  flsupport.cpp
+  fltimer.cpp
+  flutil.cpp
+  fldsp.cpp
+  Generating Code...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1445,5): warning MSB8012: TargetPath(C:\PD4932\flext\.\pd-msvc\s\flext.lib) does not match the Library's OutputFile property value (C:\PD4932\flext\pd-msvc\flext-pd_s.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1447,5): warning MSB8012: TargetName(flext) does not match the Library's OutputFile property value (flext-pd_s). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  flext.vcxproj -> C:\PD4932\flext\.\pd-msvc\s\flext.lib

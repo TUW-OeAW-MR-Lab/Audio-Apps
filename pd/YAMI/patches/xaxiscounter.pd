@@ -1,0 +1,48 @@
+#N canvas 422 299 789 477 12;
+#X obj 28 387 outlet;
+#X obj 519 65 inlet;
+#X msg 160 235 1;
+#X floatatom 160 334 5 0 500 0 - - -;
+#X msg 519 107 0;
+#X obj 291 65 inlet;
+#X text 236 44 number of values;
+#X text 152 48 values;
+#X obj 160 387 outlet;
+#X obj 419 63 inlet;
+#X text 379 44 start writing;
+#X text 460 124 stop writing & reset x-axis value;
+#X obj 160 66 inlet;
+#X obj 160 145 spigot;
+#X msg 419 108 1;
+#X text 227 373 x-axis counter \; left output: y-axis value \; right
+output: x-axis value;
+#X obj 382 222 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 216 266 moses 5000;
+#X obj 160 177 t b f;
+#X text 400 221 stop & reset;
+#X text 299 315 count up to inlet2-value;
+#X obj 78 59 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 160 268 + 0;
+#X obj 291 180 + 1;
+#X text 314 8 x-axis counter;
+#X connect 1 0 4 0;
+#X connect 2 0 22 0;
+#X connect 3 0 8 0;
+#X connect 3 0 17 0;
+#X connect 4 0 3 0;
+#X connect 4 0 13 1;
+#X connect 5 0 23 0;
+#X connect 9 0 14 0;
+#X connect 12 0 13 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 1;
+#X connect 16 0 4 0;
+#X connect 17 0 22 1;
+#X connect 17 1 16 0;
+#X connect 18 0 2 0;
+#X connect 18 1 0 0;
+#X connect 21 0 13 0;
+#X connect 22 0 3 0;
+#X connect 23 0 17 1;

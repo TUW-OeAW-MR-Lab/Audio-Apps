@@ -1,0 +1,146 @@
+****************************************************************
+*** History of YAMI
+*** Yet Another Mixer at Acoustics Research Institute
+*** by Piotr Majdak, Michael Mihocic
+*** pd patch, part of ExpSuite by Piotr Majdak, Michael Mihocic
+****************************************************************
+
+*** DEVELOPMENT STATUS ***
+
+*** v1.4 (02.07.2024) by Michael Mihocic
+- YAMI16adc has been discarded, and replaced by YAMI24adc24
+- summary of current YAMI patches:
+	> YAMI		  ( 24 DAC channels,  4 ADC channels)
+	> YAMI2		  (  2 DAC channels,  2 ADC channels)
+	> YAMI100	  (100 DAC channels,  2 ADC channels)
+	> YAMI24adc24 ( 24 DAC channels, 24 ADC channels)
+
+*** v1.3 (01.09.2020) by Michael Mihocic
+- Play.pd: Bug fixed when cancelling synchronous stimulation and 
+	stimulating again immediately
+- bug fixed in YAMI100: Play/Stop was not connected
+
+*** v1.2 (24.04.2020) by Michael Mihocic
+- bug fixed in YAMI100: pla88 fixed to play88 on 3 positions
+	caused problems when stimulating more than 88 channels
+
+*** v1.1 (17.03.2020) by Michael Mihocic
+- bug fixed in YAMI100: play41 and play42 were defined twice
+- documentation updated (YAMI100)
+
+*** v1.0 (09.2019) by Michael Mihocic
+- pd upgraded to v0.49
+- ExpSuite FW upgraded to v1.0
+- YAMI index increased to v1.0
+- flext added (to sources only), and compiled, required to compile libraries
+- libraries updated and compiled: 
+	> vasp -> loadbang warnings removed
+	> dyn ->  loadbang warnings removed; 
+		bug fix: multiple, dynamic loading of tracker.pd prevented by 
+		using a spigot object -> check if tracker has already been loaded,
+		multiple instances of comport object (same port) cause errors
+	> comport -> index starts with 1 instead of zero ->
+		YAMI patches updated to stay backwards compatible:
+			+ Tracker load: default COM-port: 1 instead of 0
+			+ Tracker init: [input value + 1] instead of [input]
+- GEM & ViWo removed
+- testYAMI folder cleaned up
+- testtone.pd adapted to 96 channels
+- available YAMI patches:
+	> YAMI		( 24 DAC channels,  4 ADC channels)
+	> YAMI2		(  2 DAC channels,  2 ADC channels)
+	> YAMI100	(100 DAC channels,  2 ADC channels)
+	> YAMI16adc	( 24 DAC channels, 16 ADC channels)
+
+
+###################################
+
+*** v0.27 (24.07.2019) by Michael Mihocic
+- extended to 100 channels
+- bug fixed when stopping "play" of more than 24 channels
+
+*** v0.26 (26.7.2018) by Piotr Majdak
+- VBAP support in YAMI96 with up to 8 virtual sources. Tested in LAS
+
+*** v0.25 (26.7.2018) by Piotr Majdak
+- VBAP support for YAMI96 added. First untested version.
+
+*** v0.24 (06.11.2017) by Michael Mihocic
+- Minor bugs fixed (fade-out)
+
+*** v0.23 (05.12.2016) by Michael Mihocic
+- FadeOut implemented; ExpSuite command:
+	"Output.Send("/Play/SetFadeOut", <FadeOutDuration>)"
+
+*** v0.22 (17.10.2016) by Michael Mihocic
+- Echo mode added, can be enabled in main form
+
+*** v0.20 (08.05.2013) by Michael Mihocic
+- ViWo batch file modified, minor bugs fixed
+- Setup file modified, minor bugs fixed
+
+*** version 0.019 (PMajdak, 14.7.2008)
+- modified: expression.pd: improving the tracking of ranges. Should work more stable now.
+
+*** version 0.018 (PMajdak, 7.12.2007)
+- Added a new synth signal: 16th order butterworth lowpass-filtered white noise
+- 4th order chebyscheff changed to butterworth
+
+*** version 0.017 (Pmajdak, 27.3.2006)
+- Added a new synth signal: 4th order low pass filtered white noise
+- modified: synth.pd (+ version update in yami.pd, yami2.pd)
+
+*** version 0.016 on 03.11.2006 (M. Mihocic)
+- Tracker Simulation improved
+- Debug mode for tracker extracted of "general" debug mode
+- modified: YAMI.pd, YAMI2.pd, tracker.pd, trackerGUI.pd
+
+*** version 0.015 on 20.2.2006
+- /MIDI/Out, /MIDI/In added; sending and receiving data via MIDI
+
+*** version 0.013 on 8.2.2006
+- /Tracker/SendData added
+
+*** version 0.012 on 2.12.2005
+- /Tracker completed
+- some bugx fixes and issues added
+
+*** version 0.010 am 11.10.2005
+- /Tracker almost completed
+  - /Evaluate changed to /TrackMinMaxValues
+  - /Tracker can be (un)loaded by /Tracker/Load and /Tracker/Unload, respectively
+- /LoadObj and /DelObj: new objects (abstractions) can be loaded dynamically
+
+*** version v0.009 am 12.09.2005
+- /Tracker functions added: /InitFob (+ Simulation), /SetCurrentValues, /GetCurrentValues (+ Simulation),
+  /Evaluate (min, max value), /Simulation
+
+*** version v0.008 am 30.8.2005
+- /Tracker added, simulated only, see YAMI.sxw for more details
+
+*** version v0.007 am 7.2.2005 (forgot to change the version number :-(
+- /Sequencer added
+	- /Sequencer clear: clear buffer
+	- /Sequencer add X root CMD: add CMD to the buffer, delay to the previous command: Xms
+	- /Sequencer: play buffer
+	- /Sequencer read XXX: read file XXX to buffer
+	- /Sequencer write XXX: write buffer to file XXX
+- /Play extended to 24 streams
+- /Play/StartSynced added (= /Play/Start/X and /Rec/Start/* simultanously)
+- /Play/StartAll added (=/Play/Start/* and /Rec/Start/* simultanously)
+- /Play/SetDelay added
+
+*** version v0.007
+- changed /Record to /Rec in control patches and docs.
+
+*** version v0.006
+- everything changed to YAMI
+
+*** version v0.005
+- Dither added
+- Batch files changed, arguments are passed to pd now
+
+*** version v0.003
+- changed address space to allow further improvements (recorder and filter)
+- listening port changed to 10003
+

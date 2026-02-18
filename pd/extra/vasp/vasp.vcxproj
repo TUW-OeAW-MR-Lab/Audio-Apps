@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="PD Debug|Win32">
+      <Configuration>PD Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PD Release|Win32">
+      <Configuration>PD Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PD Shared Debug|Win32">
+      <Configuration>PD Shared Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PD Shared Release|Win32">
+      <Configuration>PD Shared Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PD Threads Debug|Win32">
+      <Configuration>PD Threads Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PD Threads Release|Win32">
+      <Configuration>PD Threads Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3A6993BD-E2FE-4598-86D0-40F265067E24}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.29124.152</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">
+    <OutDir>.\pd-msvc\d\</OutDir>
+    <IntDir>.\pd-msvc\d\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\PD4932\flext\source;C:\PD4932\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\PD4932\flext\source;C:\PD4932\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">
+    <OutDir>.\pd-msvc\td\</OutDir>
+    <IntDir>.\pd-msvc\td\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\PD4932\flext\source;C:\PD4932\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\PD4932\flext\source;C:\PD4932\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">
+    <OutDir>.\pd-msvc\t\</OutDir>
+    <IntDir>.\pd-msvc\t\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\PD4932\flext\source;C:\PD4932\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\PD4932\flext\source;C:\PD4932\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">
+    <OutDir>.\pd-msvc\r\</OutDir>
+    <IntDir>.\pd-msvc\r\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\PD4932\flext\source;C:\PD4932\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\PD4932\flext\source;C:\PD4932\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">
+    <OutDir>.\pd-msvc\sr\</OutDir>
+    <IntDir>.\pd-msvc\sr\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\PD4932\flext\source;C:\PD4932\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\PD4932\flext\source;C:\PD4932\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">
+    <OutDir>.\pd-msvc\sd\</OutDir>
+    <IntDir>.\pd-msvc\sd\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\PD4932\flext\source;C:\PD4932\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;$(LibraryPath)</LibraryPath>
+    <SourcePath>C:\PD4932\flext\source;C:\PD4932\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\PD4932\flext\source;C:\PD4932\src;f:\prog\pd\pd-cvs\src;f:\prog\max\flext\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FLEXT_SYS=2;VASP_COMPACT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>main.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC.lib;pd.lib;flext-pdwin.lib;flext-pd_s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\pd-msvc\d/vasp.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\PD4932\flext\pd-msvc\release-single;C:\PD4932\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\pd-msvc\d/vasp.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\pd-msvc\d/vasp.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\pd-msvc\d/vasp.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c07</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\PD4932\flext\source;C:\PD4932\src;c:\programme\pd\src;..\flext\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FLEXT_SYS=2;FLEXT_THREADS;VASP_COMPACT;FLEXT_USE_SIMD;FLEXT_USE_CMEM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>main.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC.lib;pd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\pd-msvc\td/vasp.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>c:\programme\pd\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\pd-msvc\td/vasp.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\pd-msvc\td/vasp.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\pd-msvc\td/vasp.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c07</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>C:\PD4932\flext\source;C:\PD4932\src;c:\programme\audio\pd\src;..\flext\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FLEXT_SYS=2;FLEXT_THREADS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>main.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC.lib;pd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>pd-msvc/vasp.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>c:\programme\audio\pd\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\pd-msvc\t/vasp.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\pd-msvc\t/vasp.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\pd-msvc\t/vasp.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c07</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>C:\PD4932\flext\source;C:\PD4932\src;c:\programme\audio\pd\src;f:\prog\max\flext\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FLEXT_SYS=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>main.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC.lib;pd.lib;flext-pd_s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\pd-msvc\r/vasp.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\PD4932\flext\pd-msvc;C:\PD4932\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>.\pd-msvc\r/vasp.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\pd-msvc\r/vasp.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c07</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>C:\PD4932\flext\source;C:\PD4932\src;c:\data\prog\pd\pd-cvs\src;c:\data\prog\packs\pthreads;..\flext\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FLEXT_SYS=2;FLEXT_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>main.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC.lib;pd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)vasp.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>c:\data\prog\pd\pd-cvs\bin;c:\data\prog\packs\pthreads;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)vasp.pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)vasp.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\pd-msvc\t/vasp.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c07</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\PD4932\flext\source;C:\PD4932\src;f:\prog\pd\pd-cvs\src;f:\prog\packs\pthreads;f:\prog\max\flext\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FLEXT_SYS=2;FLEXT_SHARED;VASP_COMPACT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>main.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC.lib;pd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\pd-msvc\sd/vasp.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>f:\prog\pd\pd-cvs\bin;f:\prog\packs\pthreads;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\pd-msvc\td/vasp.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\pd-msvc\td/vasp.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\pd-msvc\td/vasp.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c07</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="changes.txt" />
+    <Text Include="license.txt" />
+    <Text Include="readme.txt" />
+    <Text Include="todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\arg.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\buflib.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\classes.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\env.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_chns.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_frames.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_imm.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_offs.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_part.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_peaks.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_q.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_radio.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_size.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_split.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_sync.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_vasp.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\obj_vecs.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\opbase.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\opparam.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_arith.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_assign.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_carith.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_cmp.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_cplx.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_dft.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_feature.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_flt.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_gate.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_gen.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_qminmax.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_rearr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_resmp.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_search.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_trnsc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\ops_wnd.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\opvecs.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\util.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\vasp.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\vbuffer.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="source\vecblk.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Shared Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Shared Release|Win32'">Full</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='PD Threads Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='PD Threads Release|Win32'">Full</Optimization>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\arg.h" />
+    <ClInclude Include="source\buflib.h" />
+    <ClInclude Include="source\classes.h" />
+    <ClInclude Include="source\env.h" />
+    <ClInclude Include="source\main.h" />
+    <ClInclude Include="source\mixfft.hpp" />
+    <ClInclude Include="source\opbase.h" />
+    <ClInclude Include="source\opdefs.h" />
+    <ClInclude Include="source\opfuns.h" />
+    <ClInclude Include="source\oploop.h" />
+    <ClInclude Include="source\opparam.h" />
+    <ClInclude Include="source\oppermute.h" />
+    <ClInclude Include="source\ops.h" />
+    <ClInclude Include="source\ops_arith.h" />
+    <ClInclude Include="source\ops_assign.h" />
+    <ClInclude Include="source\ops_carith.h" />
+    <ClInclude Include="source\ops_cmp.h" />
+    <ClInclude Include="source\ops_cplx.h" />
+    <ClInclude Include="source\ops_dft.h" />
+    <ClInclude Include="source\ops_feature.h" />
+    <ClInclude Include="source\ops_flt.h" />
+    <ClInclude Include="source\ops_gen.h" />
+    <ClInclude Include="source\ops_rearr.h" />
+    <ClInclude Include="source\ops_resmp.h" />
+    <ClInclude Include="source\ops_search.h" />
+    <ClInclude Include="source\ops_trnsc.h" />
+    <ClInclude Include="source\ops_wnd.h" />
+    <ClInclude Include="source\rdx2fft.hpp" />
+    <ClInclude Include="source\rvfft.hpp" />
+    <ClInclude Include="source\util.h" />
+    <ClInclude Include="source\vasp.h" />
+    <ClInclude Include="source\vbuffer.h" />
+    <ClInclude Include="source\vecblk.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
