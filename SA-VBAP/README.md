@@ -1,10 +1,10 @@
-# Virtual Audio: VBAP
+# Spatial Audio: VBAP
 
 **!!! STILL UNDER DEVELOPMENT !!!**
 
 ## Description
 - Spatialization of virtual sources by means of the vector-based amplitude panning.
-- XX defines the state of the doors: open (O) or closed (C). Allowed states: CC, CO, OC, OO.
+- The state of the doors can be defined on-the-fly: open (O) or closed (C). Allowed states: CC, CO, OC, OO.
 - Based on VBAP and VBAP200, ExpSuite package.
 
 ## Launch Scene
