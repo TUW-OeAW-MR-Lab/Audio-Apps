@@ -16,7 +16,7 @@
 
 @set pd_PATH=-path %YAMI_DIR%\abs -path ..\extra\iemlib -path ..\extra\iemmatrix -path ..\extra\bsaylor
 
-@set pd_OPEN=-open VA-CC.VBAP.pd
+@set pd_OPEN=-open SA-VBAP.pd
 @set pd_ASIO=-asio
 @set pd_SRATE=-r 48000
 @set pd_AUDIO=-blocksize 64 -audiobuf 42
