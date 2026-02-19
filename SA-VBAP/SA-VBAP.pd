@@ -45,6 +45,7 @@
 #X text 410 200 last output resets to CC;
 #X text 302 163 set triggers also get;
 #X obj 115 45 loadbang;
+#X text 183 46 Default: CC;
 #X connect 0 0 3 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
