@@ -359,7 +359,7 @@
 #X obj 1508 532 env~;
 #X obj 1508 552 env~;
 #X obj 50 89 vsl 15 128 0.01 1 1 0 empty empty LS_OUTPUT 0 -28 0 20
--261234 -1 -258113 5397 1;
+-261234 -1 -258113 4763 1;
 #X obj 469 912 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 0;
 #X obj 39 902 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -1821,7 +1821,7 @@
 #X obj 995 337 readsf~ 24;
 #X obj 837 337 readsf~ 24;
 #X obj 24 231 vsl 15 128 0 100 0 0 empty SetVolume Master_Volume 0
--9 0 20 -260097 -1 -1 9779 1;
+-9 0 20 -260097 -1 -1 9525 1;
 #X obj 24 388 dbtorms;
 #X obj 334 87 r dJungle;
 #X obj 261 69 delay 10000;
@@ -1841,7 +1841,6 @@
 #X text 1363 233 v1.3 miho: OSC commands updated;
 #X obj 1273 74 loadbang;
 #X text 1271 88 connect to enable at startup;
-#X obj 1273 129 OSC-Control 10007;
 #X obj 188 357 s reset;
 #N canvas 0 50 450 363 SendVU 0;
 #X obj 130 297 s OSCresponse;
@@ -1918,6 +1917,7 @@
 #X coords 0 -1 1 1 100 60 2 50 50;
 #X restore 1130 127 pd Send_Duration;
 #X msg 23 180 75;
+#X obj 1273 129 OSC-Control 10003;
 #X connect 1 0 28 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -2026,14 +2026,14 @@
 #X connect 13 21 0 22;
 #X connect 13 22 0 23;
 #X connect 13 23 0 24;
-#X connect 13 24 52 0;
+#X connect 13 24 51 0;
 #X connect 15 0 14 0;
 #X connect 15 1 16 0;
 #X connect 17 0 42 0;
 #X connect 17 0 37 0;
 #X connect 17 0 22 1;
 #X connect 19 0 15 0;
-#X connect 20 0 56 0;
+#X connect 20 0 55 0;
 #X connect 21 0 36 0;
 #X connect 23 0 32 0;
 #X connect 24 0 30 0;
@@ -2153,6 +2153,6 @@
 #X connect 41 0 40 0;
 #X connect 42 0 10 0;
 #X connect 44 0 47 0;
-#X connect 45 0 51 0;
-#X connect 56 0 33 0;
+#X connect 45 0 56 0;
+#X connect 55 0 33 0;
 #X coords 0 662 1 661 85 60 0;
