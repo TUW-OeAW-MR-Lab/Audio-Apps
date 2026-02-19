@@ -29,7 +29,7 @@ Typical sources in a jungle atmosphere
 - use OSC commands to control demo
   
 ## OSC Commands
-The app is listening to port 10007. The following commands can be used to communicate with Demo-Fly via OSC:
+The app is listening to port 10003. The following commands can be used to communicate with Demo-Fly via OSC:
 | Send | Receive | Description |
 |-----|-----------|-----------|
 |     /Control/Response connect localhost [value] | connect localhost [value] | connect to demo app and send return channel |
