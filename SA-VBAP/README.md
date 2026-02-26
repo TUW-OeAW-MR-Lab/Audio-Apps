@@ -18,7 +18,7 @@
 The app is listening to port 10003. The following commands can be used to communicate via OSC:
 | Send | Response | Description | Example |
 |-----|-----------|-----------|-----------|
-|     /Control/Response connect localhost _port_ | connect localhost _port_ | connect the OSC response channel with the master listening at _port_ | /Control/Response connect localhost 10005 |
+|     /Control/Response connect _ip_ _port_ | connect localhost _port_ | connect the OSC response channel with the master listening at _ip_ and _port_ | /Control/Response connect localhost 10005 |
 |     /Control/Version | /Control/Version _string_ | get version number | /Control/Version 1.2.0 |
 |     /Control/SampleRate | /Control/SampleRate _value_ | get sample rate (_value_ in Hz) | /Control/SampleRate 48000 |
 |     /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 5.73 |
