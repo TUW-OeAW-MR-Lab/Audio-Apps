@@ -6,7 +6,7 @@
 lib.name = externals.howto.vbap
 
 # input source file (class name == source file basename)
-class.sources = vbap.c define_loudspeakers.c vbapcart.c
+class.sources = vbap.c define_loudspeakers.c vbapcart.c define_loudspeakerscart.c
 
 # all extra files to be included in binary distribution of the library
 datafiles =
