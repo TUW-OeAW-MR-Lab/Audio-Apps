@@ -23,7 +23,7 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /Control/SampleRate | /Control/SampleRate _value_ | get sample rate (_value_ in Hz) | /Control/SampleRate 48000 |
 |     /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 5.73 |
 |     /Control/Door | /Control/Door _string_ | get current door configuration, with _string_ = { OO, OC, CO, CC} | /Control/Door OO |
-|     /Control/Door/Set _door_ | - | set current door configuration: _door_ = {OO, OC, CO, CC}; the first letter describes the state of the curved LED wall door, the second letter describest the state of the CAVE wall (C: closed, O: opened)  |  /Control/Door/Set CC |
+|     /Control/Door/Set _door_ | - | set current door configuration: _door_ = {OO, OC, CO, CC}; C: closed, O: open; First letter: CAVE LED door, second letter: Curved LED door  |  /Control/Door/Set CC |
 |     /VirtualSource/_index_/Position/Set _x y z_ | - | set the position of the virtual source #_index_ with _x, y, z_ in meter | /VirtualSource/0/Position/Set 5 2 1.5  |
 |     /VirtualSource/_index_/Volume/Set _volume_ | - | set the volume of the virtual source #_index_ with _volume_ in dB (0...100) | /VirtualSource/5/Volume/Set 70  |
 |     /VirtualSource/_index_/Volume | /VirtualSource/_index_/Volume _volume_ | get the volume of the virtual source #_index_ with _volume_ in dB (0...100) | /VirtualSource/12/Volume 45 |
