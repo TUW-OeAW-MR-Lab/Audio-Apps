@@ -12,7 +12,8 @@
 @set pd_CHANNELS=-channels 200
 
 @rem --- which device do you use?
-@set pd_DEF=-audioadddev "ASIO:ASIO MADIface USB" -noadc
+@rem @set pd_DEF=-audioadddev "ASIO:ASIO MADIface USB" -noadc
+@set pd_DEF=-audioadddev "ASIO:ASIO HDSPe FX"
 
 @set pd_PATH=-path %YAMI_DIR%\abs -path ..\extra\iemlib -path ..\extra\iemmatrix -path ..\extra\bsaylor
 
