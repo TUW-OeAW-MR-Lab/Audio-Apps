@@ -4,6 +4,7 @@
 #X obj 114 50 route \$2;
 #X obj 34 13 r~ \$1_play;
 #X obj 114 12 r \$1_gains;
+#X text 185 11 individual volume for triplets;
 #X connect 0 0 1 0;
 #X connect 2 0 0 1;
 #X connect 3 0 0 0;
