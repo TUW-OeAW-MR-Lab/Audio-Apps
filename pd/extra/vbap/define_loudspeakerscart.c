@@ -60,6 +60,7 @@ typedef struct /* This defines the object as an entity made up of other things
   void *x_outlet0;           /* outlet creation - inlets are automatic */
   long x_ls_amount;          /* number of loudspeakers */
   long x_dimension;          /* 2 (horizontal arrays) or 3 (3d setups) */
+  long x_verbose;            /* 1 for verbose output, 0 for quiet */
 } t_def_ls;
 
 static t_class *def_ls_class; /* so max can identify your object */
@@ -67,6 +68,7 @@ void def_ls_bang(t_def_ls *x);
 void def_ls_int(t_def_ls *x, t_float n);
 void def_ls_read_directions(t_def_ls *x, t_symbol *s, int ac, t_atom *av);
 void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av);
+void def_ls_verbose(t_def_ls *x, t_float n);
 static void *def_ls_new(t_symbol *s, int ac,
                         t_atom *av); /* using A_GIMME - typed message list */
 void def_ls(float g[3], long ls[3], t_def_ls *x);
@@ -103,6 +105,8 @@ void define_loudspeakerscart_setup(void) {
                   gensym("ls-directions"), A_GIMME, 0);
   class_addmethod(def_ls_class, (t_method)def_ls_read_triplets,
                   gensym("ls-triplets"), A_GIMME, 0);
+  class_addmethod(def_ls_class, (t_method)def_ls_verbose, gensym("verbose"),
+                  A_FLOAT, 0);
 }
 
 void def_ls_bang(t_def_ls *x) /* x = reference to this instance of the object */
@@ -120,9 +124,11 @@ void def_ls_bang(t_def_ls *x) /* x = reference to this instance of the object */
     } else if (x->x_dimension == 3) {
       if (x->x_triplets_specified == 0) {
         choose_ls_triplets(x);
-        post("define-loudspeakers: triplets calculated", 0);
+        if (x->x_verbose)
+          post("define-loudspeakers: triplets calculated", 0);
       } else {
-        post("define-loudspeakers: using defined triplets", 0);
+        if (x->x_verbose)
+          post("define-loudspeakers: using defined triplets", 0);
       }
       calculate_3x3_matrixes(x);
     } else if (x->x_dimension == 2) {
@@ -149,6 +155,8 @@ void def_ls_int(t_def_ls *x,
 {
   /* do something if an int comes in the left inlet???	 */
 }
+
+void def_ls_verbose(t_def_ls *x, t_float n) { x->x_verbose = (n != 0); }
 
 void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 /* when loudspeaker triplets come in a message (unchanged) */
@@ -185,7 +193,8 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
       l3 = (long)av[i + 2].a_w.w_float;
     add_ldsp_triplet(l1 - 1, l2 - 1, l3 - 1, x);
   }
-  post("define-loudspeakers: %d triplets saved", ac / 3);
+  if (x->x_verbose)
+    post("define-loudspeakers: %d triplets saved", ac / 3);
   x->x_triplets_specified = 1;
 }
 
@@ -266,8 +275,9 @@ void def_ls_read_directions(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
     x->x_ls_set = NULL;
   }
   x->x_triplets_specified = 0;
-  post("define-loudspeakers: Cartesian directions of %d loudspeakers saved",
-       x->x_ls_amount);
+  if (x->x_verbose)
+    post("define-loudspeakers: Cartesian directions of %d loudspeakers saved",
+         x->x_ls_amount);
 }
 
 /*--------------------------------------------------------------------------*/
@@ -312,6 +322,7 @@ static void *def_ls_new(t_symbol *s, int ac,
 
   x->x_ls_read = 0;
   x->x_dimension = 0;
+  x->x_verbose = 1;
 
   if (ac > 0 && av[0].a_type == A_FLOAT) {
     x->x_dimension = (int)av[0].a_w.w_float;
@@ -412,7 +423,8 @@ Auditory Displays -98.*/
   /* Warning this function is buggy!!!! For larger arrays, define triplets with
    * ls-triplets*/
 
-  post("Choose LS Tripples", 0);
+  if (x->x_verbose)
+    post("Choose LS Tripples", 0);
 
   for (i = 0; i < ls_amount; i++)
     for (j = i + 1; j < ls_amount; j++)
@@ -687,7 +699,8 @@ void calculate_3x3_matrixes(t_def_ls *x)
     post("define-loudspeakers: Not valid 3-D configuration\n", 1);
     return;
   }
-  post("define-loudspeakers: calculate 3-D matrices", 0);
+  if (x->x_verbose)
+    post("define-loudspeakers: calculate 3-D matrices", 0);
   /* counting triplet amount */
   while (tr_ptr != NULL) {
     triplet_amount++;

@@ -57,6 +57,7 @@ typedef struct vbapcart /* This defines the object as an entity made up of other
   long x_dimension;       /* 2 or 3 */
   t_float x_spread;       /* speading amount of virtual source (0-100) */
   float x_spread_base[3]; /* used to create uniform spreading */
+  long x_verbose;         /* 1 for verbose output, 0 for quiet */
 } t_vbapcart;
 
 /* Globals */
@@ -74,6 +75,7 @@ void vbapcart_in1(t_vbapcart *x, long n);
 void vbapcart_in2(t_vbapcart *x, long n);
 void vbapcart_in3(t_vbapcart *x, long n);
 void vbapcart_in4(t_vbapcart *x, long n);
+void vbapcart_verbose(t_vbapcart *x, t_float n);
 void spread_it(t_vbapcart *x, float *final_gs);
 static void *vbapcart_new(t_symbol *s, int ac,
                           t_atom *av); /* using A_GIMME - typed message list */
@@ -95,6 +97,8 @@ void vbapcart_setup(void) {
   class_addfloat(vbapcart_class, vbapcart_int);
   class_addmethod(vbapcart_class, (t_method)vbapcart_matrix,
                   gensym("loudspeaker-matrices"), A_GIMME, 0);
+  class_addmethod(vbapcart_class, (t_method)vbapcart_verbose, gensym("verbose"),
+                  A_FLOAT, 0);
 }
 
 void normalize_cart(float vec[3])
@@ -597,7 +601,8 @@ void vbapcart_matrix(t_vbapcart *x, t_symbol *s, int ac, t_atom *av)
     return;
   }
 
-  post("vbapcart: %d loudspeakers found", x->x_ls_amount);
+  if (x->x_verbose)
+    post("vbapcart: %d loudspeakers found", x->x_ls_amount);
   /*if (x->x_ls_amount > 55)
   {
           post("vbapcart: Too many!",0);
@@ -642,8 +647,11 @@ void vbapcart_matrix(t_vbapcart *x, t_symbol *s, int ac, t_atom *av)
 
     setpointer++;
   }
-  post("vbapcart: Loudspeaker setup configured!", 0);
+  if (x->x_verbose)
+    post("vbapcart: Loudspeaker setup configured!", 0);
 }
+
+void vbapcart_verbose(t_vbapcart *x, t_float n) { x->x_verbose = (n != 0); }
 
 void vbapcart_in1(t_vbapcart *x,
                   long n) /* x = the instance of the object, n = the int
@@ -690,6 +698,7 @@ static void *vbapcart_new(t_symbol *s, int ac, t_atom *av)
 {
   t_vbapcart *x;
   x = (t_vbapcart *)pd_new(vbapcart_class);
+  x->x_verbose = 1;
 
   /* pure data: */
 
