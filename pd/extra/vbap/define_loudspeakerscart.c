@@ -8,12 +8,13 @@ Modified by Michael Mihocic and Piotr Majdak
 - able to work with 96 channels (25.7.2019)
 - display more debug informations (25.7.2019)
 
-Modified: Cartesian coordinate input for loudspeaker positions.
-ls-directions format (3-D): "ls-directions 3 x1 y1 z1 x2 y2 z2 ..."
-ls-directions format (2-D): "ls-directions 2 x1 y1 x2 y2 ..."
-Example: "ls-directions 3 1 1 1 2 -3 0.5"
+Modified by Michael Mihocic:
+- Cartesian coordinate input for loudspeaker positions.
+  ls-directions format (3-D): "ls-directions 3 x1 y1 z1 x2 y2 z2 ..."
+  ls-directions format (2-D): "ls-directions 2 x1 y1 x2 y2 ..."
+  Example: "ls-directions 3 1 1 1 2 -3 0.5"
   -> 2 loudspeakers at cartesian positions (1/1/1) and (2/-3/0.5)
-ls-triplets: unchanged (specify which 3 speakers form a triplet)
+  ls-triplets: unchanged (specify which 3 speakers form a triplet)
 
 */
 

@@ -7,6 +7,8 @@ Unversity of California at Berkeley
 
 See copyright in file with name COPYRIGHT
 
+Updates Michael Mihocic, Acoustics Research Institute, Austrian Academy of
+Sciences:
 Modified: Cartesian coordinate input/output (x, y, z) instead of
 azimuth/elevation angles. Inputs:  1) loudspeaker-matrices (from
 define_loudspeakerscart) 2) X position (cartesian) 3) Y position (cartesian) 4)
@@ -27,8 +29,9 @@ Z position (cartesian) 5) spread (0-100) Outputs: 1) DAC levels of loudspeakers
 #define RES_ID 9171 /* resource ID for assistance (we'll add that later) */
 #define MAX_LS_SETS                                                            \
   385 /* maximum number of loudspeaker sets (triplets or pairs) allowed */
-#define MAX_LS_AMOUNT 200 /* maximum amount of loudspeakers, can be increased  \
-                           */
+#define MAX_LS_AMOUNT                                                          \
+  200 /* maximum amount of loudspeakers, can be increased                      \
+       */
 
 typedef struct vbapcart /* This defines the object as an entity made up of other
                            things */
