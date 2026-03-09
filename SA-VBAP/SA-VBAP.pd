@@ -780,12 +780,12 @@
 -232576 -66577 0;
 #X msg 108 180 /VirtualSource/0/Switch 1;
 #X obj 118 484 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 2447 1;
 #X msg 100 551 /VirtualSource/0/Position \$1 \$2 \$3;
 #X obj 171 484 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 3003 1;
 #X obj 223 483 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 0 1;
+-1 312 1;
 #X obj 19 550 pack 0 0 0;
 #X floatatom 115 500 5 0 0 0 - - -;
 #X floatatom 168 500 5 0 0 0 - - -;
@@ -794,7 +794,7 @@
 #X obj 221 517 t b f;
 #X msg 126 253 /VirtualSource/0/Volume/Set \$1;
 #X obj 140 237 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12000 1;
 #X text 292 179 switch VBAP on;
 #X obj 18 119 s DebugControl1;
 #X obj 439 6 cnv 15 400 600 empty empty Debug_OSC_Channel_2 20 12 0
@@ -817,12 +817,12 @@
 #X text 292 201 switch VBAP off;
 #X msg 610 316 /Total/Volume;
 #X obj 620 271 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12300 1;
 #X msg 610 289 /Total/Volume/Set \$1;
 #X text 617 252 total volume;
 #X obj 102 578 tgl 15 0 print_gains empty print_triplet_gains 17 7
-0 10 -262144 -1 -1 0 1;
-#X obj 300 462 unpack f f f;
+0 10 -262144 -1 -1 1 1;
+#X obj 300 464 unpack f f f;
 #X msg 300 341 -2.55 -5.4 2.7;
 #X msg 305 368 2.55 5.4 0.4;
 #X text 122 340 corner glassdoor/LED/top;
@@ -836,6 +836,7 @@
 #X text 210 7 10013;
 #X msg 540 37 /Control/Response connect localhost 10005;
 #X msg 110 36 /Control/Response connect localhost 10015;
+#X msg 310 441 2.55 5.4 1.4;
 #X connect 1 0 15 0;
 #X connect 2 0 7 0;
 #X connect 3 0 15 0;
@@ -873,6 +874,7 @@
 #X connect 47 0 38 0;
 #X connect 50 0 17 0;
 #X connect 51 0 15 0;
+#X connect 52 0 38 0;
 #X restore 241 184 pd DEBUG;
 #X obj 261 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
