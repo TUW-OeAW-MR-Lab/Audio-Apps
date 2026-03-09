@@ -1,8 +1,8 @@
-#N canvas 536 128 489 281 12;
+#N canvas 500 144 489 281 12;
 #X floatatom 120 56 5 0 0 0 - CPULoad -;
 #X obj 221 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
 -262144 -258699 -1 0 1;
-#N canvas 845 378 1079 639 root 1;
+#N canvas 845 378 1079 639 root 0;
 #X obj 23 14 dumpOSC 10003;
 #N canvas 1091 319 1134 627 ADC 0;
 #X text 25 178 ADC engines;
@@ -332,7 +332,7 @@
 -1 -1 0 1;
 #X obj 373 87 symbol;
 #X msg 370 118 send /Echo \$1;
-#N canvas 140 204 2085 396 VBAP200 1;
+#N canvas 140 204 2085 396 VBAP200 0;
 #X obj 30 20 inlet;
 #X obj 30 47 OSCroute /0 /1 /2 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12 /13
 /14 /15 /16 /17 /18 /19 /20 /21 /22 /23 /24 /25 /26 /27 /28 /29 /30
@@ -567,7 +567,7 @@
 #X obj 611 527 print - -> OSC-Send2;
 #X obj 257 179 print <- - OSC-Receive1;
 #X obj 707 179 print <- - OSC-Receive2;
-#N canvas 25 60 746 598 control1 0;
+#N canvas 438 50 746 598 control1 0;
 #X obj 15 26 inlet;
 #X obj 141 260 samplerate~;
 #X obj 239 162 dsp~;
@@ -775,18 +775,18 @@
 ;
 #X obj 231 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 710 246 900 679 DEBUG 1;
+#N canvas 994 90 900 679 DEBUG 1;
 #X obj 9 6 cnv 15 400 600 empty empty Debug_OSC_Channel_1 20 12 0 14
 -232576 -66577 0;
 #X msg 110 36 /Control/Response connect localhost 10005;
 #X msg 108 180 /VirtualSource/0/Switch 1;
 #X obj 118 484 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 1453 1;
+-1 -1 0 1;
 #X msg 100 551 /VirtualSource/0/Position \$1 \$2 \$3;
 #X obj 171 484 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 3003 1;
+-1 -1 0 1;
 #X obj 223 483 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 1287 1;
+-1 0 1;
 #X obj 19 550 pack 0 0 0;
 #X floatatom 115 500 5 0 0 0 - - -;
 #X floatatom 168 500 5 0 0 0 - - -;
@@ -795,7 +795,7 @@
 #X obj 221 517 t b f;
 #X msg 126 253 /VirtualSource/0/Volume/Set \$1;
 #X obj 140 237 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2500 1;
+-1 -1 0 1;
 #X text 292 179 switch VBAP on;
 #X obj 18 119 s DebugControl1;
 #X obj 439 6 cnv 15 400 600 empty empty Debug_OSC_Channel_2 20 12 0
@@ -823,7 +823,7 @@
 #X msg 610 289 /Total/Volume/Set \$1;
 #X text 617 252 total volume;
 #X obj 102 578 tgl 15 0 print_gains empty print_triplet_gains 17 7
-0 10 -262144 -1 -1 1 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 300 462 unpack f f f;
 #X msg 300 341 -2.55 -5.4 2.7;
 #X msg 305 368 2.55 5.4 0.4;
