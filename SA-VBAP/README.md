@@ -1,7 +1,5 @@
 # Spatial Audio: VBAP
 
-**!!! STILL UNDER DEVELOPMENT !!!**
-
 ## Description
 - Spatialization of virtual sources by means of the vector-based amplitude panning.
 - The state of the doors can be defined on-the-fly: open (O) or closed (C). Allowed states: CC, CO, OC, OO.
@@ -15,7 +13,7 @@
 - The spatialized signals are also summed up, low-pass filtered at 120 Hz, and output to the 16 subwoofers;
 
 ## OSC Commands
-The app is listening to port 10003 (OSC channel 1) and 10013 (OSC channel 1). The following commands can be used to communicate via OSC:
+The app is listening to port 10013 (OSC channel 1; source control) and 10003 (OSC channel 2; system control). The following commands can be used to communicate via OSC:
 |OSC Channels| Send | Response | Description | Example |
 |-----|-----|-----------|-----------|-----------|
 |1, 2|     /Control/Response connect _ip_ _port_ | connect localhost _port_ | connect the OSC response channel with the master listening at _ip_ and _port_ | /Control/Response connect localhost 10005 |
