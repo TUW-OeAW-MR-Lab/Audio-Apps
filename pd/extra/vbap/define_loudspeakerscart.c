@@ -322,7 +322,7 @@ static void *def_ls_new(t_symbol *s, int ac,
 
   x->x_ls_read = 0;
   x->x_dimension = 0;
-  x->x_verbose = 1;
+  x->x_verbose = 0;
 
   if (ac > 0 && av[0].a_type == A_FLOAT) {
     x->x_dimension = (int)av[0].a_w.w_float;
