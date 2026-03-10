@@ -79,7 +79,7 @@ void vbapcart_verbose(t_vbapcart *x, t_float n);
 void spread_it(t_vbapcart *x, float *final_gs);
 static void *vbapcart_new(t_symbol *s, int ac,
                           t_atom *av); /* using A_GIMME - typed message list */
-void vbapcart(float g[3], long ls[3], t_vbapcart *x);
+void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3]);
 void cart_to_angle(float cvec[3], float avec[3]);
 void normalize_cart(float vec[3]);
 
@@ -147,7 +147,7 @@ void cart_to_angle(float cvec[3], float avec[3])
   avec[2] = dist;
 }
 
-void vbapcart(float g[3], long ls[3], t_vbapcart *x) {
+void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3]) {
   /* calculates gain factors using loudspeaker setup and given cartesian
    * direction */
   float power;
@@ -170,6 +170,11 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x) {
   cartdir[2] = (dim == 3) ? x->x_z : 0.0f;
   normalize_cart(cartdir);
 
+  /* actual_dir starts as the (normalised) intended direction */
+  actual_dir[0] = cartdir[0];
+  actual_dir[1] = cartdir[1];
+  actual_dir[2] = cartdir[2];
+
   /* go through all defined loudspeaker sets and find the set which
   // has all positive values. If such is not found, set with largest
   // minimum value is chosen. If at least one of gain factors of one LS set is
@@ -178,6 +183,13 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x) {
 
   big_sm_g = -100000.0; /* initial value for largest minimum gain value */
   best_neg_g_am = 3;    /* how many negative values in this set */
+
+  g[0] = 0.0f;
+  g[1] = 0.0f;
+  g[2] = 0.0f;
+  ls[0] = 1;
+  ls[1] = 1;
+  ls[2] = 1;
 
   for (i = 0; i < x->x_lsset_amount; i++) {
     small_g = 10000000.0;
@@ -190,8 +202,11 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x) {
         small_g = gtmp[j];
       if (gtmp[j] >= -0.01)
         neg_g_am--;
+      if (gtmp[j] != gtmp[j] || gtmp[j] > 1e6f || gtmp[j] < -1e6f)
+        neg_g_am += 10;
     }
-    if (small_g > big_sm_g && neg_g_am <= best_neg_g_am) {
+    if (neg_g_am < best_neg_g_am ||
+        (neg_g_am == best_neg_g_am && small_g > big_sm_g)) {
       big_sm_g = small_g;
       best_neg_g_am = neg_g_am;
       winner_set = i;
@@ -230,10 +245,12 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x) {
       new_cartdir[2] = x->x_set_matx[winner_set][6] * g[0] +
                        x->x_set_matx[winner_set][7] * g[1] +
                        x->x_set_matx[winner_set][8] * g[2];
-      /* store back actual clamped direction as cartesian */
-      x->x_x = new_cartdir[0];
-      x->x_y = new_cartdir[1];
-      x->x_z = new_cartdir[2];
+      /* report the actual (clamped) direction via actual_dir without
+         modifying the user's stored position (x_x/y/z) - this prevents
+         state corruption across consecutive bangs */
+      actual_dir[0] = new_cartdir[0];
+      actual_dir[1] = new_cartdir[1];
+      actual_dir[2] = new_cartdir[2];
     }
   }
 
@@ -283,6 +300,13 @@ void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
   big_sm_g = -100000.0;
   best_neg_g_am = 3;
 
+  g[0] = 0.0f;
+  g[1] = 0.0f;
+  g[2] = 0.0f;
+  ls[0] = 1;
+  ls[1] = 1;
+  ls[2] = 1;
+
   for (i = 0; i < x->x_lsset_amount; i++) {
     small_g = 10000000.0;
     neg_g_am = 3;
@@ -294,8 +318,11 @@ void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
         small_g = gtmp[j];
       if (gtmp[j] >= -0.01)
         neg_g_am--;
+      if (gtmp[j] != gtmp[j] || gtmp[j] > 1e6f || gtmp[j] < -1e6f)
+        neg_g_am += 10;
     }
-    if (small_g > big_sm_g && neg_g_am <= best_neg_g_am) {
+    if (neg_g_am < best_neg_g_am ||
+        (neg_g_am == best_neg_g_am && small_g > big_sm_g)) {
       big_sm_g = small_g;
       best_neg_g_am = neg_g_am;
       winner_set = i;
@@ -342,10 +369,16 @@ void new_spread_dir(t_vbapcart *x, float spreaddir[3], float vscartdir[3],
   float pi = 3.1415927;
   float power;
   float tmp_base[3];
+  float inner_prod;
 
-  gamma = acos(vscartdir[0] * spread_base[0] + vscartdir[1] * spread_base[1] +
-               vscartdir[2] * spread_base[2]) /
-          pi * 180;
+  inner_prod = vscartdir[0] * spread_base[0] + vscartdir[1] * spread_base[1] +
+               vscartdir[2] * spread_base[2];
+  if (inner_prod > 1.0f)
+    inner_prod = 1.0f;
+  if (inner_prod < -1.0f)
+    inner_prod = -1.0f;
+
+  gamma = acos(inner_prod) / pi * 180;
   if (fabs(gamma) < 1) {
     /* generate a perpendicular base vector by using cross product */
     float perp[3];
@@ -506,8 +539,14 @@ void spread_it(t_vbapcart *x, float *final_gs)
   }
 
   power = sqrt(power);
-  for (i = 0; i < x->x_ls_amount; i++) {
-    final_gs[i] /= power;
+  if (power > 0.00001f) {
+    for (i = 0; i < x->x_ls_amount; i++) {
+      final_gs[i] /= power;
+    }
+  } else {
+    for (i = 0; i < x->x_ls_amount; i++) {
+      final_gs[i] = 0.0f;
+    }
   }
 }
 
@@ -519,10 +558,12 @@ void vbapcart_bang(t_vbapcart *x)
   long ls[3];
   long i;
   float *final_gs;
+  float actual_dir[3]; /* actual (possibly clamped) direction, separate from
+                          stored x_x/y/z so user position is not corrupted */
 
   final_gs = (float *)getbytes(x->x_ls_amount * sizeof(float));
   if (x->x_lsset_available == 1) {
-    vbapcart(g, ls, x);
+    vbapcart(g, ls, x, actual_dir);
     for (i = 0; i < x->x_ls_amount; i++)
       final_gs[i] = 0.0;
     for (i = 0; i < x->x_dimension; i++) {
@@ -536,9 +577,10 @@ void vbapcart_bang(t_vbapcart *x)
       SETFLOAT(&at[1], (t_float)final_gs[i]);
       outlet_list(x->x_outlet0, gensym("list") /* was: 0L */, 2, at);
     }
-    outlet_float(x->x_outlet1, x->x_x);
-    outlet_float(x->x_outlet2, x->x_y);
-    outlet_float(x->x_outlet3, x->x_z);
+    /* output actual (possibly clamped) direction, not the stored input */
+    outlet_float(x->x_outlet1, actual_dir[0]);
+    outlet_float(x->x_outlet2, actual_dir[1]);
+    outlet_float(x->x_outlet3, actual_dir[2]);
     outlet_float(x->x_outlet4, x->x_spread);
   } else
     post("vbapcart: Configure loudspeakers first!", 0);
