@@ -238,9 +238,11 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x) {
   }
 
   power = sqrt(g[0] * g[0] + g[1] * g[1] + g[2] * g[2]);
-  g[0] /= power;
-  g[1] /= power;
-  g[2] /= power;
+  if (power > 0.00001f) {
+    g[0] /= power;
+    g[1] /= power;
+    g[2] /= power;
+  }
 }
 
 void cross_prod(float v1[3], float v2[3], float v3[3])
@@ -252,9 +254,11 @@ void cross_prod(float v1[3], float v2[3], float v3[3])
   v3[2] = (v1[0] * v2[1]) - (v1[1] * v2[0]);
 
   length = sqrt(v3[0] * v3[0] + v3[1] * v3[1] + v3[2] * v3[2]);
-  v3[0] /= length;
-  v3[1] /= length;
-  v3[2] /= length;
+  if (length > 0.00001f) {
+    v3[0] /= length;
+    v3[1] /= length;
+    v3[2] /= length;
+  }
 }
 
 void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
@@ -265,7 +269,7 @@ void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
   int i, j, k, gains_modified;
   float small_g;
   float big_sm_g, gtmp[3];
-  long winner_set;
+  long winner_set = 0;
   float new_cartdir[3];
   long dim = x->x_dimension;
   long neg_g_am, best_neg_g_am;
@@ -317,13 +321,15 @@ void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
 
   if (gains_modified != 1) {
     power = sqrt(g[0] * g[0] + g[1] * g[1] + g[2] * g[2]);
-    g[0] /= power;
-    g[1] /= power;
-    g[2] /= power;
+    if (power > 0.00001f) {
+      g[0] /= power;
+      g[1] /= power;
+      g[2] /= power;
 
-    final_gs[ls[0] - 1] += g[0];
-    final_gs[ls[1] - 1] += g[1];
-    final_gs[ls[2] - 1] += g[2];
+      final_gs[ls[0] - 1] += g[0];
+      final_gs[ls[1] - 1] += g[1];
+      final_gs[ls[2] - 1] += g[2];
+    }
   }
 }
 
