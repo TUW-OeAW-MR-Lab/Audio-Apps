@@ -1,8 +1,8 @@
-#N canvas 500 144 489 281 12;
-#X floatatom 120 56 5 0 0 0 - CPULoad -;
-#X obj 221 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
+#N canvas 517 142 421 281 12;
+#X floatatom 119 56 5 0 0 0 - CPULoad -;
+#X obj 220 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
 -262144 -258699 -1 1 1;
-#N canvas 227 349 1079 639 root 1;
+#N canvas 227 349 1079 639 root 0;
 #N canvas 1091 319 1134 627 ADC 0;
 #X text 25 178 ADC engines;
 #X obj 18 228 adc adc0;
@@ -466,7 +466,7 @@
 #X connect 1 61 62 0;
 #X connect 1 62 63 0;
 #X connect 1 63 64 0;
-#X restore 203 255 pd VBAP200;
+#X restore 204 255 pd VBAP200;
 #X obj 351 508 spigot;
 #X obj 386 494 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
 -1 -1 1 1;
@@ -546,7 +546,7 @@
 #X connect 12 0 13 0;
 #X connect 13 0 11 0;
 #X connect 14 0 6 0;
-#X restore 563 255 pd Total;
+#X restore 564 255 pd Total;
 #X obj 474 218 OSCroute /Control /Total /VirtualSource;
 #X obj 124 14 r DebugControl1;
 #X obj 574 14 r DebugControl2;
@@ -766,24 +766,24 @@
 #X connect 55 0 12 0;
 #X connect 55 0 8 0;
 #X connect 55 0 20 0;
-#X restore 37 127 pd root;
-#X text 42 57 CPU load;
-#X obj 300 56 tgl 25 0 echomode empty Echo_Mode -20 -10 0 10 -262144
+#X restore 36 127 pd root;
+#X text 41 57 CPU load;
+#X obj 299 56 tgl 25 0 echomode empty Echo_Mode -20 -10 0 10 -262144
 -258699 -1 0 1;
-#X text 17 11 SA-VBAP \, based on YAMI200, f 64;
-#X text 25 170 michael.mihocic@oeaw.ac.at \; piotr.majdak@oeaw.ac.at
+#X text 16 11 SA-VBAP \, based on YAMI200, f 64;
+#X text 24 170 michael.mihocic@oeaw.ac.at \; piotr.majdak@oeaw.ac.at
 ;
-#X obj 231 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
+#X obj 230 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 2272 100 939 660 DEBUG 1;
+#N canvas 958 76 939 660 DEBUG 1;
 #X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_1 20 12 0 14
 -232576 -66577 0;
 #X obj 118 484 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 2447 1;
+-1 -1 2347 1;
 #X obj 171 484 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 1503 1;
+-1 -1 3003 1;
 #X obj 223 483 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 0 1;
+-1 312 1;
 #X obj 19 550 pack 0 0 0;
 #X floatatom 115 500 5 0 0 0 - - -;
 #X floatatom 168 500 5 0 0 0 - - -;
@@ -791,7 +791,7 @@
 #X obj 168 518 t b f;
 #X obj 221 517 t b f;
 #X obj 140 237 hsl 128 15 0 100 0 0 empty empty Volume -2 -8 0 10 -262144
--1 -1 2600 1;
+-1 -1 0 1;
 #X text 292 179 switch VBAP on;
 #X obj 18 119 s DebugControl1;
 #X obj 518 6 cnv 15 400 600 empty empty Debug_OSC_Channel_2 20 12 0
@@ -814,7 +814,7 @@
 0 10 -262144 -1 -1 0 1;
 #X msg 685 289 /Total/Volume/Set \$1;
 #X obj 102 578 tgl 15 0 print_gains empty print_triplet_gains 17 7
-0 10 -262144 -1 -1 1 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 270 464 unpack f f f;
 #X msg 270 341 -2.55 -5.4 2.7;
 #X msg 273 368 2.55 5.4 0.4;
@@ -840,6 +840,7 @@
 #X msg 395 349 2.55 -5.4 2.7;
 #X msg 395 374 2.55 5.4 2.7;
 #X msg 395 399 -2.55 -5.4 0.4;
+#X text 396 327 test positions;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
@@ -881,8 +882,8 @@
 #X connect 52 0 31 0;
 #X connect 53 0 31 0;
 #X connect 54 0 31 0;
-#X restore 241 184 pd DEBUG;
-#X obj 261 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
+#X restore 240 184 pd DEBUG;
+#X obj 260 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
-#X obj 318 129 loadbang;
+#X obj 317 129 loadbang;
 #X connect 10 0 9 0;
