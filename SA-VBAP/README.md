@@ -10,7 +10,7 @@
 - Use OSC commands to control the parameters;
 - Each virtual source with the index _index_ is linked to an incoming audio channel of MADI 1 (_index_ = [0..31]) and MADI 2 (_index_ = [31..63]).
 - The spatialized signals are output to the 184 broadband loudspeakers;
-- The spatialized signals are also summed up, low-pass filtered at 120 Hz, and output to the 16 subwoofers;
+- The spatialized signals are also summed up, low-pass filtered at 120 Hz, and output to the 8 subwoofers;
 
 ## OSC Commands
 The app is listening to port 10013 (OSC channel 1; source control) and 10003 (OSC channel 2; system control). The following commands can be used to communicate via OSC:
