@@ -1,7 +1,7 @@
 #N canvas 517 142 421 281 12;
 #X floatatom 119 56 5 0 0 0 - CPULoad -;
 #X obj 220 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
--262144 -258699 -1 1 1;
+-262144 -258699 -1 0 1;
 #N canvas 227 349 1079 639 root 0;
 #N canvas 1091 319 1134 627 ADC 0;
 #X text 25 178 ADC engines;
@@ -779,11 +779,11 @@
 #X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_1 20 12 0 14
 -232576 -66577 0;
 #X obj 118 484 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 2347 1;
+-1 -1 1453 1;
 #X obj 171 484 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 3003 1;
+-1 -1 897 1;
 #X obj 223 483 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 312 1;
+-1 2106 1;
 #X obj 19 550 pack 0 0 0;
 #X floatatom 115 500 5 0 0 0 - - -;
 #X floatatom 168 500 5 0 0 0 - - -;
@@ -832,7 +832,6 @@
 #X msg 280 441 2.55 5.4 1.4;
 #X obj 700 569 hsl 128 15 0 100 0 0 empty GlobalMax Total_VU -2 -8
 0 10 -228856 -1 -1 0 1;
-#X msg 100 551 /VirtualSource/2/Position \$1 \$2 \$3;
 #X msg 108 179 /VirtualSource/2/Switch 1;
 #X msg 108 202 /VirtualSource/2/Switch 0;
 #X msg 126 253 /VirtualSource/2/Volume/Set \$1;
@@ -841,10 +840,11 @@
 #X msg 395 374 2.55 5.4 2.7;
 #X msg 395 399 -2.55 -5.4 0.4;
 #X text 396 327 test positions;
+#X msg 100 551 /VirtualSource/2/Position/Set \$1 \$2 \$3;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
-#X connect 4 0 47 0;
+#X connect 4 0 55 0;
 #X connect 5 0 4 0;
 #X connect 6 0 8 0;
 #X connect 7 0 9 0;
@@ -852,7 +852,7 @@
 #X connect 8 1 4 1;
 #X connect 9 0 4 0;
 #X connect 9 1 4 2;
-#X connect 10 0 50 0;
+#X connect 10 0 49 0;
 #X connect 15 0 14 0;
 #X connect 16 0 12 0;
 #X connect 17 0 14 0;
@@ -878,10 +878,10 @@
 #X connect 48 0 12 0;
 #X connect 49 0 12 0;
 #X connect 50 0 12 0;
-#X connect 51 0 12 0;
+#X connect 51 0 31 0;
 #X connect 52 0 31 0;
 #X connect 53 0 31 0;
-#X connect 54 0 31 0;
+#X connect 55 0 12 0;
 #X restore 240 184 pd DEBUG;
 #X obj 260 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
