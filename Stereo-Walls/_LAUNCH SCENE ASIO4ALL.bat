@@ -20,7 +20,7 @@
 @set pd_OPEN=-open StereoWalls.pd
 @set pd_ASIO=-asio
 @set pd_SRATE=-r 48000
-@set pd_AUDIO=-blocksize 64 -audiobuf 42
+@set pd_AUDIO=-blocksize 512 -audiobuf 100
 
 
 %pd_BINDIR%\pd %pd_SRATE% %pd_ASIO% %pd_CHANNELS% %pd_DEF% %pd_OPEN% %pd_AUDIO% %pd_PATH% %pd_LIB% -path %YAMI_DIR%

@@ -1,7 +1,5 @@
 # Stereo Walls
 
-**!!! STILL UNDER DEVELOPMENT !!!**
-
 ## Description
 - Plays a stereo signal over various sections of loudspeakers along the walls.
 - The left channel is routed to the loudspeakers along the north wall
@@ -28,7 +26,7 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 5.73 |
 |     /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ = [0..100] in dB | /Total/Volume/Set 65 | 
 |     /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ = [0..100] in dB | /Total/Volume 50 | 
-|     No command required, it will be sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ = [0..100] in dB *2) | /Total/VU 25.12345 |
+|     No command required, it will be sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ = [0..100] in dB | /Total/VU 25.12345 |
 |     /CurvedLED/Volume/Set _volume_ | - | set the volume of the Curved-LED section with _volume_ in dB (0...100) *1) | /CurvedLED/Volume/Set 70  |
 |     /CurvedLED/Volume | /CurvedLED/Volume _volume_ | get the volume of the Curved-LED section  with _volume_ in dB (0...100) *1) | /CurvedLED/Volume 45 |
 |     /CurvedLED/Switch _value_ | - | switch the Curved-LED section off and on with _value_ = { 0, 1}, respectively *1) | /CurvedDoor/Switch 1 |
@@ -44,7 +42,4 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /CAVE/Volume/Set _volume_ | - | set the volume of the CAVE section with _volume_ in dB (0...100) *1) | /CAVE/Volume/Set 70  |
 |     /CAVE/Volume | /CAVE/Volume _volume_ | get the volume of the CAVE section  with _volume_ in dB (0...100) *1) | /CAVE/Volume 45 |
 |     /CAVE/Switch _value_ | - | switch the CAVE section off and on with _value_ = { 0, 1}, respectively *1) | /CAVECAVEDoor/Switch 1 |
-
-*1) not implemented in pd patch, will not be implemented here either
-*2) not working yet (will be implemented)
 
