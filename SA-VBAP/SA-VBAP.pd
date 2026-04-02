@@ -704,14 +704,14 @@
 #X connect 13 0 16 0;
 #X connect 14 0 15 0;
 #X restore 473 256 pd control2;
-#X msg 89 432 \; pd dsp 1 \; version v1.1 \;;
 #X obj 370 151 s OSCresponse1;
 #X obj 820 151 s OSCresponse2;
 #X obj 473 14 dumpOSC 10003;
 #X obj 23 14 dumpOSC 10013;
+#X msg 89 432 \; pd dsp 1 \; version v1.2 \;;
 #X connect 1 0 10 1;
 #X connect 1 0 11 0;
-#X connect 3 0 51 0;
+#X connect 3 0 55 0;
 #X connect 4 0 8 0;
 #X connect 4 0 20 0;
 #X connect 8 0 47 0;
@@ -722,7 +722,7 @@
 #X connect 13 0 12 1;
 #X connect 14 0 15 0;
 #X connect 15 0 8 0;
-#X connect 15 0 52 0;
+#X connect 15 0 51 0;
 #X connect 17 0 45 0;
 #X connect 18 0 17 1;
 #X connect 20 0 49 0;
@@ -735,7 +735,7 @@
 #X connect 28 0 27 1;
 #X connect 29 0 30 0;
 #X connect 30 0 25 0;
-#X connect 30 0 53 0;
+#X connect 30 0 52 0;
 #X connect 32 0 50 0;
 #X connect 32 1 31 0;
 #X connect 33 0 8 0;
@@ -758,14 +758,14 @@
 #X connect 43 0 39 0;
 #X connect 44 0 37 0;
 #X connect 44 0 41 0;
-#X connect 54 0 22 0;
-#X connect 54 0 27 0;
-#X connect 54 0 25 0;
-#X connect 54 0 32 0;
-#X connect 55 0 5 0;
-#X connect 55 0 12 0;
-#X connect 55 0 8 0;
-#X connect 55 0 20 0;
+#X connect 53 0 22 0;
+#X connect 53 0 27 0;
+#X connect 53 0 25 0;
+#X connect 53 0 32 0;
+#X connect 54 0 5 0;
+#X connect 54 0 12 0;
+#X connect 54 0 8 0;
+#X connect 54 0 20 0;
 #X restore 56 127 pd root;
 #X text 61 57 CPU load;
 #X obj 319 56 tgl 25 0 echomode empty Echo_Mode -20 -10 0 10 -262144
@@ -779,11 +779,11 @@
 #X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_10013 20 12
 0 14 -232576 -66577 0;
 #X obj 118 484 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 1453 1;
+-1 -1 0 1;
 #X obj 171 484 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 897 1;
+-1 -1 0 1;
 #X obj 223 483 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 2106 1;
+-1 0 1;
 #X obj 19 550 pack 0 0 0;
 #X floatatom 115 500 5 0 0 0 - - -;
 #X floatatom 168 500 5 0 0 0 - - -;
@@ -791,7 +791,7 @@
 #X obj 168 518 t b f;
 #X obj 221 517 t b f;
 #X obj 140 237 hsl 128 15 0 100 0 0 empty empty Volume -2 -8 0 10 -262144
--1 -1 3800 1;
+-1 -1 0 1;
 #X text 292 179 switch VBAP on;
 #X obj 18 119 s DebugControl1;
 #X obj 518 6 cnv 15 400 600 empty empty Debug_OSC_Channel_10003 20
@@ -811,7 +811,7 @@
 #X text 292 201 switch VBAP off;
 #X msg 685 316 /Total/Volume;
 #X obj 695 271 hsl 128 15 0 100 0 0 empty empty Total_Volume -2 -8
-0 10 -262144 -1 -1 5100 1;
+0 10 -262144 -1 -1 0 1;
 #X msg 685 289 /Total/Volume/Set \$1;
 #X obj 102 578 tgl 15 0 print_gains empty print_triplet_gains 17 7
 0 10 -262144 -1 -1 0 1;
@@ -884,4 +884,3 @@
 #X obj 280 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
 #X obj 337 129 loadbang;
-#X connect 10 0 9 0;
