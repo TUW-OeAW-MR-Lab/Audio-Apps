@@ -12,6 +12,14 @@
 - The spatialized signals are output to the 184 broadband loudspeakers;
 - The spatialized signals are also summed up, low-pass filtered at 120 Hz, and output to the 8 subwoofers;
 
+## How to test
+- On the tablet, "Control" scene, switch on the PDU and unmute the amps. Check if the amp status is "green" (i.e., unmuted).
+- On the tablet, "Spatial Audio: VBAP" scene, launch the app; set the doors to their actual position, in the Inputs section, click on "Curved LED PC Stereo"; In the Total section set volume to 70 dB.
+- On the Curved LED PC, start audio playback via an app, e.g., youtube in a browser window, and set the volume to a moderate volume. 
+- On the Curved LED PC, go to "Open Volume Mixer" (right click on the loudspeaker icon in the right part of the taskbar), in the System section, select the Output device "DVS Transmit 3-4 (Dante Virtual Sound Card" and set the Volume slider to 100. In the apps section, expand additional controls, select the Output device to the same as in the System section and set the Volume slider to 100.
+- On the Audio PC, in the taskbar, click on the "pd" icon with the title "DEBUG". This will open a window with a purple background. Click on the box with "/VirtualSource/3/Switch 1", then on the box with "/VirtualSource/3/Volume/Set 120", then click on the box right to the label "ceiling center". 
+- You should hear the audio coming from the center-top of the Spatial-Audio Area. Increase the volume slowly in your app on the Curved LED PC.
+
 ## OSC Commands
 The app is listening to port 10013 (OSC channel 1; source control) and 10003 (OSC channel 2; system control). The following commands can be used to communicate via OSC:
 |OSC Channels| Send | Response | Description | Example |
@@ -27,6 +35,9 @@ The app is listening to port 10013 (OSC channel 1; source control) and 10003 (OS
 |1|     /VirtualSource/_index_/Volume | /VirtualSource/_index_/Volume _volume_ | get the volume of the virtual source #_index_ with _volume_ in dB (0...100) | /VirtualSource/12/Volume 45 |
 |1|     /VirtualSource/_index_/Switch _value_ | - | switch the virtual source #_index_ off and on with _value_ = { 0, 1}, respectively | /VirtualSource/15/Switch 1 |
 |2|     /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ = [0..100] in dB | /Total/Volume/Set 65 | 
-|2|     /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ = [0..100] in dB | /Total/Volume 50 | 
-|2|     No command required, it will be sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ = [0..100] in dB | /Total/VU 25.12345 |
+|2|     /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ = [0..100] in dB | /Total/Volume | 
+|1|     /Subwoofer/Switch _value_ | - | switch the subwoofers off and on with _value_ = { 0, 1}, respectively | /Subwoofer/Switch 1 |
+|2|     /Subwoofer/Volume/Set _volume_ | - | set the volume of the subwoofers with _volume_ = [-80..+20] in dB re output audio | /Subwoofer/Volume/Set 10 | 
+|2|     /Subwoofer/Volume | /Subwoofer/Volume _volume_ | get the total volume of the subwoofers with _volume_ = [-80..+20] in dB re output audio | /Subwoofer/Volume | 
+|2|     Sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ = [0..100] in dB | /Total/VU 25.12345 |
 
