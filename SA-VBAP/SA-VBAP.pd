@@ -1,7 +1,7 @@
 #N canvas 517 142 445 288 12;
 #X floatatom 139 56 5 0 0 0 - CPULoad -;
 #X obj 240 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
--262144 -258699 -1 1 1;
+-262144 -258699 -1 0 1;
 #N canvas 227 349 1079 639 root 1;
 #N canvas 1091 319 1134 627 ADC 0;
 #X text 25 178 ADC engines;
@@ -323,7 +323,7 @@
 #X text 123 78 receive from aux patches;
 #X obj 257 160 spigot;
 #X obj 292 146 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 250 446 spigot;
 #X obj 250 528 s Response;
 #X obj 376 56 spigot;
@@ -331,7 +331,7 @@
 -1 -1 0 1;
 #X obj 373 87 symbol;
 #X msg 370 118 send /Echo \$1;
-#N canvas 66 228 1578 356 VBAP200 1;
+#N canvas 31 619 1578 356 VBAP200 1;
 #X obj 30 20 inlet;
 #X obj 119 150 VBAP200 2;
 #X obj 210 150 VBAP200 3;
@@ -469,7 +469,7 @@
 #X restore 204 255 pd VBAP200;
 #X obj 351 508 spigot;
 #X obj 386 494 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 800 410 print TEMP;
 #X obj 24 218 OSCroute /Control /Total /VirtualSource;
 #X obj 483 103 r root;
@@ -478,7 +478,7 @@
 #X text 573 78 receive from aux patches;
 #X obj 707 160 spigot;
 #X obj 742 146 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 826 56 spigot;
 #X obj 861 42 tgl 15 0 empty echomode Echo_Mode -24 -6 0 8 -262144
 -1 -1 0 1;
@@ -558,7 +558,7 @@
 #X obj 510 528 s Response;
 #X obj 611 508 spigot;
 #X obj 646 494 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 510 411 r OSCresponse2;
 #X obj 611 410 r OSCdirectresponse2;
 #X obj 351 527 print - -> OSC-Send1;
@@ -580,7 +580,7 @@
 #X obj 15 50 OSCroute /Response /Version /SampleRate /CPULoad /Door
 ;
 #X text 547 23 test;
-#N canvas 63 619 659 390 Door 0;
+#N canvas 556 312 659 390 Door 0;
 #X obj 72 71 inlet;
 #X obj 51 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -621,7 +621,7 @@
 #X connect 11 4 13 0;
 #X connect 14 0 15 0;
 #X restore 23 256 pd control1;
-#N canvas 1258 56 746 598 control2 0;
+#N canvas 1258 56 746 598 control2 1;
 #X obj 15 26 inlet;
 #X obj 141 260 samplerate~;
 #X obj 239 162 dsp~;
@@ -655,11 +655,16 @@
 #X obj 115 45 loadbang;
 #X text 183 46 Default: CC;
 #X obj 537 177 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 498 192 spigot;
 #X obj 498 217 print Door;
 #X obj 72 268 s OSCresponse2;
 #X obj 148 203 s DoorState;
+#X obj 200 348 s refreshDoors;
+#X obj 200 287 b;
+#X obj 235 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 200 317 del 200;
 #X connect 0 0 3 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
@@ -675,10 +680,14 @@
 #X connect 8 0 3 0;
 #X connect 13 1 7 0;
 #X connect 13 1 18 0;
+#X connect 13 1 23 0;
 #X connect 14 0 20 0;
 #X connect 15 0 2 0;
 #X connect 17 0 18 1;
 #X connect 18 0 19 0;
+#X connect 23 0 25 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 0;
 #X restore 270 112 pd Door;
 #X msg 77 418 send /Control/Version v1.2;
 #X msg 374 21 connect localhost 10015;
@@ -775,15 +784,15 @@
 ;
 #X obj 250 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 633 570 939 660 DEBUG 1;
+#N canvas 2031 32 939 660 DEBUG 1;
 #X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_10013 20 12
 0 14 -232576 -66577 0;
 #X obj 118 490 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 1482 1;
+-1 -1 2447 1;
 #X obj 171 490 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 839 1;
+-1 -1 692 1;
 #X obj 223 489 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 1960 1;
+-1 312 1;
 #X obj 19 556 pack 0 0 0;
 #X floatatom 115 506 5 0 0 0 - - -;
 #X floatatom 168 506 5 0 0 0 - - -;
@@ -827,7 +836,6 @@
 #X msg 276 399 -2.55 5.4 1.65;
 #X msg 615 37 /Control/Response connect localhost 10005;
 #X msg 110 36 /Control/Response connect localhost 10015;
-#X msg 280 447 2.55 5.4 1.4;
 #X obj 700 569 hsl 128 15 0 100 0 0 empty GlobalMax Total_VU -2 -8
 0 10 -228856 -1 -1 0 1;
 #X msg 395 355 2.55 -5.4 2.7;
@@ -842,11 +850,13 @@
 #X msg 278 248 100;
 #X msg 166 231 /VirtualSource/3/Volume/Set 120;
 #X msg 398 433 2.55 -7.65 1.65;
-#X msg 400 461 -2.4 -5.7 2;
+#X msg 280 447 2.55 5.4 2;
+#X msg 400 461 -2.4 -5.7 2.15;
+#X obj 399 487 testpositions;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
-#X connect 4 0 51 0;
+#X connect 4 0 50 0;
 #X connect 5 0 4 0;
 #X connect 6 0 8 0;
 #X connect 7 0 9 0;
@@ -854,7 +864,7 @@
 #X connect 8 1 4 1;
 #X connect 9 0 4 0;
 #X connect 9 1 4 2;
-#X connect 10 0 52 0;
+#X connect 10 0 51 0;
 #X connect 15 0 14 0;
 #X connect 16 0 12 0;
 #X connect 17 0 14 0;
@@ -875,21 +885,22 @@
 #X connect 40 0 31 0;
 #X connect 41 0 14 0;
 #X connect 42 0 12 0;
-#X connect 43 0 31 0;
+#X connect 44 0 31 0;
 #X connect 45 0 31 0;
 #X connect 46 0 31 0;
-#X connect 47 0 31 0;
+#X connect 48 0 12 0;
 #X connect 49 0 12 0;
 #X connect 50 0 12 0;
 #X connect 51 0 12 0;
 #X connect 52 0 12 0;
-#X connect 53 0 12 0;
-#X connect 54 0 10 0;
-#X connect 55 0 12 0;
+#X connect 53 0 10 0;
+#X connect 54 0 12 0;
+#X connect 55 0 31 0;
 #X connect 56 0 31 0;
 #X connect 57 0 31 0;
+#X connect 58 0 31 0;
 #X restore 260 184 pd DEBUG;
 #X obj 280 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
--258699 -1 0 1;
+-258699 -1 1 1;
 #X obj 337 129 loadbang;
 #X connect 10 0 9 0;
