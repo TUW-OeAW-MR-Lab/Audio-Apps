@@ -12,7 +12,7 @@
 -1 -1 2400 1;
 #X text 212 399 to output updated values;
 #X obj 194 420 metro 100;
-#X obj 194 398 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 194 398 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 145 789 *~;
 #X obj 174 790 *~;
@@ -126,6 +126,14 @@
 -8.8 3.2 1.2 -8.8 3.2 0 -7 3.2;
 #X floatatom 348 520 5 0 0 1 spread - -;
 #X floatatom 428 559 5 0 0 1 actual_spread - -;
+#X obj 24 605 print vbapcart;
+#X obj 24 583 spigot;
+#X obj 68 567 tgl 15 0 empty print_gains print_gains 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 96 539 > 0;
+#X obj 24 560 spigot;
+#X obj 24 516 t l l;
+#X obj 90 517 unpack f f;
 #X connect 0 0 31 1;
 #X connect 1 0 12 1;
 #X connect 2 0 13 1;
@@ -159,6 +167,7 @@
 #X connect 29 0 28 0;
 #X connect 30 0 32 0;
 #X connect 31 0 23 0;
+#X connect 31 0 42 0;
 #X connect 31 1 3 0;
 #X connect 31 2 4 0;
 #X connect 31 3 5 0;
@@ -167,3 +176,10 @@
 #X connect 33 0 32 0;
 #X connect 34 0 32 0;
 #X connect 35 0 31 4;
+#X connect 38 0 37 0;
+#X connect 39 0 38 1;
+#X connect 40 0 41 1;
+#X connect 41 0 38 0;
+#X connect 42 0 41 0;
+#X connect 42 1 43 0;
+#X connect 43 1 40 0;
