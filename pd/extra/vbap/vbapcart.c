@@ -573,7 +573,7 @@ void vbapcart_bang(t_vbapcart *x)
       spread_it(x, final_gs);
     }
     for (i = 0; i < x->x_ls_amount; i++) {
-      SETFLOAT(&at[0], (t_float)i);
+      SETFLOAT(&at[0], (t_float)(i + 1));
       SETFLOAT(&at[1], (t_float)final_gs[i]);
       outlet_list(x->x_outlet0, gensym("list") /* was: 0L */, 2, at);
     }
