@@ -31,12 +31,12 @@ SYS  |   /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_va
 SYS, VSS   |  /Control/Door | /Control/Door _string_ | get current door configuration, with _string_ = { OO, OC, CO, CC} | /Control/Door OO |
 SYS  |   /Control/Door/Set _door_ | - | set current door configuration: _door_ = {OO, OC, CO, CC}; C: closed, O: open; First letter: CAVE LED door, second letter: Curved LED door  |  /Control/Door/Set CC |
 VSS  |   /VirtualSource/_index_/Position/Set _x y z_ | - | set the position of the virtual source #_index_ with _x, y, z_ in meter | /VirtualSource/0/Position/Set 5 2 1.5  |
-VSS  |   /VirtualSource/_index_/Volume/Set _volume_ | - | set the volume of the virtual source #_index_ with _volume_ in dB (0...100) | /VirtualSource/5/Volume/Set 70  |
-VSS  |   /VirtualSource/_index_/Volume | /VirtualSource/_index_/Volume _volume_ | get the volume of the virtual source #_index_ with _volume_ in dB (0...100) | /VirtualSource/12/Volume 45 |
+VSS  |   /VirtualSource/_index_/Volume/Set _volume_ | - | set the volume of the virtual source #_index_ with _volume_ re 0 dB FS | /VirtualSource/5/Volume/Set -18  |
+VSS  |   /VirtualSource/_index_/Volume | /VirtualSource/_index_/Volume _volume_ | get the volume of the virtual source #_index_ with _volume_ re 0 dB FS | /VirtualSource/12/Volume -18 |
 VSS  |   /VirtualSource/_index_/Switch _value_ | - | switch the virtual source #_index_ off and on with _value_ = { 0, 1}, respectively | /VirtualSource/15/Switch 1 |
-SYS  |   /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ = 0..100 in dB | /Total/Volume/Set 65 | 
-SYS  |   /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ = 0..100 in dB | /Total/Volume | 
+SYS  |   /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ re 0 dB FS | /Total/Volume/Set -24 | 
+SYS  |   /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ re 0 dB FS | /Total/Volume -24 | 
 VSS  |   /Subwoofer/Switch _value_ | - | switch the subwoofers off and on with _value_ = { 0, 1}, respectively | /Subwoofer/Switch 1 |
-SYS  |   /Subwoofer/Volume/Set _volume_ | - | set the volume of the subwoofers with _volume_ = -80..+20 in dB re output audio | /Subwoofer/Volume/Set 10 | 
+SYS  |   /Subwoofer/Volume/Set _volume_ | - | set the volume of the subwoofers with _volume_ = -80..+20 in dB re output audio | /Subwoofer/Volume/Set 6 | 
 SYS  |   /Subwoofer/Volume | /Subwoofer/Volume _volume_ | get the total volume of the subwoofers with _volume_ = -80..+20 in dB re output audio | /Subwoofer/Volume | 
-SYS  |   Sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ = 0..100 in dB | /Total/VU 25.12345 |
+SYS  |   Sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ re 0 dB FS | /Total/VU -25.12345 |
