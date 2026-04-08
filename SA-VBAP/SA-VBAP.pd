@@ -1,7 +1,7 @@
 #N canvas 517 142 445 288 12;
 #X floatatom 139 56 5 0 0 0 - CPULoad -;
 #X obj 240 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
--262144 -258699 -1 1 1;
+-262144 -258699 -1 0 1;
 #N canvas 579 183 1076 672 root 0;
 #X obj 527 497 sendOSC;
 #X obj 103 413 loadbang;
@@ -434,8 +434,8 @@
 #X obj 21 67 OSCroute /Volume /Switch;
 #X obj 326 216 s SubwooferBoost;
 #X obj 326 191 dbtorms;
-#X msg 327 116 0;
 #X obj 103 95 s SubwooferSwitch;
+#X msg 327 116 -20;
 #X connect 0 0 15 0;
 #X connect 1 0 11 0;
 #X connect 2 0 12 0;
@@ -444,15 +444,15 @@
 #X connect 5 0 4 0;
 #X connect 5 1 1 0;
 #X connect 8 0 11 0;
-#X connect 9 0 18 0;
+#X connect 9 0 19 0;
 #X connect 11 0 14 0;
 #X connect 11 0 17 0;
 #X connect 12 0 3 1;
 #X connect 13 0 10 0;
 #X connect 15 0 5 0;
-#X connect 15 1 19 0;
+#X connect 15 1 18 0;
 #X connect 17 0 16 0;
-#X connect 18 0 8 0;
+#X connect 19 0 8 0;
 #X restore 287 269 pd Subwoofer;
 #X connect 0 0 8 1;
 #X connect 0 0 9 0;
@@ -592,7 +592,7 @@
 #X msg 576 231 /VirtualSource/3/Volume/Set 20;
 #X msg 688 248 0;
 #X obj 118 330 hsl 128 15 -100 20 0 0 empty empty Subwoofer_Volume
--2 -8 0 10 -262144 -1 -1 7400 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X msg 108 348 /Subwoofer/Volume/Set \$1;
 #X msg 108 375 /Subwoofer/Volume;
 #X msg 109 401 /Subwoofer/Switch 1;
