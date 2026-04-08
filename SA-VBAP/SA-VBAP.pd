@@ -2,7 +2,7 @@
 #X floatatom 139 56 5 0 0 0 - CPULoad -;
 #X obj 240 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
 -262144 -258699 -1 1 1;
-#N canvas 227 349 1079 639 root 0;
+#N canvas 592 108 1079 639 root 0;
 #N canvas 1091 319 1134 627 ADC 0;
 #X text 25 178 ADC engines;
 #X obj 18 228 adc adc0;
@@ -470,7 +470,6 @@
 #X obj 351 508 spigot;
 #X obj 386 494 tgl 15 0 empty debugmode Debug_Mode -24 -6 0 8 -232576
 -1 -1 1 1;
-#X obj 800 410 print TEMP;
 #X obj 24 218 OSCroute /Control /Total /VirtualSource;
 #X obj 483 103 r root;
 #X obj 481 58 s dumpOSC;
@@ -484,15 +483,15 @@
 -1 -1 0 1;
 #X obj 823 87 symbol;
 #X msg 820 118 send /Echo \$1;
-#N canvas 216 85 468 277 Total 0;
+#N canvas 2245 189 468 369 Total 1;
 #X obj 21 43 inlet;
 #N canvas 597 43 450 363 SendVU 0;
-#X obj 130 250 float;
-#X obj 186 230 r GlobalMax;
+#X obj 130 270 float;
+#X obj 186 206 r GlobalMax;
 #X obj 130 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 130 222 t b b;
-#X obj 185 207 s TriggerGlobalMax;
+#X obj 130 195 t b b;
+#X obj 185 180 s TriggerGlobalMax;
 #X obj 54 53 tgl 15 0 empty activeTEMP Send_VU 17 7 0 10 -262144 -1
 -1 0 1;
 #X obj 54 195 metro 100;
@@ -501,10 +500,11 @@
 #X msg 86 166 1;
 #X obj 54 140 delay 500;
 #X obj 130 28 r GetVU;
-#X msg 130 273 send /Total/VU \$1;
-#X obj 130 297 s OSCresponse2;
+#X msg 130 293 send /Total/VU \$1;
+#X obj 130 317 s OSCresponse2;
+#X obj 186 230 - 100;
 #X connect 0 0 12 0;
-#X connect 1 0 0 1;
+#X connect 1 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
 #X connect 3 1 4 0;
@@ -517,35 +517,40 @@
 #X connect 10 0 8 0;
 #X connect 11 0 2 0;
 #X connect 12 0 13 0;
+#X connect 14 0 0 1;
 #X coords 0 -1 1 1 100 40 2 50 50;
-#X restore 222 185 pd SendVU;
+#X restore 222 225 pd SendVU;
 #X obj 114 131 OSCroute /Set;
-#X floatatom 48 135 5 0 0 0 - TotalVolume -;
-#X obj 21 162 float;
+#X floatatom 53 137 5 0 0 0 - TotalVolume -;
+#X obj 21 192 float;
 #X obj 21 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 21 94 route bang;
 #X text 130 112 Set Volume;
 #X text 23 115 Get Volume;
-#X msg 21 187 send /Total/Volume \$1;
-#X obj 114 158 s TotalVolume;
-#X floatatom 224 136 5 0 0 0 - - -;
-#X obj 224 84 loadbang;
-#X msg 224 110 80;
+#X msg 21 227 send /Total/Volume \$1;
+#X obj 114 188 s TotalVolume;
+#X floatatom 267 132 5 0 0 0 - - -;
+#X obj 267 80 loadbang;
 #X obj 21 67 OSCroute /Volume;
-#X obj 21 213 s OSCresponse2;
-#X connect 0 0 14 0;
-#X connect 2 0 10 0;
-#X connect 3 0 4 1;
+#X obj 21 253 s OSCresponse2;
+#X obj 114 158 + 100;
+#X msg 267 106 -10;
+#X obj 53 164 - 100;
+#X connect 0 0 13 0;
+#X connect 2 0 15 0;
+#X connect 3 0 17 0;
 #X connect 4 0 9 0;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
 #X connect 6 1 2 0;
-#X connect 9 0 15 0;
-#X connect 11 0 10 0;
-#X connect 12 0 13 0;
-#X connect 13 0 11 0;
-#X connect 14 0 6 0;
+#X connect 9 0 14 0;
+#X connect 11 0 15 0;
+#X connect 12 0 16 0;
+#X connect 13 0 6 0;
+#X connect 15 0 10 0;
+#X connect 16 0 11 0;
+#X connect 17 0 4 1;
 #X restore 564 255 pd Total;
 #X obj 474 218 OSCroute /Control /Total /VirtualSource;
 #X obj 124 14 r DebugControl1;
@@ -598,7 +603,7 @@
 #X connect 6 0 7 0;
 #X connect 8 0 3 1;
 #X restore 270 112 pd Door;
-#X msg 77 418 send /Control/Version v1.2;
+#X msg 77 418 send /Control/Version v1.3;
 #X obj 77 445 s OSCresponse1;
 #X obj 16 89 s OSCdirectresponse1;
 #X obj 141 309 s OSCresponse1;
@@ -689,7 +694,7 @@
 #X connect 24 0 25 0;
 #X connect 25 0 22 0;
 #X restore 270 112 pd Door;
-#X msg 77 418 send /Control/Version v1.2;
+#X msg 77 418 send /Control/Version v1.3;
 #X msg 374 21 connect localhost 10015;
 #X obj 16 89 s OSCdirectresponse2;
 #X obj 77 445 s OSCresponse2;
@@ -717,13 +722,13 @@
 #X obj 820 151 s OSCresponse2;
 #X obj 473 14 dumpOSC 10003;
 #X obj 23 14 dumpOSC 10013;
-#X msg 89 432 \; pd dsp 1 \; version v1.2 \;;
+#X msg 89 432 \; pd dsp 1 \; version v1.3 \;;
 #X connect 1 0 10 1;
 #X connect 1 0 11 0;
-#X connect 3 0 55 0;
+#X connect 3 0 54 0;
 #X connect 4 0 8 0;
-#X connect 4 0 20 0;
-#X connect 8 0 47 0;
+#X connect 4 0 19 0;
+#X connect 8 0 46 0;
 #X connect 9 0 8 1;
 #X connect 10 0 1 0;
 #X connect 10 0 17 0;
@@ -731,50 +736,50 @@
 #X connect 13 0 12 1;
 #X connect 14 0 15 0;
 #X connect 15 0 8 0;
-#X connect 15 0 51 0;
-#X connect 17 0 45 0;
+#X connect 15 0 50 0;
+#X connect 17 0 44 0;
 #X connect 18 0 17 1;
-#X connect 20 0 49 0;
-#X connect 20 2 16 0;
-#X connect 21 0 25 0;
-#X connect 21 0 32 0;
-#X connect 25 0 48 0;
-#X connect 26 0 25 1;
-#X connect 27 0 29 0;
-#X connect 28 0 27 1;
-#X connect 29 0 30 0;
-#X connect 30 0 25 0;
-#X connect 30 0 52 0;
-#X connect 32 0 50 0;
-#X connect 32 1 31 0;
-#X connect 33 0 8 0;
-#X connect 33 0 5 0;
-#X connect 33 0 20 0;
-#X connect 33 0 12 0;
-#X connect 34 0 25 0;
-#X connect 34 0 22 0;
-#X connect 34 0 32 0;
-#X connect 34 0 27 0;
-#X connect 35 0 10 0;
-#X connect 36 0 1 0;
-#X connect 36 0 17 0;
-#X connect 37 0 39 1;
-#X connect 37 0 40 0;
-#X connect 39 0 37 0;
-#X connect 39 0 41 0;
-#X connect 41 0 46 0;
-#X connect 42 0 41 1;
-#X connect 43 0 39 0;
-#X connect 44 0 37 0;
-#X connect 44 0 41 0;
-#X connect 53 0 22 0;
-#X connect 53 0 27 0;
-#X connect 53 0 25 0;
-#X connect 53 0 32 0;
-#X connect 54 0 5 0;
-#X connect 54 0 12 0;
-#X connect 54 0 8 0;
-#X connect 54 0 20 0;
+#X connect 19 0 48 0;
+#X connect 19 2 16 0;
+#X connect 20 0 24 0;
+#X connect 20 0 31 0;
+#X connect 24 0 47 0;
+#X connect 25 0 24 1;
+#X connect 26 0 28 0;
+#X connect 27 0 26 1;
+#X connect 28 0 29 0;
+#X connect 29 0 24 0;
+#X connect 29 0 51 0;
+#X connect 31 0 49 0;
+#X connect 31 1 30 0;
+#X connect 32 0 8 0;
+#X connect 32 0 5 0;
+#X connect 32 0 19 0;
+#X connect 32 0 12 0;
+#X connect 33 0 24 0;
+#X connect 33 0 21 0;
+#X connect 33 0 31 0;
+#X connect 33 0 26 0;
+#X connect 34 0 10 0;
+#X connect 35 0 1 0;
+#X connect 35 0 17 0;
+#X connect 36 0 38 1;
+#X connect 36 0 39 0;
+#X connect 38 0 36 0;
+#X connect 38 0 40 0;
+#X connect 40 0 45 0;
+#X connect 41 0 40 1;
+#X connect 42 0 38 0;
+#X connect 43 0 36 0;
+#X connect 43 0 40 0;
+#X connect 52 0 21 0;
+#X connect 52 0 26 0;
+#X connect 52 0 24 0;
+#X connect 52 0 31 0;
+#X connect 53 0 5 0;
+#X connect 53 0 12 0;
+#X connect 53 0 8 0;
+#X connect 53 0 19 0;
 #X restore 56 127 pd root;
 #X text 61 57 CPU load;
 #X obj 319 56 tgl 25 0 echomode empty Echo_Mode -20 -10 0 10 -262144
@@ -784,27 +789,27 @@
 ;
 #X obj 250 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 2031 32 939 660 DEBUG 1;
-#X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_10013 20 12
-0 14 -232576 -66577 0;
+#N canvas 857 108 939 660 DEBUG 1;
+#X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_10013_(Source_Control)
+20 12 0 14 -232576 -66577 0;
 #X obj 118 490 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 1453 1;
+-1 -1 0 1;
 #X obj 171 490 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 897 1;
+-1 -1 0 1;
 #X obj 223 489 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 2106 1;
+-1 0 1;
 #X obj 19 556 pack 0 0 0;
 #X floatatom 115 506 5 0 0 0 - - -;
 #X floatatom 168 506 5 0 0 0 - - -;
 #X floatatom 221 503 5 0 0 0 - - -;
 #X obj 168 524 t b f;
 #X obj 221 523 t b f;
-#X obj 128 254 hsl 128 15 0 120 0 0 empty empty Volume -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 128 254 hsl 128 15 -100 20 0 0 empty empty Volume -2 -8 0 10
+-262144 -1 -1 12700 1;
 #X text 292 179 switch VBAP on;
 #X obj 18 119 s DebugControl1;
-#X obj 518 6 cnv 15 400 600 empty empty Debug_OSC_Channel_10003 20
-12 0 14 -232576 -66577 0;
+#X obj 518 6 cnv 15 400 600 empty empty Debug_OSC_Channel_10003_(System_Control)
+20 12 0 14 -232576 -66577 0;
 #X obj 526 134 s DebugControl2;
 #X msg 615 62 /Control/Version;
 #X msg 111 61 /Control/Version;
@@ -819,11 +824,11 @@
 #X text 116 159 Virtual Source (VBAP);
 #X text 292 201 switch VBAP off;
 #X msg 685 316 /Total/Volume;
-#X obj 695 271 hsl 128 15 0 100 0 0 empty empty Total_Volume -2 -8
-0 10 -262144 -1 -1 0 1;
+#X obj 695 271 hsl 128 15 -100 20 0 0 empty empty Total_Volume -2 -8
+0 10 -262144 -1 -1 8500 1;
 #X msg 685 289 /Total/Volume/Set \$1;
 #X obj 102 584 tgl 15 0 print_gains empty print_triplet_gains 17 7
-0 10 -262144 -1 -1 1 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 270 470 unpack f f f;
 #X msg 270 347 -2.55 -5.4 2.7;
 #X msg 273 374 2.55 5.4 0.4;
@@ -847,12 +852,12 @@
 #X msg 100 557 /VirtualSource/3/Position/Set \$1 \$2 \$3;
 #X msg 126 269 /VirtualSource/3/Volume/Set \$1;
 #X msg 126 291 /VirtualSource/3/Volume;
-#X msg 278 248 100;
-#X msg 166 231 /VirtualSource/3/Volume/Set 120;
 #X msg 398 433 2.55 -7.65 1.65;
 #X msg 280 447 2.55 5.4 2;
 #X msg 400 461 -2.4 -5.7 2.15;
 #X obj 399 487 testpositions;
+#X msg 166 231 /VirtualSource/3/Volume/Set 20;
+#X msg 278 248 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
@@ -893,12 +898,12 @@
 #X connect 50 0 12 0;
 #X connect 51 0 12 0;
 #X connect 52 0 12 0;
-#X connect 53 0 10 0;
-#X connect 54 0 12 0;
+#X connect 53 0 31 0;
+#X connect 54 0 31 0;
 #X connect 55 0 31 0;
 #X connect 56 0 31 0;
-#X connect 57 0 31 0;
-#X connect 58 0 31 0;
+#X connect 57 0 12 0;
+#X connect 58 0 10 0;
 #X restore 260 184 pd DEBUG;
 #X obj 280 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
