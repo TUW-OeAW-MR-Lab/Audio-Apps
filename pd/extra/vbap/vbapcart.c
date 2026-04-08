@@ -563,6 +563,50 @@ void vbapcart_bang(t_vbapcart *x)
 
   final_gs = (float *)getbytes(x->x_ls_amount * sizeof(float));
   if (x->x_lsset_available == 1) {
+    /* Handle zero-vector input: (0,0,0) has no defined direction.
+       If a speaker is defined at (0,0,0), route fully to it.
+       Otherwise, distribute equal power to the first defined speaker set. */
+    float input_len = sqrtf(x->x_x * x->x_x + x->x_y * x->x_y + x->x_z * x->x_z);
+    if (input_len <= 0.0001f && x->x_ls_amount > 0) {
+      long si, li, zero_ls_channel = -1;
+      /* In 3D: scan x_set_matx for a speaker stored at position (0,0,0).
+         Layout: x_set_matx[set][li + 3*axis], axis=0=x,1=y,2=z */
+      if (x->x_dimension == 3) {
+        for (si = 0; si < x->x_lsset_amount && zero_ls_channel < 0; si++) {
+          for (li = 0; li < 3 && zero_ls_channel < 0; li++) {
+            float sx = x->x_set_matx[si][li];
+            float sy = x->x_set_matx[si][li + 3];
+            float sz = x->x_set_matx[si][li + 6];
+            if (fabsf(sx) <= 0.0001f && fabsf(sy) <= 0.0001f && fabsf(sz) <= 0.0001f)
+              zero_ls_channel = x->x_lsset[si][li]; /* 1-based */
+          }
+        }
+      }
+      for (i = 0; i < x->x_ls_amount; i++) final_gs[i] = 0.0f;
+      if (zero_ls_channel > 0 && zero_ls_channel <= x->x_ls_amount) {
+        /* Speaker defined at (0,0,0): full gain to that speaker */
+        final_gs[zero_ls_channel - 1] = 1.0f;
+      } else if (x->x_lsset_amount > 0) {
+        /* No speaker at (0,0,0): distribute equal power to first speaker set */
+        float eq_g = 1.0f / sqrtf((float)x->x_dimension);
+        for (li = 0; li < x->x_dimension; li++) {
+          long ch = x->x_lsset[0][li];
+          if (ch > 0 && ch <= x->x_ls_amount)
+            final_gs[ch - 1] = eq_g;
+        }
+      }
+      for (i = 0; i < x->x_ls_amount; i++) {
+        SETFLOAT(&at[0], (t_float)(i + 1));
+        SETFLOAT(&at[1], (t_float)final_gs[i]);
+        outlet_list(x->x_outlet0, gensym("list"), 2, at);
+      }
+      outlet_float(x->x_outlet1, 0.0f);
+      outlet_float(x->x_outlet2, 0.0f);
+      outlet_float(x->x_outlet3, 0.0f);
+      outlet_float(x->x_outlet4, x->x_spread);
+      freebytes(final_gs, x->x_ls_amount * sizeof(float));
+      return;
+    }
     vbapcart(g, ls, x, actual_dir);
     for (i = 0; i < x->x_ls_amount; i++)
       final_gs[i] = 0.0;
@@ -723,9 +767,7 @@ void vbapcart_in3(t_vbapcart *x,
                              received in the right inlet */
 /* panning Z (cartesian) */
 {
-  if (n < 0)
-    n = 0;
-  x->x_z = n; /* store n in a global variable */
+  x->x_z = n; /* store n in a global variable - negative values are valid */
 }
 
 void vbapcart_in4(t_vbapcart *x,
