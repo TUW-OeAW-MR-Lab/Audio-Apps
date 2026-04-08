@@ -1,11 +1,11 @@
 #N canvas 846 208 450 300 10;
 #X obj 81 104 *~;
 #X obj 82 139 outlet~;
-#X obj 114 50 route \$2;
 #X text 218 11 individual volume for triplets;
 #X obj 34 13 r~ vbap\$1_play;
 #X obj 125 12 r vbap\$1_gains;
+#X obj 114 50 route \$2;
 #X connect 0 0 1 0;
-#X connect 2 0 0 1;
-#X connect 4 0 0 0;
-#X connect 5 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 1;
