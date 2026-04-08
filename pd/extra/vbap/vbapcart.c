@@ -788,7 +788,7 @@ static void *vbapcart_new(t_symbol *s, int ac, t_atom *av)
 {
   t_vbapcart *x;
   x = (t_vbapcart *)pd_new(vbapcart_class);
-  x->x_verbose = 1;
+  x->x_verbose = 0;
 
   /* pure data: */
 

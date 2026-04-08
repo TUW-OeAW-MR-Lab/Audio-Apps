@@ -1,11 +1,11 @@
-#N canvas 1073 113 2079 792 10;
+#N canvas 2087 147 2079 792 10;
 #N canvas 58 104 2232 1041 VU_ambisonics~ 0;
 #X obj 51 51 cnv 15 1890 170 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 72 88 vsl 10 128 0 127 0 0 SliderValue1 empty 1 4 -9 0 10 -262144
--1 -1 4129 1;
+-1 -1 0 1;
 #X obj 82 88 vsl 10 128 0 127 0 0 SliderValue2 empty empty -10 -25
-0 15 -262144 -1 -4160 4129 1;
+0 15 -262144 -1 -4160 0 1;
 #X obj 92 88 vsl 10 128 0 127 0 0 SliderValue3 empty empty 4 -9 0 10
 -262144 -1 -1 0 1;
 #X obj 102 88 vsl 10 128 0 127 0 0 SliderValue4 empty empty 0 -9 0
@@ -359,7 +359,7 @@
 #X obj 1508 532 env~;
 #X obj 1508 552 env~;
 #X obj 50 89 vsl 15 128 0.01 1 1 0 empty empty LS_OUTPUT 0 -28 0 20
--261234 -1 -258113 12700 1;
+-261234 -1 -258113 0 1;
 #X obj 469 912 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 0;
 #X obj 39 902 multiline~ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -383,7 +383,7 @@
 #X obj 1520 688 env~;
 #X obj 1815 837 env~;
 #X obj 1921 88 vsl 10 128 0 127 0 0 SliderValue185 empty LFE -4 -9
-0 10 -162280 -1 -1 5979 1;
+0 10 -162280 -1 -1 0 1;
 #X obj 146 24 loadbang;
 #X msg 219 24 0;
 #X text 1701 719 LFE;
@@ -792,7 +792,7 @@
 #X floatatom 1695 53 5 0 0 0 - GlobalMax -;
 #X obj 1962 74 max_slider_185;
 #X obj 1560 53 hsl 128 15 0 127 0 0 empty GlobalMax GlobalMaxLevel
--90 9 0 10 -261682 -1 -1 6082 1;
+-90 9 0 10 -261682 -1 -1 0 1;
 #X obj 1962 51 r TriggerGlobalMax;
 #X msg 1892 25 10;
 #X obj 1697 758 lop~ 120;
@@ -1765,7 +1765,7 @@
 #X text 1558 167 volume [0..100];
 #X obj 56 75 switch~;
 #X obj 108 53 t f;
-#X obj 90 220 tgl 15 0 active empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 90 220 tgl 15 0 active empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 108 75 moses 1;
 #N canvas 400 104 1659 714 directions 0;
@@ -2389,7 +2389,7 @@ opened);
 #X obj 347 272 unpack f f f;
 #X obj 33 371 spigot;
 #X obj 77 355 tgl 15 0 empty print_gains print_gains 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X floatatom 419 298 5 0 0 2 - - -;
 #X floatatom 235 335 0 0 0 1 actual_z - -;
 #X obj 169 316 vbapcart 0 0 0 0;
@@ -2398,7 +2398,7 @@ opened);
 #X text 16 448 Volume;
 #X obj 1002 160 loadbang;
 #X obj 8 498 vsl 15 128 0 100 0 0 empty empty VBAP_Volume 0 -9 0 20
--260097 -1 -1 12700 1;
+-260097 -1 -1 7620 1;
 #X obj 8 655 dbtorms;
 #X floatatom 20 634 5 0 0 0 - - GetVolume#1;
 #X msg 1002 180 60;
@@ -2452,8 +2452,8 @@ opened);
 #X msg 14 20 0;
 #X obj 538 313 testpositions;
 #X obj 236 184 r refreshDoors;
-#X text 295 110 verbose: trigger output messages;
 #X obj 69 434 vm \$1 1;
+#X text 295 110 verbose: display output messages;
 #X connect 1 0 215 1;
 #X connect 4 0 215 0;
 #X connect 5 0 20 0;
@@ -2702,6 +2702,7 @@ opened);
 #X connect 253 1 264 0;
 #X connect 253 2 228 0;
 #X connect 254 0 209 0;
+#X connect 254 0 215 0;
 #X connect 255 0 210 0;
 #X connect 256 0 210 0;
 #X connect 262 0 210 0;
@@ -2713,5 +2714,5 @@ opened);
 #X connect 270 0 15 0;
 #X connect 271 0 210 0;
 #X connect 272 0 209 0;
-#X connect 274 0 0 1;
+#X connect 273 0 0 1;
 #X coords 0 792 1 791 85 60 0;
