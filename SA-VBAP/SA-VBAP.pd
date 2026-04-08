@@ -1,7 +1,7 @@
 #N canvas 517 142 445 288 12;
 #X floatatom 139 56 5 0 0 0 - CPULoad -;
 #X obj 240 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
--262144 -258699 -1 1 1;
+-262144 -258699 -1 0 1;
 #N canvas 592 108 1079 639 root 0;
 #N canvas 1091 319 1134 627 ADC 0;
 #X text 25 178 ADC engines;
@@ -483,7 +483,7 @@
 -1 -1 0 1;
 #X obj 823 87 symbol;
 #X msg 820 118 send /Echo \$1;
-#N canvas 2245 189 468 369 Total 1;
+#N canvas 2245 189 468 369 Total 0;
 #X obj 21 43 inlet;
 #N canvas 597 43 450 363 SendVU 0;
 #X obj 130 270 float;
@@ -789,75 +789,75 @@
 ;
 #X obj 250 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 857 108 939 660 DEBUG 1;
-#X obj 9 6 cnv 15 500 600 empty empty Debug_OSC_Channel_10013_(Source_Control)
+#N canvas 839 183 943 622 DEBUG 1;
+#X obj 419 6 cnv 15 500 600 empty empty Debug_Virtual_Sound_Source_Control_(VSS)
 20 12 0 14 -232576 -66577 0;
-#X obj 118 490 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
+#X obj 528 490 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 171 490 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
+#X obj 581 490 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 223 489 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
+#X obj 633 489 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
 -1 0 1;
-#X obj 19 556 pack 0 0 0;
-#X floatatom 115 506 5 0 0 0 - - -;
-#X floatatom 168 506 5 0 0 0 - - -;
-#X floatatom 221 503 5 0 0 0 - - -;
-#X obj 168 524 t b f;
-#X obj 221 523 t b f;
-#X obj 128 254 hsl 128 15 -100 20 0 0 empty empty Volume -2 -8 0 10
--262144 -1 -1 12700 1;
-#X text 292 179 switch VBAP on;
-#X obj 18 119 s DebugControl1;
-#X obj 518 6 cnv 15 400 600 empty empty Debug_OSC_Channel_10003_(System_Control)
-20 12 0 14 -232576 -66577 0;
-#X obj 526 134 s DebugControl2;
-#X msg 615 62 /Control/Version;
-#X msg 111 61 /Control/Version;
-#X msg 615 87 /Control/SampleRate;
-#X msg 617 111 /Control/CPULoad;
-#X text 288 88 doors;
-#X msg 747 149 /Control/Door/Set CC;
-#X msg 748 176 /Control/Door/Set OO;
-#X text 748 125 doors;
-#X msg 747 203 /Control/Door;
-#X msg 287 112 /Control/Door;
-#X text 116 159 Virtual Source (VBAP);
-#X text 292 201 switch VBAP off;
-#X msg 685 316 /Total/Volume;
-#X obj 695 271 hsl 128 15 -100 20 0 0 empty empty Total_Volume -2 -8
-0 10 -262144 -1 -1 8500 1;
-#X msg 685 289 /Total/Volume/Set \$1;
-#X obj 102 584 tgl 15 0 print_gains empty print_triplet_gains 17 7
+#X obj 429 556 pack 0 0 0;
+#X floatatom 525 506 5 0 0 0 - - -;
+#X floatatom 578 506 5 0 0 0 - - -;
+#X floatatom 631 503 5 0 0 0 - - -;
+#X obj 578 524 t b f;
+#X obj 631 523 t b f;
+#X obj 538 254 hsl 128 15 -100 20 0 0 empty empty Volume -2 -8 0 10
+-262144 -1 -1 0 1;
+#X text 702 179 switch VBAP on;
+#X obj 428 119 s DebugControl1;
+#X obj 8 6 cnv 15 400 600 empty empty Debug_System_Control_(SYS) 20
+12 0 14 -232576 -66577 0;
+#X obj 16 134 s DebugControl2;
+#X msg 105 62 /Control/Version;
+#X msg 521 61 /Control/Version;
+#X msg 105 87 /Control/SampleRate;
+#X msg 107 111 /Control/CPULoad;
+#X text 698 88 doors;
+#X msg 237 149 /Control/Door/Set CC;
+#X msg 238 176 /Control/Door/Set OO;
+#X text 238 125 doors;
+#X msg 237 203 /Control/Door;
+#X msg 697 112 /Control/Door;
+#X text 526 159 Virtual Source (VBAP);
+#X text 702 201 switch VBAP off;
+#X msg 175 316 /Total/Volume;
+#X obj 185 271 hsl 128 15 -100 20 0 0 empty empty Total_Volume -2 -8
 0 10 -262144 -1 -1 0 1;
-#X obj 270 470 unpack f f f;
-#X msg 270 347 -2.55 -5.4 2.7;
-#X msg 273 374 2.55 5.4 0.4;
-#X text 92 346 corner glassdoor/LED/top;
-#X text 72 372 corner entrance/CAVE/bottom;
-#X text 62 397 corner glassdoor/CAVE/middle;
-#X text 165 321 virtual position (x/y/z);
-#X text 163 424 ceiling center;
-#X msg 275 424 0 0 3.2;
-#X msg 276 399 -2.55 5.4 1.65;
-#X msg 615 37 /Control/Response connect localhost 10005;
-#X msg 110 36 /Control/Response connect localhost 10015;
-#X obj 700 569 hsl 128 15 0 100 0 0 empty GlobalMax Total_VU -2 -8
+#X msg 175 289 /Total/Volume/Set \$1;
+#X obj 512 584 tgl 15 0 print_gains empty print_triplet_gains 17 7
+0 10 -262144 -1 -1 0 1;
+#X obj 680 470 unpack f f f;
+#X msg 680 347 -2.55 -5.4 2.7;
+#X msg 683 374 2.55 5.4 0.4;
+#X text 502 346 corner glassdoor/LED/top;
+#X text 482 372 corner entrance/CAVE/bottom;
+#X text 472 397 corner glassdoor/CAVE/middle;
+#X text 575 321 virtual position (x/y/z);
+#X text 573 424 ceiling center;
+#X msg 685 424 0 0 3.2;
+#X msg 686 399 -2.55 5.4 1.65;
+#X msg 105 37 /Control/Response connect localhost 10005;
+#X msg 520 36 /Control/Response connect localhost 10015;
+#X obj 190 569 hsl 128 15 0 100 0 0 empty GlobalMax Total_VU -2 -8
 0 10 -228856 -1 -1 0 1;
-#X msg 395 355 2.55 -5.4 2.7;
-#X msg 395 380 2.55 5.4 2.7;
-#X msg 395 405 -2.55 -5.4 0.4;
-#X text 396 333 test positions;
-#X msg 108 179 /VirtualSource/3/Switch 1;
-#X msg 108 202 /VirtualSource/3/Switch 0;
-#X msg 100 557 /VirtualSource/3/Position/Set \$1 \$2 \$3;
-#X msg 126 269 /VirtualSource/3/Volume/Set \$1;
-#X msg 126 291 /VirtualSource/3/Volume;
-#X msg 398 433 2.55 -7.65 1.65;
-#X msg 280 447 2.55 5.4 2;
-#X msg 400 461 -2.4 -5.7 2.15;
-#X obj 399 487 testpositions;
-#X msg 166 231 /VirtualSource/3/Volume/Set 20;
-#X msg 278 248 0;
+#X msg 805 355 2.55 -5.4 2.7;
+#X msg 805 380 2.55 5.4 2.7;
+#X msg 805 405 -2.55 -5.4 0.4;
+#X text 806 333 test positions;
+#X msg 518 179 /VirtualSource/3/Switch 1;
+#X msg 518 202 /VirtualSource/3/Switch 0;
+#X msg 510 557 /VirtualSource/3/Position/Set \$1 \$2 \$3;
+#X msg 536 269 /VirtualSource/3/Volume/Set \$1;
+#X msg 536 291 /VirtualSource/3/Volume;
+#X msg 808 433 2.55 -7.65 1.65;
+#X msg 690 447 2.55 5.4 2;
+#X msg 810 461 -2.4 -5.7 2.15;
+#X obj 809 487 testpositions;
+#X msg 576 231 /VirtualSource/3/Volume/Set 20;
+#X msg 688 248 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
