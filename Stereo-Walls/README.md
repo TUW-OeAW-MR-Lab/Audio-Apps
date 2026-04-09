@@ -24,7 +24,7 @@ The app is listening to port 10003. The following commands can be used to commun
 |     /Control/Version | /Control/Version _string_ | get version number | /Control/Version 1.2.0 |
 |     /Control/SampleRate | /Control/SampleRate _value_ | get sample rate (_value_ in Hz) | /Control/SampleRate 48000 |
 |     /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 5.73 |
-|     /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ = re dB FS | /Total/Volume/Set -65 | 
+|     /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ re dB FS | /Total/Volume/Set -65 | 
 |     /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ re dB FS | /Total/Volume -50 | 
 |     No command required, it will be sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ re dB FS | /Total/VU -25.12345 |
 |     /CurvedLED/Volume/Set _volume_ | - | set the volume of the Curved-LED section with _volume_ re dB FS | /CurvedLED/Volume/Set -30  |
