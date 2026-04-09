@@ -1835,21 +1835,19 @@
 #X floatatom 38 369 5 0 0 0 - - GetVolume;
 #X obj 1273 196 loadbang;
 #X obj 1273 110 tgl 15 0 empty empty OSC_Debug 17 7 0 10 -232576 -1
--1 0 1;
+-1 1 1;
 #X text 1264 143 Define listening port;
-#X msg 1273 228 \; version v1.3 \;;
-#X text 1363 233 v1.3 miho: OSC commands updated;
 #X obj 1273 74 loadbang;
 #X text 1271 88 connect to enable at startup;
 #X obj 188 357 s reset;
-#N canvas 0 50 450 363 SendVU 0;
+#N canvas 767 95 450 363 SendVU 0;
 #X obj 130 297 s OSCresponse;
 #X obj 130 250 float;
-#X obj 186 230 r GlobalMax;
+#X obj 186 200 r GlobalMax;
 #X obj 130 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 130 222 t b b;
-#X obj 185 207 s TriggerGlobalMax;
+#X obj 185 177 s TriggerGlobalMax;
 #X obj 54 53 tgl 15 0 empty active Send_VU 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 54 195 metro 100;
@@ -1859,8 +1857,11 @@
 #X obj 54 140 delay 500;
 #X msg 130 273 send /Play/VU \$1;
 #X obj 130 28 r GetVU;
+#X obj 186 226 - 100;
+#X obj 315 180 loadbang;
+#X msg 315 204 0;
 #X connect 1 0 12 0;
-#X connect 2 0 1 1;
+#X connect 2 0 14 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 4 1 5 0;
@@ -1873,6 +1874,9 @@
 #X connect 11 0 9 0;
 #X connect 12 0 0 0;
 #X connect 13 0 3 0;
+#X connect 14 0 1 1;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
 #X coords 0 -1 1 1 100 40 2 50 50;
 #X restore 1017 76 pd SendVU;
 #N canvas 0 50 450 363 SendTimecode 0;
@@ -1918,6 +1922,7 @@
 #X restore 1130 127 pd Send_Duration;
 #X msg 23 180 75;
 #X obj 1273 129 OSC-Control 10003;
+#X msg 1273 228 \; version v1.4 \;;
 #X connect 1 0 28 0;
 #X connect 2 0 0 73;
 #X connect 2 1 0 74;
@@ -2026,14 +2031,14 @@
 #X connect 13 21 0 22;
 #X connect 13 22 0 23;
 #X connect 13 23 0 24;
-#X connect 13 24 51 0;
+#X connect 13 24 49 0;
 #X connect 15 0 14 0;
 #X connect 15 1 16 0;
 #X connect 17 0 42 0;
 #X connect 17 0 37 0;
 #X connect 17 0 22 1;
 #X connect 19 0 15 0;
-#X connect 20 0 55 0;
+#X connect 20 0 53 0;
 #X connect 21 0 36 0;
 #X connect 23 0 32 0;
 #X connect 24 0 30 0;
@@ -2152,7 +2157,7 @@
 #X connect 40 0 39 1;
 #X connect 41 0 40 0;
 #X connect 42 0 10 0;
-#X connect 44 0 47 0;
-#X connect 45 0 56 0;
-#X connect 55 0 33 0;
+#X connect 44 0 55 0;
+#X connect 45 0 54 0;
+#X connect 53 0 33 0;
 #X coords 0 662 1 661 85 60 0;
