@@ -14,10 +14,10 @@
 
 ## How to test
 - On the tablet (= system control), "Control" scene, switch on the PDU and unmute the amps. Check if the amp status is "green" (i.e., unmuted).
-- On the tablet, "Spatial Audio: VBAP" scene, launch the app; set the doors to their actual position, in the Inputs section, click on "Curved LED PC Stereo"; In the Total section set volume to 70 dB.
+- On the tablet, "Spatial Audio: VBAP" scene, launch the app; set the doors to their actual position, in the Inputs section, click on "Curved LED PC Stereo"; In the Total section set volume to -30 dB.
 - On the Curved LED PC (= virtual sound source control), start audio playback via an app, e.g., youtube in a browser window, and set the volume to a moderate volume. 
-- On the Curved LED PC, go to "Open Volume Mixer" (right click on the loudspeaker icon in the right part of the taskbar), in the System section, select the Output device "DVS Transmit 3-4 (Dante Virtual Sound Card" and set the Volume slider to 100. In the apps section, expand additional controls, select the Output device to the same as in the System section and set the Volume slider to 100.
-- On the Audio PC, in the taskbar, click on the "pd" icon with the title "DEBUG". This will open a window with a purple background. Click on the box with "/VirtualSource/3/Switch 1", then on the box with "/VirtualSource/3/Volume/Set 100", then click on the box right to the label "ceiling center". 
+- On the Curved LED PC, go to "Open Volume Mixer" (right click on the loudspeaker icon in the right part of the taskbar), in the System section, select the Output device "DVS Transmit 3-4 (Dante Virtual Sound Card" and set the Volume slider to 0 dB FS. In the apps section, expand additional controls, select the Output device to the same as in the System section and set the Volume slider to 0 dB FS.
+- On the Audio PC, in the taskbar, click on the "pd" icon with the title "DEBUG". This will open a window with a purple background. Click on the box with "/VirtualSource/3/Switch 1", then on the box with "/VirtualSource/3/Volume/Set 0", then click on the box right to the label "ceiling center". 
 - You should hear the audio coming from the center-top of the Spatial-Audio Area. Increase the volume slowly in your app on the Curved LED PC.
 
 ## OSC Commands
