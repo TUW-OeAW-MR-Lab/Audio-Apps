@@ -1,4 +1,4 @@
-#N canvas 2013 90 1271 708 10;
+#N canvas 318 140 1271 708 10;
 #X obj 54 610 outlet;
 #X msg 254 86 -2.55 -5.4 2.7;
 #X msg 422 85 2.55 5.4 0.4;
@@ -10,7 +10,7 @@
 #X msg 598 85 1.8 -5.7 0.4;
 #X text 214 50 virtual position (x/y/z) \, channel VBAP (channel pd)
 ;
-#X msg 597 132 -2.4 -2.4 3.2;
+#X msg 596 154 -2.4 -2.4 3.2;
 #X msg 962 115 0 2.85 0;
 #X msg 969 137 0 -2.85 0;
 #X msg 969 87 0 0 0;
@@ -18,7 +18,7 @@
 #X text 354 87 1;
 #X text 351 133 47;
 #X text 515 84 51;
-#X text 686 131 150;
+#X text 685 153 150;
 #X text 902 85 151;
 #X text 898 110 161;
 #X text 902 135 181;
@@ -30,6 +30,7 @@
 #X msg 422 133 2.55 -6.45 1.65;
 #X text 687 84 CC 101;
 #X text 694 107 OO 101;
+#X msg 599 129 2.55 -7.65 1.65;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -45,3 +46,4 @@
 #X connect 14 0 0 0;
 #X connect 23 0 0 0;
 #X connect 27 0 0 0;
+#X connect 30 0 0 0;
