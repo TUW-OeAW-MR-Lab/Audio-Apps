@@ -1,8 +1,8 @@
-#N canvas 517 142 445 288 12;
+#N canvas 11 484 445 288 12;
 #X floatatom 139 56 5 0 0 0 - CPULoad -;
 #X obj 240 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
--262144 -258699 -1 1 1;
-#N canvas 580 183 1075 672 root 1;
+-262144 -258699 -1 0 1;
+#N canvas 209 112 1075 672 root 0;
 #X obj 527 497 sendOSC;
 #X obj 103 413 loadbang;
 #X obj 500 114 r root;
@@ -19,7 +19,7 @@
 -1 -1 0 1;
 #X obj 840 98 symbol;
 #X msg 837 129 send /Echo \$1;
-#N canvas 236 238 1578 356 VBAP200 0;
+#N canvas -14 240 1540 356 VBAP200 0;
 #X obj 30 20 inlet;
 #X obj 119 150 VBAP200 2;
 #X obj 210 150 VBAP200 3;
@@ -171,7 +171,7 @@
 -1 -1 0 1;
 #X obj 376 100 symbol;
 #X msg 373 131 send /Echo \$1;
-#N canvas 1444 410 468 369 Total 1;
+#N canvas 589 271 468 369 Total 0;
 #X obj 21 43 inlet;
 #N canvas 597 43 450 363 SendVU 0;
 #X obj 130 270 float;
@@ -275,17 +275,17 @@
 -1;
 #X obj 72 130 route bang /Set;
 #X obj 72 200 list;
-#X text 189 96 bang: get door state \; /Set: set door state;
 #X text 113 200 Save door state;
 #X msg 72 242 send /Control/Door \$1;
 #X obj 72 268 s OSCresponseVSS;
 #X obj 97 168 r DoorState;
+#X text 189 96 bang: get door state;
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 6 0;
-#X connect 6 0 7 0;
-#X connect 8 0 3 1;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 3 1;
 #X restore 270 112 pd Door;
 #X msg 77 418 send /Control/Version v1.5;
 #X obj 77 445 s OSCresponseVSS;
@@ -310,7 +310,7 @@
 #X connect 11 4 13 0;
 #X connect 14 0 15 0;
 #X restore 491 267 pd controlVSS;
-#N canvas 1258 56 746 598 controlSYS 0;
+#N canvas 618 111 746 598 controlSYS 0;
 #X obj 15 26 inlet;
 #X obj 141 260 samplerate~;
 #X obj 239 162 dsp~;
@@ -324,7 +324,7 @@
 #X obj 15 50 OSCroute /Response /Version /SampleRate /CPULoad /Door
 ;
 #X text 596 52 test;
-#N canvas 939 141 659 390 Door 0;
+#N canvas 499 211 659 390 Door 0;
 #X obj 72 71 inlet;
 #X obj 51 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -532,11 +532,11 @@
 #X obj 418 6 cnv 15 700 600 empty empty Debug_Virtual_Sound_Source_Control_(VSS)
 20 12 0 14 -232576 -66577 0;
 #X obj 528 490 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
--1 -1 2447 1;
+-1 -1 0 1;
 #X obj 581 490 hsl 40 15 -10 10 0 0 empty empty y -2 -8 0 10 -262144
--1 -1 458 1;
+-1 -1 0 1;
 #X obj 633 489 hsl 40 15 0 5 0 0 empty empty z -2 -8 0 10 -262144 -1
--1 1287 1;
+-1 0 1;
 #X obj 429 556 pack 0 0 0;
 #X floatatom 525 506 5 0 0 0 - - -;
 #X floatatom 578 506 5 0 0 0 - - -;
@@ -566,7 +566,7 @@
 0 10 -262144 -1 -1 0 1;
 #X msg 111 258 /Total/Volume/Set \$1;
 #X obj 512 584 tgl 15 0 print_gains empty print_triplet_gains 17 7
-0 10 -262144 -1 -1 1 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 680 470 unpack f f f;
 #X msg 671 347 -2.55 -5.4 2.7;
 #X msg 674 374 2.55 5.4 0.4;
@@ -577,7 +577,7 @@
 #X msg 105 37 /Control/Response connect localhost 10005;
 #X msg 520 36 /Control/Response connect localhost 10015;
 #X obj 190 569 hsl 128 15 0 100 0 0 empty GlobalMax Total_VU -2 -8
-0 10 -228856 -1 -1 6328 1;
+0 10 -228856 -1 -1 0 1;
 #X msg 783 347 2.55 -5.4 2.7;
 #X msg 783 372 2.55 5.4 2.7;
 #X msg 783 397 -2.55 -5.4 0.4;
@@ -596,8 +596,6 @@
 #X msg 109 427 /Subwoofer/Switch 0;
 #X obj 428 119 s DebugControlVSS;
 #X msg 576 231 /VirtualSource/3/Volume/Set 0;
-#X obj 282 78 tgl 15 0 sendVU sendVU Send_VU 17 7 0 10 -262144 -1 -1
-1 1;
 #X text 481 372 corner window/CAVE/bottom;
 #X text 449 346 corner studentroomwall/LED/top;
 #X text 886 345 corner window/LED/top;
@@ -606,6 +604,8 @@
 #X text 424 399 corner studentroomwall/CAVE/center;
 #X text 914 454 window/LED extreme/center;
 #X msg 788 453 2.55 -8.25 1.67;
+#X obj 328 569 tgl 15 0 sendVU sendVU Send_VU 17 7 0 10 -262144 -1
+-1 0 1;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
@@ -654,7 +654,7 @@
 #X connect 53 0 13 0;
 #X connect 54 0 13 0;
 #X connect 56 0 55 0;
-#X connect 65 0 30 0;
+#X connect 64 0 30 0;
 #X restore 260 184 pd DEBUG;
 #X obj 280 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
