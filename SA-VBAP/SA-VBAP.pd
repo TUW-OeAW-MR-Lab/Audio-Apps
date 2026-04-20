@@ -287,7 +287,7 @@
 #X connect 5 0 6 0;
 #X connect 7 0 3 1;
 #X restore 270 112 pd Door;
-#X msg 77 418 send /Control/Version v1.5;
+#X msg 77 418 send /Control/Version v1.6;
 #X obj 77 445 s OSCresponseVSS;
 #X obj 16 89 s OSCdirectresponseVSS;
 #X obj 141 309 s OSCresponseVSS;
@@ -378,7 +378,7 @@
 #X connect 24 0 25 0;
 #X connect 25 0 22 0;
 #X restore 270 112 pd Door;
-#X msg 77 418 send /Control/Version v1.5;
+#X msg 77 418 send /Control/Version v1.6;
 #X msg 423 50 connect localhost 10015;
 #X obj 15 139 s OSCdirectresponseSYS;
 #X obj 77 445 s OSCresponseSYS;
@@ -459,7 +459,7 @@
 #X restore 287 269 pd Subwoofer;
 #X obj 127 27 r DebugControlSYS;
 #X obj 356 424 r OSCdirectresponseSYS;
-#X msg 103 447 \; pd dsp 1 \; version v1.6 \;;
+#X msg 103 447 \; pd dsp 1 \; version v1.7 \;;
 #X connect 0 0 8 1;
 #X connect 0 0 9 0;
 #X connect 1 0 54 0;
@@ -528,7 +528,7 @@
 ;
 #X obj 250 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 308 36 1203 622 DEBUG 1;
+#N canvas 565 131 1203 622 DEBUG 1;
 #X obj 418 6 cnv 15 700 600 empty empty Debug_Virtual_Sound_Source_Control_(VSS)
 20 12 0 14 -232576 -66577 0;
 #X obj 528 490 hsl 40 15 -10 10 0 0 empty empty x -2 -8 0 10 -262144
@@ -570,17 +570,16 @@
 #X obj 680 470 unpack f f f;
 #X msg 671 347 -2.55 -5.4 2.7;
 #X msg 674 374 2.55 5.4 0.4;
-#X text 575 321 virtual position (x/y/z);
-#X text 564 424 ceiling center;
+#X text 569 321 virtual position (x/y/z);
 #X msg 676 424 0 0 3.2;
-#X msg 669 399 -2.55 5.4 1.65;
+#X msg 679 399 -2.55 5.4 1.65;
 #X msg 105 37 /Control/Response connect localhost 10005;
 #X msg 520 36 /Control/Response connect localhost 10015;
 #X obj 190 569 hsl 128 15 0 100 0 0 empty GlobalMax Total_VU -2 -8
 0 10 -228856 -1 -1 0 1;
 #X msg 783 347 2.55 -5.4 2.7;
 #X msg 783 372 2.55 5.4 2.7;
-#X msg 775 398 -2.55 -5.4 0.4;
+#X msg 785 398 -2.55 -5.4 0.4;
 #X msg 518 179 /VirtualSource/3/Switch 1;
 #X msg 518 202 /VirtualSource/3/Switch 0;
 #X msg 510 557 /VirtualSource/3/Position/Set \$1 \$2 \$3;
@@ -596,20 +595,21 @@
 #X msg 109 427 /Subwoofer/Switch 0;
 #X obj 428 119 s DebugControlVSS;
 #X msg 576 231 /VirtualSource/3/Volume/Set 0;
-#X text 481 372 corner window/CAVE/bottom;
-#X text 449 346 corner studentroomwall/LED/top;
-#X text 886 345 corner window/LED/top;
-#X text 881 369 corner window/CAVE/top;
-#X text 881 397 corner studentroomwall/LED/bottom;
-#X text 424 399 corner studentroomwall/CAVE/center;
-#X text 914 454 window/LED extreme/center;
 #X msg 788 453 2.55 -8.25 1.67;
 #X obj 328 569 tgl 15 0 sendVU sendVU Send_VU 17 7 0 10 -262144 -1
 -1 0 1;
+#X text 465 372 #2 corner window/CAVE/bottom;
+#X text 433 345 #1 corner studentroomwall/LED/top;
+#X text 418 399 #3 corner studentroomwall/CAVE/center;
+#X text 548 424 #4 ceiling center;
+#X text 886 345 #5 corner window/LED/top;
+#X text 881 369 #6 corner window/CAVE/top;
+#X text 851 413 #7 corner studentroomwall/LED/bottom;
+#X text 904 454 #8 window/LED extreme/center;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
-#X connect 4 0 45 0;
+#X connect 4 0 44 0;
 #X connect 5 0 4 0;
 #X connect 6 0 8 0;
 #X connect 7 0 9 0;
@@ -617,15 +617,15 @@
 #X connect 8 1 4 1;
 #X connect 9 0 4 0;
 #X connect 9 1 4 2;
-#X connect 10 0 46 0;
+#X connect 10 0 45 0;
 #X connect 14 0 13 0;
-#X connect 15 0 55 0;
+#X connect 15 0 54 0;
 #X connect 16 0 13 0;
 #X connect 17 0 13 0;
 #X connect 19 0 13 0;
 #X connect 20 0 13 0;
 #X connect 22 0 13 0;
-#X connect 23 0 55 0;
+#X connect 23 0 54 0;
 #X connect 26 0 13 0;
 #X connect 27 0 28 0;
 #X connect 28 0 13 0;
@@ -634,27 +634,27 @@
 #X connect 30 2 3 0;
 #X connect 31 0 30 0;
 #X connect 32 0 30 0;
+#X connect 34 0 30 0;
 #X connect 35 0 30 0;
-#X connect 36 0 30 0;
-#X connect 37 0 13 0;
-#X connect 38 0 55 0;
+#X connect 36 0 13 0;
+#X connect 37 0 54 0;
+#X connect 39 0 30 0;
 #X connect 40 0 30 0;
 #X connect 41 0 30 0;
-#X connect 42 0 30 0;
-#X connect 43 0 55 0;
-#X connect 44 0 55 0;
-#X connect 45 0 55 0;
-#X connect 46 0 55 0;
-#X connect 47 0 55 0;
-#X connect 48 0 30 0;
-#X connect 49 0 10 0;
-#X connect 50 0 51 0;
+#X connect 42 0 54 0;
+#X connect 43 0 54 0;
+#X connect 44 0 54 0;
+#X connect 45 0 54 0;
+#X connect 46 0 54 0;
+#X connect 47 0 30 0;
+#X connect 48 0 10 0;
+#X connect 49 0 50 0;
+#X connect 50 0 13 0;
 #X connect 51 0 13 0;
 #X connect 52 0 13 0;
 #X connect 53 0 13 0;
-#X connect 54 0 13 0;
-#X connect 56 0 55 0;
-#X connect 64 0 30 0;
+#X connect 55 0 54 0;
+#X connect 56 0 30 0;
 #X restore 260 184 pd DEBUG;
 #X obj 280 152 tgl 25 0 debugmode empty Debug_Mode -20 -10 0 10 -232576
 -258699 -1 1 1;
