@@ -1,4 +1,4 @@
-#N canvas 2282 188 1409 708 10;
+#N canvas 978 139 1409 708 10;
 #X obj 54 610 outlet;
 #X msg 254 86 -2.55 -5.4 2.7;
 #X msg 422 85 2.55 5.4 0.4;
@@ -45,7 +45,6 @@
 #X obj 878 549 s ySlider;
 #X msg 631 480 stop;
 #X obj 701 522 line;
-#X text 765 434 moving sources (x \, y);
 #X obj 701 550 s xSlider;
 #X msg 878 466 stop \, -8 \, 8 12000;
 #X msg 887 487 stop \, 8 \, -8 12000;
@@ -58,6 +57,12 @@
 #X text 1022 91 silent hole;
 #X text 1028 124 silent poles (>184) get silent;
 #X text 1010 234 playground;
+#X text 765 434 moving sources (X \, Y \, Z);
+#X text 723 567 doors walls;
+#X text 893 567 long walls;
+#X text 1033 567 up & down;
+#X msg 988 358 -2.55 8.25 2.15;
+#X text 1089 358 CO 129;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -84,12 +89,13 @@
 #X connect 41 0 42 0;
 #X connect 43 0 41 0;
 #X connect 43 0 44 0;
-#X connect 43 0 51 0;
-#X connect 44 0 46 0;
+#X connect 43 0 50 0;
+#X connect 44 0 45 0;
+#X connect 46 0 41 0;
 #X connect 47 0 41 0;
-#X connect 48 0 41 0;
+#X connect 48 0 44 0;
 #X connect 49 0 44 0;
-#X connect 50 0 44 0;
-#X connect 51 0 54 0;
-#X connect 52 0 51 0;
-#X connect 53 0 51 0;
+#X connect 50 0 53 0;
+#X connect 51 0 50 0;
+#X connect 52 0 50 0;
+#X connect 61 0 0 0;
