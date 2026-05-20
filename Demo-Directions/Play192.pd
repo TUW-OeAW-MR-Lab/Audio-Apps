@@ -380,7 +380,7 @@
 -1 -1 0 1;
 #X obj 972 88 vsl 10 128 0 127 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 1696 759 lop~ 150;
+#X obj 1696 759 lop~ 120;
 #X obj 1520 688 env~;
 #X obj 1827 846 env~;
 #X obj 1921 88 vsl 10 128 0 127 0 0 empty empty LFE -4 -9 0 10 -162280

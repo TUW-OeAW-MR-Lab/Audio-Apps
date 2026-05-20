@@ -13,9 +13,9 @@ Modified: Cartesian coordinate input/output (x, y, z) instead of
 azimuth/elevation angles. Inputs:  1) loudspeaker-matrices (from
 define_loudspeakerscart) 2) X position (cartesian) 3) Y position (cartesian) 4)
 Z position (cartesian) 5) spread (0-100) Outputs: 1) DAC levels of loudspeakers
-         2) X position actual (cartesian)
-         3) Y position actual (cartesian)
-         4) Z position actual (cartesian)
+         2) X direction actual (listener-relative, normalised cartesian)
+         3) Y direction actual (listener-relative, normalised cartesian)
+         4) Z direction actual (listener-relative, normalised cartesian)
          5) spread actual
 */
 
@@ -32,6 +32,9 @@ Z position (cartesian) 5) spread (0-100) Outputs: 1) DAC levels of loudspeakers
 #define MAX_LS_AMOUNT                                                          \
   200 /* maximum amount of loudspeakers, can be increased                      \
        */
+#define LISTENER_X 0.0f
+#define LISTENER_Y 0.0f
+#define LISTENER_Z 1.6f
 
 typedef struct vbapcart /* This defines the object as an entity made up of other
                            things */
@@ -58,6 +61,7 @@ typedef struct vbapcart /* This defines the object as an entity made up of other
   t_float x_spread;       /* speading amount of virtual source (0-100) */
   float x_spread_base[3]; /* used to create uniform spreading */
   long x_verbose;         /* 1 for verbose output, 0 for quiet */
+  int x_is_silent_pole[MAX_LS_AMOUNT]; /* 1 if speaker is a silent pole */
 } t_vbapcart;
 
 /* Globals */
@@ -67,7 +71,8 @@ void new_spread_dir(t_vbapcart *x, float spreaddir[3], float vscartdir[3],
 void new_spread_base(t_vbapcart *x, float spreaddir[3], float vscartdir[3]);
 static t_class *vbapcart_class;
 void cross_prod(float v1[3], float v2[3], float v3[3]);
-void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x);
+void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x,
+                       int *is_silent);
 void vbapcart_bang(t_vbapcart *x);
 void vbapcart_int(t_vbapcart *x, t_float n);
 void vbapcart_matrix(t_vbapcart *x, t_symbol *s, int ac, t_atom *av);
@@ -76,10 +81,12 @@ void vbapcart_in2(t_vbapcart *x, long n);
 void vbapcart_in3(t_vbapcart *x, long n);
 void vbapcart_in4(t_vbapcart *x, long n);
 void vbapcart_verbose(t_vbapcart *x, t_float n);
+void vbapcart_silent_poles(t_vbapcart *x, t_symbol *s, int ac, t_atom *av);
 void spread_it(t_vbapcart *x, float *final_gs);
 static void *vbapcart_new(t_symbol *s, int ac,
                           t_atom *av); /* using A_GIMME - typed message list */
-void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3]);
+void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3],
+              int *is_silent);
 void cart_to_angle(float cvec[3], float avec[3]);
 void normalize_cart(float vec[3]);
 
@@ -87,7 +94,7 @@ void normalize_cart(float vec[3]);
 
 void vbapcart_setup(void) {
   vbapcart_class = class_new(gensym("vbapcart"), (t_newmethod)vbapcart_new, 0,
-                             (short)sizeof(t_vbapcart), 0, A_GIMME, 0);
+                             sizeof(t_vbapcart), 0, A_GIMME, 0);
   /* vbapcart_new = creation function, A_DEFLONG = its (optional) arguement is a
    * long (32-bit) int */
 
@@ -99,6 +106,8 @@ void vbapcart_setup(void) {
                   gensym("loudspeaker-matrices"), A_GIMME, 0);
   class_addmethod(vbapcart_class, (t_method)vbapcart_verbose, gensym("verbose"),
                   A_FLOAT, 0);
+  class_addmethod(vbapcart_class, (t_method)vbapcart_silent_poles,
+                  gensym("silent-poles"), A_GIMME, 0);
 }
 
 void normalize_cart(float vec[3])
@@ -147,7 +156,8 @@ void cart_to_angle(float cvec[3], float avec[3])
   avec[2] = dist;
 }
 
-void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3]) {
+void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3],
+              int *is_silent) {
   /* calculates gain factors using loudspeaker setup and given cartesian
    * direction */
   float power;
@@ -164,13 +174,31 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3]) {
   gtmp[1] = 0;
   gtmp[2] = 0;
 
-  /* use cartesian input directly, normalise to unit sphere */
-  cartdir[0] = x->x_x;
-  cartdir[1] = x->x_y;
-  cartdir[2] = (dim == 3) ? x->x_z : 0.0f;
+  /* use absolute cartesian input as listener-relative direction */
+  cartdir[0] = x->x_x - LISTENER_X;
+  cartdir[1] = x->x_y - LISTENER_Y;
+  cartdir[2] = (dim == 3) ? x->x_z - LISTENER_Z : 0.0f;
+
+  /* The listener position has no VBAP direction. Keep it silent instead of
+     mapping it to an arbitrary loudspeaker direction. */
+  if (cartdir[0] * cartdir[0] + cartdir[1] * cartdir[1] +
+          cartdir[2] * cartdir[2] <
+      0.000001f) {
+    actual_dir[0] = 0.0f;
+    actual_dir[1] = 0.0f;
+    actual_dir[2] = 0.0f;
+    g[0] = 0.0f;
+    g[1] = 0.0f;
+    g[2] = 0.0f;
+    ls[0] = 1;
+    ls[1] = 1;
+    ls[2] = 1;
+    return;
+  }
+
   normalize_cart(cartdir);
 
-  /* actual_dir starts as the (normalised) intended direction */
+  /* actual_dir starts as the normalised listener-relative intended direction */
   actual_dir[0] = cartdir[0];
   actual_dir[1] = cartdir[1];
   actual_dir[2] = cartdir[2];
@@ -182,7 +210,7 @@ void vbapcart(float g[3], long ls[3], t_vbapcart *x, float actual_dir[3]) {
   // it means that the virtual source does not lie in that LS set. */
 
   big_sm_g = -100000.0; /* initial value for largest minimum gain value */
-  best_neg_g_am = 3;    /* how many negative values in this set */
+  best_neg_g_am = 1000; /* how many negative values in this set */
 
   g[0] = 0.0f;
   g[1] = 0.0f;
@@ -278,7 +306,8 @@ void cross_prod(float v1[3], float v2[3], float v3[3])
   }
 }
 
-void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
+void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x,
+                       int *is_silent)
 /* calculates gains to be added to previous gains, used in
 // multiple direction panning (source spreading) */
 {
@@ -298,7 +327,7 @@ void additive_vbapcart(float *final_gs, float cartdir[3], t_vbapcart *x)
   ls[2] = 0;
 
   big_sm_g = -100000.0;
-  best_neg_g_am = 3;
+  best_neg_g_am = 1000;
 
   g[0] = 0.0f;
   g[1] = 0.0f;
@@ -451,10 +480,10 @@ void spread_it(t_vbapcart *x, float *final_gs)
   long i, spreaddirnum;
   float power;
 
-  /* build the normalised vscartdir from current X/Y/Z */
-  vscartdir[0] = x->x_x;
-  vscartdir[1] = x->x_y;
-  vscartdir[2] = (x->x_dimension == 3) ? x->x_z : 0.0f;
+  /* build the normalised listener-relative direction from current X/Y/Z */
+  vscartdir[0] = x->x_x - LISTENER_X;
+  vscartdir[1] = x->x_y - LISTENER_Y;
+  vscartdir[2] = (x->x_dimension == 3) ? x->x_z - LISTENER_Z : 0.0f;
   normalize_cart(vscartdir);
 
   if (x->x_dimension == 3) {
@@ -496,10 +525,10 @@ void spread_it(t_vbapcart *x, float *final_gs)
     for (i = 0; i < 3; i++)
       spreadbase[15][i] = (vscartdir[i] + spreadbase[11][i]) / 2.0;
 
-    additive_vbapcart(final_gs, spreaddir[0], x);
+    additive_vbapcart(final_gs, spreaddir[0], x, x->x_is_silent_pole);
     for (i = 1; i < spreaddirnum; i++) {
       new_spread_dir(x, spreaddir[i], vscartdir, spreadbase[i]);
-      additive_vbapcart(final_gs, spreaddir[i], x);
+      additive_vbapcart(final_gs, spreaddir[i], x, x->x_is_silent_pole);
     }
   } else if (x->x_dimension == 2) {
     /* 2-D spreading: rotate in azimuth around the virtual source direction */
@@ -524,7 +553,7 @@ void spread_it(t_vbapcart *x, float *final_gs)
       spreaddir[i][2] = 0.0f;
     }
     for (i = 0; i < spreaddirnum; i++)
-      additive_vbapcart(final_gs, spreaddir[i], x);
+      additive_vbapcart(final_gs, spreaddir[i], x, x->x_is_silent_pole);
   } else
     return;
 
@@ -563,29 +592,64 @@ void vbapcart_bang(t_vbapcart *x)
 
   final_gs = (float *)getbytes(x->x_ls_amount * sizeof(float));
   if (x->x_lsset_available == 1) {
-    vbapcart(g, ls, x, actual_dir);
+    vbapcart(g, ls, x, actual_dir, x->x_is_silent_pole);
     for (i = 0; i < x->x_ls_amount; i++)
       final_gs[i] = 0.0;
     for (i = 0; i < x->x_dimension; i++) {
       final_gs[ls[i] - 1] = g[i];
     }
-    if (x->x_spread != 0) {
+    if (x->x_verbose) {
+      /* post("vbapcart: triplet %d %d %d, gains %.3f %.3f %.3f", (int)ls[0],
+            (int)ls[1], (int)ls[2], g[0], g[1], g[2]); */
+    }
+    if (x->x_spread != 0 &&
+        actual_dir[0] * actual_dir[0] + actual_dir[1] * actual_dir[1] +
+                actual_dir[2] * actual_dir[2] >=
+            0.000001f) {
       spread_it(x, final_gs);
     }
-    for (i = 0; i < x->x_ls_amount; i++) {
-      SETFLOAT(&at[0], (t_float)i);
-      SETFLOAT(&at[1], (t_float)final_gs[i]);
-      outlet_list(x->x_outlet0, gensym("list") /* was: 0L */, 2, at);
+    /* Zero out silent pole gains and renormalize */
+    {
+      int has_silent = 0;
+      float sp_power;
+      for (i = 0; i < x->x_ls_amount; i++) {
+        if (x->x_is_silent_pole[i] && final_gs[i] != 0.0f) {
+          final_gs[i] = 0.0f;
+          has_silent = 1;
+        }
+      }
+      if (has_silent) {
+        sp_power = 0.0f;
+        for (i = 0; i < x->x_ls_amount; i++)
+          sp_power += final_gs[i] * final_gs[i];
+        sp_power = sqrtf(sp_power);
+        if (sp_power > 0.00001f) {
+          for (i = 0; i < x->x_ls_amount; i++)
+            final_gs[i] /= sp_power;
+        } else {
+          /* all stimulated speakers were silent poles, and no spread
+             energy reached other speakers. final_gs remains zeroed. */
+         /* if (x->x_verbose)
+            post("vbapcart: all gains zeroed (only silent poles stimulated)"); */
+        }
+      }
     }
-    /* output actual (possibly clamped) direction, not the stored input */
-    outlet_float(x->x_outlet1, actual_dir[0]);
-    outlet_float(x->x_outlet2, actual_dir[1]);
-    outlet_float(x->x_outlet3, actual_dir[2]);
+    /* output actual listener-relative direction and spread first (right to
+     * left) */
     outlet_float(x->x_outlet4, x->x_spread);
+    outlet_float(x->x_outlet3, actual_dir[2]);
+    outlet_float(x->x_outlet2, actual_dir[1]);
+    outlet_float(x->x_outlet1, actual_dir[0]);
+
+    /* finally output the loudspeaker gains (leftmost outlet) */
+    for (i = 0; i < x->x_ls_amount; i++) {
+      SETFLOAT(&at[0], (t_float)(i + 1));
+      SETFLOAT(&at[1], (t_float)final_gs[i]);
+      outlet_list(x->x_outlet0, gensym("list"), 2, at);
+    }
   } else
     post("vbapcart: Configure loudspeakers first!", 0);
-  /*	freebytes(final_gs, x->x_ls_amount * sizeof(float)); bug fix added 9/00
-   */
+  freebytes(final_gs, x->x_ls_amount * sizeof(float));
 }
 
 /*--------------------------------------------------------------------------*/
@@ -701,6 +765,23 @@ void vbapcart_matrix(t_vbapcart *x, t_symbol *s, int ac, t_atom *av)
 
 void vbapcart_verbose(t_vbapcart *x, t_float n) { x->x_verbose = (n != 0); }
 
+void vbapcart_silent_poles(t_vbapcart *x, t_symbol *s, int ac, t_atom *av) {
+  long i, ch;
+  /* clear all silent pole flags */
+  for (i = 0; i < MAX_LS_AMOUNT; i++)
+    x->x_is_silent_pole[i] = 0;
+  /* set silent pole flags for specified channels (1-based input) */
+  for (i = 0; i < ac; i++) {
+    if (av[i].a_type == A_FLOAT) {
+      ch = (long)av[i].a_w.w_float;
+      if (ch >= 1 && ch <= MAX_LS_AMOUNT)
+        x->x_is_silent_pole[ch - 1] = 1;
+    }
+  }
+  if (x->x_verbose)
+    post("vbapcart: %d silent poles configured", ac);
+}
+
 void vbapcart_in1(t_vbapcart *x,
                   long n) /* x = the instance of the object, n = the int
                              received in the right inlet */
@@ -723,9 +804,7 @@ void vbapcart_in3(t_vbapcart *x,
                              received in the right inlet */
 /* panning Z (cartesian) */
 {
-  if (n < 0)
-    n = 0;
-  x->x_z = n; /* store n in a global variable */
+  x->x_z = n; /* store n in a global variable - negative values are valid */
 }
 
 void vbapcart_in4(t_vbapcart *x,
@@ -746,7 +825,12 @@ static void *vbapcart_new(t_symbol *s, int ac, t_atom *av)
 {
   t_vbapcart *x;
   x = (t_vbapcart *)pd_new(vbapcart_class);
-  x->x_verbose = 1;
+  x->x_verbose = 0;
+  {
+    int sp_i;
+    for (sp_i = 0; sp_i < MAX_LS_AMOUNT; sp_i++)
+      x->x_is_silent_pole[sp_i] = 0;
+  }
 
   /* pure data: */
 

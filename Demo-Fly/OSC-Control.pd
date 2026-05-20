@@ -38,7 +38,7 @@
 #X connect 14 3 10 0;
 #X connect 15 0 1 0;
 #X restore 98 180 pd control;
-#N canvas 656 46 476 306 play 1;
+#N canvas 1422 55 476 306 play 0;
 #X obj 18 14 inlet;
 #X obj 328 148 s OSCresponse;
 #X text 333 96 Send stop playing;
@@ -48,17 +48,19 @@
 #X obj 19 43 OSCroute /Start /Stop /Volume /Duration /VU;
 #X obj 214 143 OSCroute /Set;
 #X obj 263 66 s GetVU;
-#X obj 214 170 s SetVolume;
+#X obj 214 190 s SetVolume;
 #X floatatom 148 147 5 0 0 0 - GetVolume -;
-#X obj 121 225 s OSCresponse;
-#X obj 121 174 float;
+#X obj 121 245 s OSCresponse;
+#X obj 121 194 float;
 #X obj 204 90 s GetDuration;
-#X msg 121 197 send /Play/Volume \$1;
+#X msg 121 217 send /Play/Volume \$1;
 #X obj 121 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 121 106 route bang;
 #X text 230 124 Set Volume;
 #X text 123 127 Get Volume;
+#X obj 148 169 - 100;
+#X obj 214 166 + 100;
 #X connect 0 0 6 0;
 #X connect 3 0 1 0;
 #X connect 6 0 4 0;
@@ -66,17 +68,19 @@
 #X connect 6 2 16 0;
 #X connect 6 3 13 0;
 #X connect 6 4 8 0;
-#X connect 7 0 9 0;
-#X connect 10 0 12 1;
+#X connect 7 0 20 0;
+#X connect 10 0 19 0;
 #X connect 12 0 14 0;
 #X connect 14 0 11 0;
 #X connect 15 0 12 0;
 #X connect 16 0 15 0;
 #X connect 16 1 7 0;
+#X connect 19 0 12 1;
+#X connect 20 0 9 0;
 #X restore 31 180 pd play;
 #X obj 210 42 inlet;
 #X obj 128 93 spigot;
-#X obj 210 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 210 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 467 147 spigot;
 #X text 116 43 OSC Receive;

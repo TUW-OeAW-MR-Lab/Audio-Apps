@@ -24,6 +24,9 @@ Modified by Michael Mihocic:
 #define RES_ID 9172 /* resource ID for assistance (we'll add that later) */
 #define MAX_LS_AMOUNT 200 /* maximum amount of loudspeakers, can be raised */
 #define MIN_VOL_P_SIDE_LGTH 0.01
+#define LISTENER_X 0.0f
+#define LISTENER_Y 0.0f
+#define LISTENER_Z 1.6f
 
 #ifndef NT
 #define NULL 0L
@@ -95,7 +98,7 @@ void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT],
 void define_loudspeakerscart_setup(void) {
   def_ls_class =
       class_new(gensym("define_loudspeakerscart"), (t_newmethod)def_ls_new, 0,
-                (short)sizeof(t_def_ls), 0, A_GIMME, 0);
+                sizeof(t_def_ls), 0, A_GIMME, 0);
   /* def_ls_new = creation function, A_DEFLONG = its (optional) arguement is a
    * long (32-bit) int */
 
@@ -283,13 +286,21 @@ void def_ls_read_directions(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 /*--------------------------------------------------------------------------*/
 
 void ls_cart_normalize(t_ls *ls)
-/* normalise cartesian loudspeaker vector to unit sphere */
+/* convert absolute cartesian loudspeaker position to listener-relative unit
+   direction */
 {
+  ls->x -= LISTENER_X;
+  ls->y -= LISTENER_Y;
+  ls->z -= LISTENER_Z;
+
   float len = sqrtf(ls->x * ls->x + ls->y * ls->y + ls->z * ls->z);
   if (len > 0.0001f) {
     ls->x /= len;
     ls->y /= len;
     ls->z /= len;
+  } else {
+    post("define_loudspeakerscart: WARNING! Loudspeaker %d is at the listener position!", ls->channel_nbr);
+    post("This will cause degenerate triplets and mathematical errors.");
   }
   /* also compute azi/ele for internal use (2-D pair selection etc.) */
   {
@@ -716,15 +727,26 @@ void calculate_3x3_matrixes(t_def_ls *x)
   pointer = 2;
 
   while (tr_ptr != NULL) {
+    float det;
     lp1 = &(lss[tr_ptr->ls_nos[0]]);
     lp2 = &(lss[tr_ptr->ls_nos[1]]);
     lp3 = &(lss[tr_ptr->ls_nos[2]]);
 
+    /* compute determinant and check for degeneracy */
+    det = lp1->x * ((lp2->y * lp3->z) - (lp2->z * lp3->y)) -
+          lp1->y * ((lp2->x * lp3->z) - (lp2->z * lp3->x)) +
+          lp1->z * ((lp2->x * lp3->y) - (lp2->y * lp3->x));
+    if (fabsf(det) < 0.0005f) {
+      if (x->x_verbose)
+        post("define-loudspeakers: skipping degenerate triplet %d %d %d",
+             tr_ptr->ls_nos[0]+1, tr_ptr->ls_nos[1]+1, tr_ptr->ls_nos[2]+1);
+      tr_ptr = tr_ptr->next;
+      continue;
+    }
+
     /* matrix inversion */
     invmx = tr_ptr->inv_mx;
-    invdet = 1.0 / (lp1->x * ((lp2->y * lp3->z) - (lp2->z * lp3->y)) -
-                    lp1->y * ((lp2->x * lp3->z) - (lp2->z * lp3->x)) +
-                    lp1->z * ((lp2->x * lp3->y) - (lp2->y * lp3->x)));
+    invdet = 1.0 / det;
 
     invmx[0] = ((lp2->y * lp3->z) - (lp2->z * lp3->y)) * invdet;
     invmx[3] = ((lp1->y * lp3->z) - (lp1->z * lp3->y)) * -invdet;
@@ -764,7 +786,7 @@ void calculate_3x3_matrixes(t_def_ls *x)
 
     tr_ptr = tr_ptr->next;
   }
-  outlet_anything(x->x_outlet0, gensym("loudspeaker-matrices"), list_length,
+  outlet_anything(x->x_outlet0, gensym("loudspeaker-matrices"), pointer,
                   at);
   freebytes(at, list_length * sizeof(t_atom));
 }
