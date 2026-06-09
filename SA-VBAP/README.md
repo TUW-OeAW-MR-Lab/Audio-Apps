@@ -46,3 +46,5 @@ VSS  |   /Subwoofer/Switch _value_ | - | switch the subwoofers off and on with _
 SYS  |   /Subwoofer/Volume/Set _volume_ | - | set the volume of the subwoofers with _volume_ = -80..+20 in dB re output audio | /Subwoofer/Volume/Set 6 | 
 SYS  |   /Subwoofer/Volume | /Subwoofer/Volume _volume_ | get the total volume of the subwoofers with _volume_ = -80..+20 in dB re output audio | /Subwoofer/Volume | 
 SYS  |   Sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ re 0 dB FS | /Total/VU -25.12345 |
+
+## Example Door Configurations
