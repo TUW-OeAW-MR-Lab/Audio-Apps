@@ -48,3 +48,5 @@ SYS  |   /Subwoofer/Volume | /Subwoofer/Volume _volume_ | get the total volume o
 SYS  |   Sent every 100 ms | /Total/VU _VU_ | instantanous maximual level across all loudspeakers, with _VU_ re 0 dB FS | /Total/VU -25.12345 |
 
 ## Example Door Configurations
+![Doors: closed/close](https://github.com/TUW-OeAW-MR-Lab/Audio-Apps/blob/development/SA-VBAP/images/mr_lab%20CC%20azi30%20ele-30.png?raw=true)
+![Doors: open/open](https://github.com/TUW-OeAW-MR-Lab/Audio-Apps/blob/development/SA-VBAP/images/mr_lab%20OO%20azi30%20ele-30.png?raw=true)
