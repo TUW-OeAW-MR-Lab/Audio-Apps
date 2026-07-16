@@ -37,9 +37,11 @@ SYS  |   /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_va
 SYS, VSS   |  /Control/Door | /Control/Door _string_ | get current door configuration, with _string_ = { OO, OC, CO, CC} | /Control/Door OO |
 SYS  |   /Control/Door/Set _door_ | - | set current door configuration: _door_ = {OO, OC, CO, CC}; C: closed, O: open; First letter: CAVE LED door, second letter: Curved LED door  |  /Control/Door/Set CC |
 VSS  |   /VirtualSource/_index_/Position/Set _x y z_ | - | set the position of the virtual source #_index_ with _x, y, z_ in meter | /VirtualSource/0/Position/Set 5 2 1.5  |
+VSS  |   /VirtualSource/_index_/Position | /VirtualSource/_index_/Position _x y z_ | get the current position of the virtual source #_index_ with _x, y, z_ in meter | /VirtualSource/0/Position 5 2 1.5  |
 VSS  |   /VirtualSource/_index_/Volume/Set _volume_ | - | set the volume of the virtual source #_index_ with _volume_ re 0 dB FS | /VirtualSource/5/Volume/Set -18  |
 VSS  |   /VirtualSource/_index_/Volume | /VirtualSource/_index_/Volume _volume_ | get the volume of the virtual source #_index_ with _volume_ re 0 dB FS | /VirtualSource/12/Volume -18 |
 VSS  |   /VirtualSource/_index_/Switch _value_ | - | switch the virtual source #_index_ off and on with _value_ = { 0, 1}, respectively | /VirtualSource/15/Switch 1 |
+VSS  |   /VirtualSource/_index_/Triplet | /VirtualSource/_index_/Triplet _a b c_ | get the current triplet (1-3 loudspeaker channels _a, b, c_) | /VirtualSource/3/Triplet 101 106 187 |
 SYS  |   /Total/Volume/Set _volume_ | - | set the total volume of app with _volume_ re 0 dB FS | /Total/Volume/Set -24 | 
 SYS  |   /Total/Volume | /Total/Volume _volume_ | get the total volume of app with _volume_ re 0 dB FS | /Total/Volume -24 | 
 VSS  |   /Subwoofer/Switch _value_ | - | switch the subwoofers off and on with _value_ = { 0, 1}, respectively | /Subwoofer/Switch 1 |

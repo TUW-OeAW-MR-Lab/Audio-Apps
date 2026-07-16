@@ -48,6 +48,7 @@ typedef struct vbapcart /* This defines the object as an entity made up of other
   void *x_outlet2;
   void *x_outlet3;
   void *x_outlet4;
+  void *x_outlet5;
   float x_set_inv_matx[MAX_LS_SETS]
                       [9]; /* inverse matrice for each loudspeaker set */
   float x_set_matx[MAX_LS_SETS][9]; /* matrice for each loudspeaker set */
@@ -634,8 +635,24 @@ void vbapcart_bang(t_vbapcart *x)
         }
       }
     }
-    /* output actual listener-relative direction and spread first (right to
-     * left) */
+    /* output active triplet (outlet 5), actual listener-relative direction and spread first (right to left) */
+    {
+      t_atom triplet_atoms[3];
+      int triplet_size = 0;
+      for (i = 0; i < x->x_dimension; i++) {
+        if (g[i] > 0.01f) {
+          SETFLOAT(&triplet_atoms[triplet_size], (t_float)ls[i]);
+          triplet_size++;
+        }
+      }
+      if (triplet_size == 0) {
+        for (i = 0; i < x->x_dimension; i++) {
+          SETFLOAT(&triplet_atoms[triplet_size], (t_float)ls[i]);
+          triplet_size++;
+        }
+      }
+      outlet_list(x->x_outlet5, gensym("list"), triplet_size, triplet_atoms);
+    }
     outlet_float(x->x_outlet4, x->x_spread);
     outlet_float(x->x_outlet3, actual_dir[2]);
     outlet_float(x->x_outlet2, actual_dir[1]);
@@ -844,6 +861,7 @@ static void *vbapcart_new(t_symbol *s, int ac, t_atom *av)
   x->x_outlet2 = outlet_new(&x->x_ob, gensym("float"));
   x->x_outlet3 = outlet_new(&x->x_ob, gensym("float"));
   x->x_outlet4 = outlet_new(&x->x_ob, gensym("float"));
+  x->x_outlet5 = outlet_new(&x->x_ob, gensym("list"));
 
   /* - */
 
