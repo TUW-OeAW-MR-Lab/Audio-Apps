@@ -2,17 +2,18 @@
 %
 % This file is used to create a spatial simulation of birds, rain and thunder.
 % The VBAP parameters are adapted to MR Lab.
-%   Sources: 53
 %       Sources  1-11: birds
 %       Sources 12-29: rain
 %       Sources 30-53: thunder
 %       Sources 54-71: rain
+%       Sources 72-95: frogs & crickets
 
-%   Directions: defined in label track channel
+%   Directions: defined in pos.txt
 %
 
 % #Author: Michael Mihocic and Piotr Majdak (09.2017)
 % #Author: Michael Mihocic: adapted to MR lab, new functions implemented/added (08.2025)
+% #Author: Michael Mihocic: frogs & crickets added (07.2026)
 % 
 % Copyright (C) Acoustics Research Institute - Austrian Academy of Sciences
 % Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "License")
@@ -29,7 +30,7 @@ close all;
 %% prepare
 % addpath('..\Spatialization\');
 load SPAT_default; % load default spatialization parameters
-SOURCE=audacity2source('Label Track.txt','Data\source.wav'); % convert audacity WAV and Label tracks
+SOURCE=audacity2source('pos.txt','Data\source.wav'); % convert audacity WAV and Label tracks
 
 %% check elevations
 minval = zeros(1, numel(SOURCE));

@@ -6,9 +6,7 @@ Typical sources in a jungle atmosphere
 - Sources 12-29: rain
 - Sources 30-53: thunderstorm
 - Sources 54-71: rain
-- Sources 72-: frogs
-- Sources : crickets
-- Sources : creek
+- Sources 72-95: frogs & crickets
 
 ## Spatialize Demo
 - prepare your multichannel source wav files in \Data folder (eg. with Audacity)

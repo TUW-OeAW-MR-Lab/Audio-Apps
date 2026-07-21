@@ -1,4 +1,38 @@
+% #Author: Michael Mihocic
+
 clear;
+
+% 1. Read both WAV files
+[y1, fs1] = audioread('Data\source channels 1-71.wav');
+[y2, fs2] = audioread('Data\source channels 72-95.wav');
+
+% 2. Match sample rates if they differ
+if fs1 ~= fs2
+    y2 = resample(y2, fs1, fs2);
+end
+
+% 3. Match track length (pad shorter file with zeros)
+len1 = size(y1, 1);
+len2 = size(y2, 1);
+
+if len1 < len2
+    y1(len1+1:len2, :) = 0; % Pad y1 to match len2
+elseif len2 < len1
+    y2(len2+1:len1, :) = 0; % Pad y2 to match len1
+end
+
+% 4. Combine channels side-by-side (e.g. 8 + 16 = 24 channels)
+y_merged = [y1, y2];
+
+% 5. Save the output file
+audiowrite('Data\source.wav', y_merged, fs1);
+disp(['Files combined to ', num2str(size(y_merged, 2)), ' channels and saved successfully.']);
+
+return;
+
+
+%% OLD CODE
+
 % [b, FS]=audioread('Data\birds.wav');
 % [r1]=audioread('Data\rain.wav');
 % [t]=audioread('Data\thunderstorm.wav');
@@ -15,11 +49,6 @@ clear;
 % 
 % audiowrite('Data\source3.wav',Y,FS);
 % disp('completed');
-
-
-
-
-
 
 
 

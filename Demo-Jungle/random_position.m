@@ -3,6 +3,9 @@
 %       Sources 12-29: rain
 %       Sources 30-53: thunder
 %       Sources 54-71: rain
+%       Sources 72-95: frogs & crickets
+
+% #Author: Michael Mihocic
 
 clc;
 pos='';
@@ -74,6 +77,24 @@ for ii=54:71 % create random positions for label tracks: rain
     rng('shuffle');
     azi2 = round(rand*720-360,0);
     ele2 =  round(rand*45+20,0); % ele range: 20-65
+
+    newRow=['0.000000	0.000000	#' num2str(ii) ': ' num2str(azi1) ',' num2str(ele1)]; % get random start position
+    disp(newRow); % display in Matlab output window
+    fprintf(fid, '%s\r\n', newRow); % save to output file
+
+    newRow=['49.000000	49.000000	' num2str(azi2) ',' num2str(ele2)]; % if moving,  get random end  position
+    disp(newRow); % display in Matlab output window
+    fprintf(fid, '%s\r\n', newRow); % save to output file
+end
+
+for ii=72:95 % create random positions for label tracks: frogs, crickets
+    rng('shuffle');
+    azi1 = round(rand*720-360,0);
+    ele1 = round(rand*50-25,0); % ele range: -25-25
+
+    rng('shuffle');
+    azi2 = round(rand*720-360,0);
+    ele2 =  round(rand*50-25,0); % ele range: -25-25
 
     newRow=['0.000000	0.000000	#' num2str(ii) ': ' num2str(azi1) ',' num2str(ele1)]; % get random start position
     disp(newRow); % display in Matlab output window
