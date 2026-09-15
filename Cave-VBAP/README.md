@@ -33,8 +33,9 @@ SYS, VSS  |   /Control/Response connect _ip_ _port_ | connect localhost _port_ |
 SYS, VSS  |   /Control/Version | /Control/Version _string_ | get version number | /Control/Version 1.2.0 |
 SYS  |   /Control/SampleRate | /Control/SampleRate _value_ | get sample rate (_value_ in Hz) | /Control/SampleRate 48000 |
 SYS  |   /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 5.73 |
-VSS  |   /VirtualSource/_index_/Position/Set _x y z_ | - | set the position of the virtual source #_index_ with _x, y, z_ in meter | /VirtualSource/0/Position/Set 5 2 1.5  |
-VSS  |   /VirtualSource/_index_/Position | /VirtualSource/_index_/Position _x y z_ | get the current position of the virtual source #_index_ with _x, y, z_ in meter | /VirtualSource/0/Position 5 2 1.5  |
+VSS  |   /VirtualSource/_index_/Position/Set _x y_ | - | set the position of the virtual source #_index_ with _x, y_ in meter; z position is obsolete | /VirtualSource/0/Position/Set 0 3  |
+VSS  |   /VirtualSource/_index_/Azimuth/Set _degrees_ | - | set a 2D source direction on the CAVE ellipse; 0 degrees is front (+Y), X radius is 1.7925 m and Y radius is 3.183 m | /VirtualSource/0/Azimuth/Set 0 |
+VSS  |   /VirtualSource/_index_/Position | /VirtualSource/_index_/Position _x y_ | get the current position of the virtual source #_index_ with _x, y_ in meter | /VirtualSource/7/Position 0 3  |
 VSS  |   /VirtualSource/_index_/Volume/Set _volume_ | - | set the volume of the virtual source #_index_ with _volume_ re 0 dB FS | /VirtualSource/5/Volume/Set -18  |
 VSS  |   /VirtualSource/_index_/Volume | /VirtualSource/_index_/Volume _volume_ | get the volume of the virtual source #_index_ with _volume_ re 0 dB FS | /VirtualSource/12/Volume -18 |
 VSS  |   /VirtualSource/_index_/Switch _value_ | - | switch the virtual source #_index_ off and on with _value_ = { 0, 1}, respectively | /VirtualSource/15/Switch 1 |
