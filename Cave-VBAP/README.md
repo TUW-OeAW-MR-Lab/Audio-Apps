@@ -1,38 +1,43 @@
 # Cave: VBAP
-
-!!! STILL UNDER DEVELOPMENT, NOT WORKING YET !!!
+- NOT COMPLETELY IMPLEMENTED YET
 
 ## Description
 - Spatialization of virtual sources by means of the vector-based amplitude panning.
-- Based on SA-VBAP and VBAP200, ExpSuite package.
+- Sources' directions can be controlled 2-dimensionally, as X/Y coordinates or azimuth angles.
+- Based on SA-VBAP application and VBAP200, ExpSuite package.
 
 ## Launch Scene
 - Launch batch file _LAUNCH SCENE.bat;
 - Use OSC commands to control the parameters;
 - Each virtual source with the index _index_ is linked to an incoming audio channel of MADI 1 (_index_ = [0..31]) and MADI 2 (_index_ = [31..63]).
-- The spatialized signals are output to the 16 broadband loudspeakers;
+- The spatialized signals are output to the 8 broadband loudspeakers;
 
 ## How to test
-- On the tablet (= system control), "Control" scene, switch on the PDU and unmute the amps. Check if the amp status is "green" (i.e., unmuted).
+- On the tablet (= system control), "Control" scene: [unclear how to unmute CAVE audio]
 - On the Curved LED PC (= virtual sound source control):
   - Start audio playback via an app, e.g., Youtube in a browser window, and set the volume to a moderate volume.
   - Go to "Open Volume Mixer" (right click on the loudspeaker icon in the right part of the taskbar):
     - In the System section, select the Output device "DVS Transmit 3-4 (Dante Virtual Sound Card" and set the Volume slider to 0 dB FS.
     - In the apps section, expand additional controls, select the Output device to the same as in the System section and set the Volume slider to 0 dB FS. 
-- On the tablet, click on the scee "Spatial Audio: VBAP":
+- On the tablet, click on the scee "CAVE: VBAP":
   - Click on "Launch App", wait until the status becomes "connected". If red "error" appears, click on Launch App again, until it works
   - In the Inputs section, click on "Curved LED PC: Test VBAP on Channel #3"
-  - You should hear the audio coming from the center-top of the Spatial-Audio Area. Increase the volume slowly in your app on the Curved LED PC.
+  - You should hear the audio coming from front of the CAVE area.
 - For more control of the source position: On the Audio PC, in the taskbar, click on the "pd" icon with the title "DEBUG". This will open a window with a purple background. Click on one of the boxes below "virtual position" to position the virtual sound source. 
+- Directions: X/Y; Azimuth
+  - Front: 0/3; 0
+  - Left: -2/0; 90
+  - Right: 2/0; 270
+  - Back: 0/-3; 180
 
 ## OSC Commands
 The app is listening to OSC port 10003: SYS (system control), and OSC port 10013: VSS (virtual sound source control). The following commands can be used to communicate via OSC:
 |OSC Partner(s)| Send | Response | Description | Example |
 |-----|-----|-----------|-----------|-----------|
 SYS, VSS  |   /Control/Response connect _ip_ _port_ | connect localhost _port_ | connect the OSC response channel with the master listening at _ip_ and _port_ | /Control/Response connect localhost 10005 |
-SYS, VSS  |   /Control/Version | /Control/Version _string_ | get version number | /Control/Version 1.2.0 |
+SYS, VSS  |   /Control/Version | /Control/Version _string_ | get version number | /Control/Version 1.13.0 |
 SYS  |   /Control/SampleRate | /Control/SampleRate _value_ | get sample rate (_value_ in Hz) | /Control/SampleRate 48000 |
-SYS  |   /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 5.73 |
+SYS  |   /Control/CPULoad | /Control/CPULoad _value_ | get current CPU load (_value_ in %) | /Control/CPULoad 6.78 |
 VSS  |   /VirtualSource/_index_/Position/Set _x y_ | - | set the position of the virtual source #_index_ with _x, y_ in meter; z position is obsolete | /VirtualSource/0/Position/Set 0 3  |
 VSS  |   /VirtualSource/_index_/Azimuth/Set _degrees_ | - | set a 2D source direction on the CAVE ellipse; 0 degrees is front (+Y), X radius is 1.7925 m and Y radius is 3.183 m | /VirtualSource/0/Azimuth/Set 0 |
 VSS  |   /VirtualSource/_index_/Position | /VirtualSource/_index_/Position _x y_ | get the current position of the virtual source #_index_ with _x, y_ in meter | /VirtualSource/7/Position 0 3  |

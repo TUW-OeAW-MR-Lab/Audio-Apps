@@ -2,7 +2,7 @@
 #X floatatom 139 56 5 0 0 0 - CPULoad -;
 #X obj 240 56 tgl 25 0 empty Response Response_Channel -50 -10 0 10
 -262144 -258699 -1 0 1;
-#N canvas 2108 230 1075 672 root 1;
+#N canvas 555 211 1075 672 root 0;
 #X obj 527 497 sendOSC;
 #X obj 103 413 loadbang;
 #X obj 500 114 r root;
@@ -138,7 +138,7 @@
 #X msg 204 210 send /Control/CPULoad \$1;
 #X msg 374 21 connect localhost 10005;
 #X text 547 23 test;
-#X msg 77 418 send /Control/Version v1.12;
+#X msg 77 418 send /Control/Version v1.13;
 #X obj 77 445 s OSCresponseVSS;
 #X obj 16 89 s OSCdirectresponseVSS;
 #X obj 141 309 s OSCresponseVSS;
@@ -173,7 +173,7 @@
 #X msg 141 283 send /Control/SampleRate \$1;
 #X msg 204 210 send /Control/CPULoad \$1;
 #X text 596 52 test;
-#X msg 77 418 send /Control/Version v1.12;
+#X msg 77 418 send /Control/Version v1.13;
 #X msg 423 50 connect localhost 10015;
 #X obj 15 139 s OSCdirectresponseSYS;
 #X obj 77 445 s OSCresponseSYS;
@@ -215,7 +215,7 @@
 #X obj 356 424 r OSCdirectresponseSYS;
 #X obj 363 448 r OSCsilentresponseSYS;
 #X obj 28 231 OSCroute /Control /Total /VirtualSource;
-#N canvas 221 570 1344 356 VBAP8 1;
+#N canvas 221 570 1344 356 VBAP8 0;
 #X obj 30 20 inlet;
 #X obj 270 150 VBAP8 4;
 #X obj 350 150 VBAP8 5;
@@ -351,7 +351,7 @@
 #X connect 62 62 60 0;
 #X connect 62 63 61 0;
 #X restore 412 361 pd VBAP8;
-#X msg 103 449 \; pd dsp 1 \; version v1.12 \;;
+#X msg 103 449 \; pd dsp 1 \; version v1.13 \;;
 #X connect 0 0 8 1;
 #X connect 0 0 9 0;
 #X connect 1 0 54 0;
@@ -419,13 +419,13 @@
 ;
 #X obj 250 107 cnv 15 80 100 empty empty Debug 20 12 0 14 -232576 -66577
 0;
-#N canvas 603 122 1203 617 DEBUG 1;
+#N canvas 603 122 1203 617 DEBUG 0;
 #X obj 418 6 cnv 15 700 600 empty empty Debug_Virtual_Sound_Source_Control_(VSS)
 20 12 0 14 -232576 -66577 0;
 #X obj 691 439 hsl 400 15 -10 10 0 0 empty xSlider x -2 -8 0 10 -262144
--1 -1 15960 1;
+-1 -1 0 1;
 #X obj 690 476 hsl 400 15 -10 10 0 0 empty ySlider y -2 -8 0 10 -262144
--1 -1 19950 1;
+-1 -1 0 1;
 #X floatatom 525 506 5 0 0 0 - - -;
 #X floatatom 578 506 5 0 0 0 - - -;
 #X obj 578 524 t b f;
