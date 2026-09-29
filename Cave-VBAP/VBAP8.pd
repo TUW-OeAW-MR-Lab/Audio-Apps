@@ -1,4 +1,4 @@
-#N canvas 772 104 1065 789 10;
+#N canvas 691 516 1065 789 10;
 #N canvas 2319 86 652 693 VU_ambisonics~ 0;
 #X obj 51 52 cnv 15 298 167 empty empty empty 20 12 0 14 -204800 -66577
 0;
@@ -7,9 +7,9 @@
 #X obj 124 88 vsl 10 128 0 127 0 0 SliderValue2 empty empty -10 -25
 0 15 -262144 -1 -4160 0 1;
 #X obj 134 88 vsl 10 128 0 127 0 0 SliderValue3 empty empty 4 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 6269 1;
 #X obj 144 88 vsl 10 128 0 127 0 0 SliderValue4 empty empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 6115 1;
 #X obj 154 88 vsl 10 128 0 127 0 0 SliderValue5 empty empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 164 88 vsl 10 128 0 127 0 0 SliderValue6 empty empty 0 -9 0
@@ -43,7 +43,7 @@
 #X text 80 25 Volume;
 #X floatatom 299 172 5 0 0 0 - GlobalMax -;
 #X obj 203 188 hsl 128 15 0 127 0 0 empty GlobalMax GlobalMaxLevel:
-0 -10 0 10 -261682 -1 -1 0 1;
+0 -10 0 10 -261682 -1 -1 6284 1;
 #X obj 445 78 r TriggerGlobalMax;
 #X obj 284 237 t f;
 #X obj 34 509 multiline~ 1 1 1 1 1 1 1 1 0;
@@ -105,7 +105,7 @@
 #X text 657 517 volume [0..100];
 #X obj 56 72 switch~;
 #X obj 108 50 t f;
-#X obj 90 217 tgl 15 0 active empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 90 217 tgl 15 0 active empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 108 72 moses 1;
 #N canvas 2208 162 491 232 directions 0;
@@ -172,7 +172,7 @@ opened);
 #X msg 54 18 1;
 #X floatatom 623 668 5 0 0 0 - - -;
 #X obj 623 642 env~ 16384;
-#X text 649 460 dynamic input (dynamic for each VBAP object);
+#X text 658 461 dynamic input (dynamic for each VBAP object);
 #X floatatom 30 426 5 0 0 0 - #1_vol -;
 #X obj 33 345 spigot;
 #X obj 33 301 t l l;
@@ -242,6 +242,7 @@ poles only;
 #X obj 511 240 azi2xy;
 #X text 500 265 Azimuth in degrees: 0 = front (+Y);
 #X floatatom 527 217 5 0 0 0 - - -;
+#X obj 529 436 r~ mydebugsound;
 #X connect 1 0 34 1;
 #X connect 1 0 86 1;
 #X connect 2 0 34 0;
@@ -346,4 +347,6 @@ poles only;
 #X connect 107 0 1 0;
 #X connect 107 1 4 0;
 #X connect 109 0 107 0;
+#X connect 110 0 49 0;
+#X connect 110 0 6 0;
 #X coords 0 789 1 788 85 60 0;

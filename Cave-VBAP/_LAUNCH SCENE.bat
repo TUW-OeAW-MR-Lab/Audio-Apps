@@ -9,11 +9,10 @@
 @set pd_LIB=-lib ..\YAMI\lib\iemlib1 -lib ..\YAMI\lib\iemlib2 -lib ..\YAMI\lib\OSC -lib ..\YAMI\lib\comport -lib ..\YAMI\lib\vasp -lib ..\YAMI\lib\zexy -lib ..\YAMI\lib\dyn~ -lib ..\extra\iemmatrix -lib ..\extra\bsaylor\partconv~ -lib define_loudspeakerscart -lib vbapcart
 
 @rem --- how many channels do you have?
-@set pd_CHANNELS=-channels 200
+@set pd_CHANNELS=-channels 8
 
 @rem --- which device do you use?
-@rem @set pd_DEF=-audioadddev "ASIO:ASIO MADIface USB" -noadc
-@set pd_DEF=-audioadddev "ASIO:ASIO HDSPe FX"
+@set pd_DEF=-audioadddev "ASIO:Dante Virtual Soundcard"
 
 @set pd_PATH=-path %YAMI_DIR%\abs -path ..\extra\iemlib -path ..\extra\iemmatrix -path ..\extra\bsaylor
 

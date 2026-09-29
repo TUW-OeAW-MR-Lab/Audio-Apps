@@ -1,4 +1,4 @@
-#N canvas 2363 139 755 688 10;
+#N canvas 503 487 1087 688 10;
 #X obj 54 610 outlet;
 #X msg 254 86 -2.55 -5.4 2.7;
 #X msg 253 109 -2.55 -5.4 0.4;
@@ -8,7 +8,7 @@
 #X msg 255 159 -2.55 -3 0.4;
 #X obj 517 410 line;
 #X obj 517 438 s ySlider;
-#X msg 270 369 stop;
+#X msg 616 139 stop;
 #X obj 340 411 line;
 #X obj 340 439 s xSlider;
 #X msg 340 356 stop \, -2.5 \, 2.5 4000;
@@ -18,6 +18,20 @@
 #X text 331 456 along front back walls;
 #X text 502 456 along left right walls;
 #X text 404 323 moving sources (along X \, Y);
+#X obj 731 404 line;
+#X msg 731 349 stop \, 0 \, 359 10000;
+#X obj 731 432 s aziSlider;
+#X text 716 450 in circles;
+#X obj 516 568 hsl 400 15 0 360 0 0 empty aziSlider azi -2 -8 0 10
+-262144 -1 -1 19178 1;
+#X obj 857 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 684 434 5 0 0 0 - - -;
+#X obj 814 400 del 10010;
+#X obj 771 375 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 890 440 print restartcircle;
+#X text 735 326 rotate sources;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -27,8 +41,18 @@
 #X connect 7 0 8 0;
 #X connect 9 0 7 0;
 #X connect 9 0 10 0;
+#X connect 9 0 26 0;
+#X connect 9 0 19 0;
 #X connect 10 0 11 0;
 #X connect 12 0 10 0;
 #X connect 13 0 10 0;
 #X connect 14 0 7 0;
 #X connect 15 0 7 0;
+#X connect 19 0 21 0;
+#X connect 19 0 25 0;
+#X connect 20 0 19 0;
+#X connect 20 0 27 0;
+#X connect 24 0 20 0;
+#X connect 26 0 24 0;
+#X connect 26 0 28 0;
+#X connect 27 0 26 0;
