@@ -6,7 +6,7 @@
 @set YAMI_DIR=C:\pd\YAMI
 
 @rem --- which libraries to load?
-@set pd_LIB=-lib ..\YAMI\lib\iemlib1 -lib ..\YAMI\lib\iemlib2 -lib ..\YAMI\lib\OSC -lib ..\YAMI\lib\comport -lib ..\YAMI\lib\vasp -lib ..\YAMI\lib\zexy -lib ..\YAMI\lib\dyn~ -lib ..\extra\iemmatrix -lib ..\extra\bsaylor\partconv~
+@set pd_LIB=-lib ..\YAMI\lib\OSC
 
 @rem --- how many channels do you have?
 @set pd_CHANNELS=-channels 200
@@ -15,7 +15,7 @@
 @rem @set pd_DEF=-audioadddev "ASIO:ASIO MADIface USB" -noadc
 @set pd_DEF=-audioadddev "ASIO:ASIO HDSPe FX"
 
-@set pd_PATH=-path %YAMI_DIR%\abs -path ..\extra\iemlib -path ..\extra\iemmatrix -path ..\extra\bsaylor
+@set pd_PATH=-path %YAMI_DIR%\abs
 
 @set pd_OPEN=-open DemoTracker.pd
 @set pd_AUDIO=-noaudio
