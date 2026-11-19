@@ -1,0 +1,45 @@
+#N canvas 400 178 1081 554 10;
+#X obj 724 232 dumpOSC 22227;
+#X obj 181 176 sendOSC;
+#X obj 181 205 s Response;
+#X msg 181 63 connect 128.130.143.144 22225;
+#X msg 227 122 send StreamFrames;
+#X obj 187 396 sendOSC;
+#X obj 187 425 s Response;
+#X msg 187 282 connect 128.130.143.144 22235;
+#X text 389 283 B1 establish OSC send channel to Audio PC;
+#X msg 208 92 send Connect 22227;
+#X text 706 209 C1 receive from tracker PC;
+#N canvas 1291 316 524 300 ManipulateTrackerData 0;
+#X obj 66 38 inlet;
+#X obj 66 232 outlet;
+#X text 100 118 use to manipulate tracker data before sending them
+to the Audio PC;
+#X connect 0 0 1 0;
+#X restore 724 305 pd ManipulateTrackerData;
+#X text 816 240 connect to print tracker values;
+#X obj 814 254 print TrackerData;
+#X text 239 175 send to Tracker PC;
+#X text 251 394 send to Audio PC;
+#X text 382 63 A1 establish OSC send channel to Tracker PC;
+#X text 344 90 A2 connect to Tracker PC \, and tell my port;
+#X text 356 121 A3 send command to start streaming \; improve this
+command if required: https://docs.qualisys.com/qtm-rt-protocol/#streamframes
+;
+#X obj 20 50 t b b b b b;
+#X msg 724 329 send \$1;
+#X obj 20 15 loadbang;
+#X connect 0 0 11 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 9 0 1 0;
+#X connect 11 0 20 0;
+#X connect 19 1 7 0;
+#X connect 19 2 4 0;
+#X connect 19 3 9 0;
+#X connect 19 4 3 0;
+#X connect 20 0 5 0;
+#X connect 21 0 19 0;
