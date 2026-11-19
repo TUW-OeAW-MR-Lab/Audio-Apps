@@ -3,14 +3,18 @@
 ## Description
 - Spatialization of virtual sources by means of the vector-based amplitude panning.
 - The state of the doors can be defined on-the-fly: open (O) or closed (C). Allowed states: CC, CO, OC, OO.
+- 96 virtual sources are available. Each virtual source with the index _index_ = [1..96] is linked to the incoming audio channel _index_ of the audio interface:
+  - [1..2]: Mix of all inputs which would have been sent to the Audio PC
+  - [3..16]: Direct Curved LED PC, audio channels 3 to 16 
+  - [33..48]: Direct Mobile Dante, audio channels 1 to 16
+  - [65..80]: Direct CAVE PC, audio channels 1 to 16
+- The spatialized signals are output to the 184 broadband loudspeakers;
+- The spatialized signals are also summed up, low-pass filtered at 120 Hz, and output to the 8 subwoofers;
 - Based on VBAP and VBAP200, ExpSuite package.
 
 ## Launch Scene
 - Launch batch file _LAUNCH SCENE.bat;
 - Use OSC commands to control the parameters;
-- 96 virtual sources are available. Each virtual source with the index _index_ = [1..96] is linked to the incoming audio channel _index_ of the audio interface.
-- The spatialized signals are output to the 184 broadband loudspeakers;
-- The spatialized signals are also summed up, low-pass filtered at 120 Hz, and output to the 8 subwoofers;
 
 ## How to test
 - On the tablet (= system control), "Control" scene, switch on the PDU and unmute the amps. Check if the amp status is "green" (i.e., unmuted).
